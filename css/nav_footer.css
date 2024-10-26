@@ -1,0 +1,40 @@
+/* CSS uniquement pour la nav bar et le footer */
+/* 
+> Classe navbar --> .navbar
+> Classe footer --> ?
+*/
+
+
+:root{
+    --couleur-croute: #f7e1bd;
+    --rouge-sauce: #cc452b;
+    --vert-basilic: #529c4a;
+    --couleur-fromage: #f4db95;
+}
+
+
+
+* {
+    background-color: var(--couleur-croute);
+}
+
+
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.navbar a{
+    text-decoration: none;
+    color : var(--rouge-sauce);
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+.navbar a:hover{
+    border-radius: 18px;
+    color: var(--vert-basilic);
+    text-decoration: underline;
+}
