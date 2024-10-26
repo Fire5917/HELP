@@ -1,6 +1,7 @@
 /* CSS uniquement pour la nav bar et le footer */
 /* 
 > Classe navbar --> .navbar
+> ID banière du haut --> #top_banner
 > Classe footer --> ?
 */
 
@@ -19,10 +20,52 @@
 }
 
 
+#top_banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--rouge-sauce);
+}
+
+.help_first_letter {
+    color: var(--rouge-sauce);
+    font-weight: bold;
+    display: inline-block;
+}
+
+#top_banner span:not(.help_first_letter) {
+    display: inline-block;
+    animation: toggleVisibility 8s infinite;
+}
+
+@keyframes toggleVisibility {
+    0% {
+        opacity: 1;
+    }
+    12.5% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0; 
+    }
+    62.5% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1; 
+    }
+}
+
+
 .navbar{
     display: flex;
     justify-content: center;
     align-self: center;
+    background-color: var(--couleur-fromage); 
+    padding: 10px 20px; 
+    border-radius: 25px;
 }
 
 .navbar a{
@@ -31,6 +74,8 @@
     padding: 10px 20px;
     margin: 0 10px;
     font-weight: bold;
+    font-size: large;
+    background-color: var(--couleur-fromage);
 }
 
 .navbar a:hover{
