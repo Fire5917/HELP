@@ -1,4 +1,4 @@
-# Projet Héritage Eleganza Leggenda Pizza
+# Projet Heritage Eleganza Leggenda Pizza
 
 ## Table des matières
 
@@ -22,7 +22,7 @@ Voici l'arborescence principale du projet :
 
 2. **Accéder au projet** :
     ```bash
-    cd héritage-eleganza-leggenda-pizza
+    cd HELP
     ```
 
 3. **Ouvrir le projet** : Ouvrez le projet dans votre éditeur de code et ouvrez `index.html` dans le navigateur pour voir le rendu initial du site.
