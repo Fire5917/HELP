@@ -2,8 +2,10 @@
 /* 
 > Classe navbar --> .navbar
 > ID banière du haut --> #top_banner
-> Classe footer --> ?
+> Classe footer --> .footer
+> Classe contenu footer --> .footer_content
 > Classe page courante --> .current_page
+> Bas de footer --> .footer_bottom
 */
 
 
@@ -89,4 +91,49 @@
     border-radius: 18px;
     color: var(--vert-basilic);
     text-decoration: underline;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around; 
+    align-items: flex-start; 
+    background-color: var(--couleur-croute); 
+    padding: 20px;
+}
+
+.footer_content h2 {
+    color: var(--rouge-sauce);
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+
+.footer_content p {
+    margin: 5px 0;
+}
+
+.footer_content ul {
+    list-style-type: none; /* Supprime les puces */
+    display: flex;
+    padding: 0;
+    gap: 10px;
+}
+
+/* Pour mettre les images correctement */
+.footer_content ul li a img {
+    width: 24px; 
+    height: 24px;
+    transition: transform 0.3s ease; /* Animation pour hover */
+}
+
+.footer_content ul li a:hover img {
+    transform: rotate(15deg); /* Rotation de 15 degrés au hover */
+}
+
+.footer_bottom {
+    display: flex;
+    justify-content: center;
+    color: var(--rouge-sauce);
+    padding: 10px 0;
+    font-size: 0.9em;
 }
