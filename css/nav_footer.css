@@ -3,6 +3,7 @@
 > Classe navbar --> .navbar
 > ID banière du haut --> #top_banner
 > Classe footer --> ?
+> Classe page courante --> .current_page
 */
 
 
@@ -76,6 +77,11 @@
     font-weight: bold;
     font-size: large;
     background-color: var(--couleur-fromage);
+}
+
+.navbar a.current_page{
+    border-radius: 18px;
+    text-decoration: underline;
 }
 
 .navbar a:hover{
