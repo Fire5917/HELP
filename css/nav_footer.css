@@ -30,6 +30,7 @@
     font-size: 2em;
     font-weight: bold;
     color: var(--rouge-sauce);
+    text-align: center; /* Centré pour Desktop */
 }
 
 .help_first_letter {
@@ -235,3 +236,43 @@
         justify-content: center;
     }
 }
+
+/* Pour la top_banner responsive */
+/* Moyen écran (tablette) */
+@media (max-width: 768px) {
+    #top_banner {
+        font-size: 1.5em;
+        padding: 15px;
+        text-align: left;
+    }
+    .help_first_letter {
+        display: inline; /* Garde la première lettre et le reste du mot sur la même ligne */
+    }
+    #top_banner span:not(.help_first_letter) {
+        display: inline; /* Garde les mots sur la même ligne */
+        margin-bottom: 5px;
+    }
+    #top_banner h1 {
+        display: block;
+    }
+}
+
+/* Petit écran (téléphone) */
+@media (max-width: 480px) {
+    #top_banner {
+        font-size: 1.2em;
+        padding: 10px;
+        text-align: left;
+    }
+    .help_first_letter {
+        display: inline; /* Garde la première lettre et le reste du mot sur la même ligne */
+    }
+    #top_banner span:not(.help_first_letter) {
+        display: inline; /* Garde les mots sur la même ligne */
+        margin-bottom: 5px;
+    }
+    #top_banner h1 {
+        display: block;
+    }
+}
+
