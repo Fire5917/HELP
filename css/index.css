@@ -1,0 +1,54 @@
+/* CSS uniquement pour la page : index.html */
+
+
+
+:root{
+    --couleur-croute: #f7e1bd;
+    --rouge-sauce: #cc452b;
+    --vert-basilic: #529c4a;
+    --couleur-fromage: #f4db95;
+}
+
+/* Section Welcoming */
+#welcoming {
+    background-color: var(--couleur-croute);
+    padding: 50px 20px;
+    text-align: center;
+    font-family: "Times New Roman", serif;
+}
+
+#welcoming h2 {
+    font-size: 2.5em;
+    color: var(--rouge-sauce);
+    margin-bottom: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px var(--vert-basilic);
+}
+
+#welcoming p {
+    font-size: 1.2em;
+    color: var(--vert-basilic);
+    margin: 15px 0;
+    font-weight: 500;
+}
+
+.cta_button {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 24px;
+    font-size: 1em;
+    color: var(--couleur-croute);
+    background-color: var(--rouge-sauce);
+    border: 2px solid var(--vert-basilic);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.cta_button:hover {
+    background-color: var(--vert-basilic);
+    color: var(--couleur-fromage);
+    transform: scale(1.05);
+}
