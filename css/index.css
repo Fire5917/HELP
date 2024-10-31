@@ -95,3 +95,34 @@
     background-color: var(--couleur-fromage);
 }
 
+/* Affichage tablette */
+@media (max-width: 768px) {
+    #about_us {
+        flex-direction: column; /* Place les divs en colonne */
+        align-items: center;
+        gap: 15px; /* Réduitl'espacement entre les divs */
+    }
+
+    .about_item {
+        width: 80%; /* Occupe une large partie de l'écran tout en laissant des marges */
+    }
+}
+
+/* Affichage téléphone */
+@media (max-width: 480px) {
+    #about_us {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 10px; /* Réduit le padding*/
+    }
+
+    .about_item {
+        width: 100%; /*Prend toute la largeur de l'écran*/
+        padding: 10px; /*Moins de padding --> plus compact*/
+    }
+
+    .about_item img {
+        border-radius: 8px; /* Aroondi pour petits écrans*/
+    }
+}
