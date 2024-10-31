@@ -52,3 +52,46 @@
     color: var(--couleur-fromage);
     transform: scale(1.05);
 }
+
+#about_us {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Espace entre chaque div */
+    padding: 20px;
+    background-color: var(--couleur-croute);
+}
+
+.about_item {
+    text-align: center;
+    width: 30%; /* Réduit la largeur pour donner plus d’espace entre les divs */
+    padding: 15px;
+    background-color: var(--couleur-fromage);
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about_item:hover {
+    transform: scale(1.05);
+}
+
+.about_item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.about_item h3 {
+    font-family: 'Cursive', sans-serif;
+    color: var(--rouge-sauce);
+    margin: 10px 0;
+    background-color: var(--couleur-fromage);
+}
+
+.about_item p {
+    font-size: 1em;
+    color: #333;
+    line-height: 1.5em;
+    background-color: var(--couleur-fromage);
+}
+
