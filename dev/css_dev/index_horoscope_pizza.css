@@ -1,0 +1,47 @@
+/* A voir si on le met vraiment */
+/* Style de la section Horoscope (Responsive automatiaque car utilisation de grid auto)*/
+.pizza-horoscope {
+    padding: 40px;
+    text-align: center;
+}
+
+.pizza-horoscope h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: var(--rouge-sauce);
+}
+
+.pizza-horoscope p {
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+/* Grid des signes astrologiques */
+.horoscope-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.sign {
+    background-color: var(--couleur-fromage);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sign h3 {
+    font-size: 1.4em;
+    margin-bottom: 8px;
+    background-color: var(--couleur-fromage);
+}
+
+.sign p {
+    color: #333;
+    font-size: 1em;
+    background-color: var(--couleur-fromage);
+}
+
+.sign:hover {
+    transform: scale(1.05);
+}
