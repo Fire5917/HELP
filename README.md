@@ -7,11 +7,26 @@
 - [Normes de code](#normes-de-code)
 - [Couleurs](#couleurs)
 - [Contact](#contact)
+- [Aperçu en ligne](#apercu)
 
 ## Structure du projet
 
-Voici l'arborescence principale du projet :
+```
+> css
+  fichiers css
+> dev
+  fichiers html à proposer pour ajout
+  > css_dev
+    partie du css à ajouter au css de la vraie page pour l'ajout proposé
+> media
+  images/audio/icons
+> pages
+  pages du site web
+index.html
+LICENSE
+README.md
 
+```
 
 ## Installation
 
@@ -50,3 +65,8 @@ Les couleurs principales utilisées sont les suivantes :
 ## Contact
 
 Regardez #annonces sur Discord!
+
+
+## Apercu
+
+Un aperçu du site est disponible à l'adresse suivante : [HELP pizza](https://help-lime.vercel.app)
