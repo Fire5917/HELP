@@ -100,7 +100,7 @@
     #about_us {
         flex-direction: column; /* Place les divs en colonne */
         align-items: center;
-        gap: 15px; /* Réduitl'espacement entre les divs */
+        gap: 15px; /* Réduit l'espacement entre les divs */
     }
 
     .about_item {
@@ -126,9 +126,9 @@
         border-radius: 8px; /* Aroondi pour petits écrans*/
     }
 }
-
+/* A voir si on le met vraiment */
 /* Style de la section Horoscope (Responsive automatiaque car utilisation de grid auto)*/
-.pizza-horoscope {
+/* .pizza-horoscope {
     padding: 40px;
     text-align: center;
 }
@@ -142,10 +142,10 @@
 .pizza-horoscope p {
     margin-bottom: 30px;
     font-size: 1.1em;
-}
+} */
 
 /* Grid des signes astrologiques */
-.horoscope-grid {
+/* .horoscope-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
@@ -172,4 +172,4 @@
 
 .sign:hover {
     transform: scale(1.05);
-}
+} */
