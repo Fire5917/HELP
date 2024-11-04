@@ -40,8 +40,37 @@
     color: #333;
     font-size: 1em;
     background-color: var(--couleur-fromage);
+    opacity: 0;
 }
 
 .sign:hover {
     transform: scale(1.05);
+    p {
+        animation: fadeIn 0.5s forwards;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.sign:hover h3 {
+    animation: changeColor 1s forwards;
+}
+
+@keyframes changeColor {
+    0% {
+        background-color: var(--couleur-fromage);
+        border-radius: 8px;
+        color: inherit;
+    }
+    100% {
+        background-color: #333333;
+        border-radius: 75%;
+        color: var(--rouge-sauce);
+    }
 }
