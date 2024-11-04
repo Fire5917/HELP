@@ -63,6 +63,14 @@
     animation: changeColor 1s forwards;
 }
 
+.sign strong{
+    background-color: var(--couleur-fromage);
+    color: var(--rouge-sauce);
+    font-family: Georgia;
+    font-style: italic; 
+}
+
+
 @keyframes changeColor {
     0% {
         background-color: var(--couleur-fromage);
