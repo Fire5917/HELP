@@ -45,8 +45,9 @@
 
 .sign:hover {
     transform: scale(1.05);
+    animation: rotation 1s forwards;
     p {
-        animation: fadeIn 0.5s forwards;
+        animation: fadeIn 2s forwards;
     }
 }
 
@@ -69,8 +70,16 @@
         color: inherit;
     }
     100% {
-        background-color: #333333;
+        background-color: var(--vert-basilic);
         border-radius: 75%;
-        color: var(--rouge-sauce);
+    }
+}
+
+@keyframes rotation{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(720deg);
     }
 }
