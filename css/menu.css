@@ -35,7 +35,7 @@
 
 /* Style pour chaque contenu de pizza */
 .classiques_content {
-    background-color: #fff;
+    background-color: var(--couleur-fromage);
     padding: 20px;
     text-align: center;
     border-radius: 8px;
@@ -47,6 +47,7 @@
     font-size: 1.5em;
     color: #cc452b;
     margin-bottom: 10px;
+    background-color: var(--couleur-fromage);
 }
 
 /* Description de la pizza */
@@ -54,6 +55,7 @@
     color: #333;
     font-size: 1em;
     margin: 10px 0;
+    background-color: var(--couleur-fromage);
 }
 
 /* Style du prix */
@@ -61,6 +63,7 @@
     font-weight: bold;
     color: #529c4a;
     font-size: 1.2em;
+    background-color: var(--couleur-fromage);
 }
 
 /* Affichage en colonne sur les petits écrans */
@@ -68,4 +71,10 @@
     #classiques_container {
         grid-template-columns: 1fr; /* Une seule colonne */
     }
+}
+
+.classiques_content:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
 }
