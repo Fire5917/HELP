@@ -1,0 +1,68 @@
+/*CSS uniquement pour la page : events.html*/
+
+:root{
+    --couleur-croute: #f7e1bd;
+    --rouge-sauce: #cc452b;
+    --vert-basilic: #529c4a;
+    --couleur-fromage: #f4db95;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#cadre_diapo {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#diapo {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 500%;
+
+}
+
+#diapo div {
+    width: 100%;
+    height: 70%;
+    border: solid red;
+    
+    animation-name: diapo;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+
+@keyframes diapo{
+    from{
+      left: 0px;
+    }
+    10%{
+      left: 0px;
+    }
+    30%{
+      left: -100%;
+    }
+    40%{
+      left: -100%;
+    }
+    60%{
+      left: -200%;
+    }
+    70%{
+      left: -200%;
+    }
+    90%{
+      left: -300%;
+    }
+    to{
+      left: -300%;
+    }
+  }
