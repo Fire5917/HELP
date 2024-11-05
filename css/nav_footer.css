@@ -292,3 +292,24 @@ rotation a droite et a gauche, augmentation de taille et redevien normal. */
         display: block;
     }
 }
+
+/* Petit écran (téléphone) */
+@media (max-width: 480px) {
+    #top_banner {
+        font-size: 1.2em;
+        padding: 10px;
+        text-align: left;
+    }
+    .help_first_letter {
+        display: inline; /* Garde la première lettre et le reste du mot sur la même ligne */
+    }
+    #top_banner span:not(.help_first_letter) {
+        display: inline; /* Garde les mots sur la même ligne */
+        margin-bottom: 5px;
+    }
+    #top_banner h1 {
+        display: block;
+    }
+}
+
+/*test*/
