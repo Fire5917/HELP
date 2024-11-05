@@ -146,7 +146,7 @@
 }
 
 #back_to_top img:hover {
-    transform: rotate(-45deg);
+    transform: rotate(315deg);
 }
 
 #back_to_top{
@@ -275,5 +275,3 @@
         display: block;
     }
 }
-
-/*test*/
