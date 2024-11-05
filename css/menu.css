@@ -8,17 +8,14 @@
 }
 
 .classiques {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 2rem;
+    background-color: var(--couleur-croute);
+    padding: 50px 20px;
 }
 
 h2 {
     font-size: 2.5em;
     color: var(--rouge-sauce);
-    margin-bottom: 2rem;
+    margin-bottom: 30px;
     font-weight: bold;
     letter-spacing: 2px;
     text-shadow: 1px 1px var(--vert-basilic);
@@ -26,39 +23,45 @@ h2 {
 }
 
 #classiques_container {
-    width: 90%;
-    max-width: 1200px;
     display: flex;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 20px;
+    padding: 20px;
 }
 
 .classiques_content {
-    flex: 1;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
+    width: 30%;
+    padding: 15px;
+    background-color: var(--couleur-fromage);
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.classiques_content:hover {
+    transform: scale(1.05);
 }
 
 .pizza-img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    margin-bottom: 1rem;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
     object-fit: cover;
 }
 
 h3 {
+    font-family: 'Cursive', sans-serif;
     color: var(--rouge-sauce);
-    font-size: 1.5em;
-    margin: 0.5rem 0;
+    margin: 10px 0;
+    background-color: var(--couleur-fromage);
 }
 
 p {
+    font-size: 1em;
     color: #333;
-    margin: 0.5rem 0;
+    line-height: 1.5em;
+    background-color: var(--couleur-fromage);
 }
 
 .prix {
@@ -66,4 +69,36 @@ p {
     font-size: 1.2em;
     color: var(--rouge-sauce);
     margin-top: 1rem;
+}
+
+/* Affichage tablette */
+@media (max-width: 768px) {
+    #classiques_container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .classiques_content {
+        width: 80%;
+    }
+}
+
+/* Affichage téléphone */
+@media (max-width: 480px) {
+    #classiques_container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .classiques_content {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .pizza-img {
+        border-radius: 8px;
+    }
 }
