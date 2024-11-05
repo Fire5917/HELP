@@ -8,7 +8,7 @@
 > Bas de footer --> .footer_bottom
 */
 
-
+/* Couleurs personnalisées */
 :root{
     --couleur-croute: #f7e1bd;
     --rouge-sauce: #cc452b;
@@ -44,22 +44,27 @@
     animation: toggleVisibility 8s infinite;
 }
 
+/*annimation pour le texte:
+-text apparait 3seconde,
+-text disparait 1 seconde
+-text invisible 3seconde
+-test apparait 1 seconde*/
 @keyframes toggleVisibility {
     0% {
         opacity: 1;
     }
-    12.5% {
-        opacity: 0;
+    37.5% {
+        opacity: 1;
     }
     50% {
         opacity: 0; 
     }
-    62.5% {
-        opacity: 1;
+    87.5% {
+        opacity: 0;
     }
     100% {
         opacity: 1; 
-    }
+    }   
 }
 
 
@@ -81,15 +86,14 @@
     font-size: large;
     background-color: var(--couleur-fromage);
     transition: color 0.3s ease;
+    border-radius: 18px;
 }
 
-.navbar a.current_page{
-    border-radius: 18px;
+.navbar a.current_page{ 
     text-decoration: underline;
 }
 
 .navbar a:hover{
-    border-radius: 18px;
     color: var(--vert-basilic);
     text-decoration: underline;
 }
@@ -124,12 +128,33 @@
 .footer_content ul li a img {
     width: 24px; 
     height: 24px;
-    transition: transform 0.3s ease; /* Animation pour hover */
 }
 
+
+
 .footer_content ul li a:hover img {
-    transform: rotate(15deg); /* Rotation de 15 degrés au hover */
+    animation: socialMedia 1.5s ease; /* Animation pour hover */
+    
 }
+/* Animation pour les images des réseaux sociaux:
+rotation a droite et a gauche, augmentation de taille et redevien normal. */
+@keyframes socialMedia {
+    0% {
+        rotate: 0deg;
+        scale: 1;
+    }
+    10% {
+        rotate: 10deg;
+    }
+    20% {
+        rotate:-10deg;
+    }
+    30% {
+        rotate: 0deg;
+        scale: 1.2;
+    } 
+}
+
 
 .footer_bottom {
     display: flex;
@@ -142,11 +167,12 @@
 #back_to_top img {
     width: 24px; 
     height: 24px;
+    scale: 0.9;
     transition: transform 0.6s ease;
 }
 
-#back_to_top img:hover {
-    transform: rotate(-45deg);
+#back_to_top:hover img {
+    transform: rotate(315deg);
 }
 
 #back_to_top{
@@ -201,6 +227,21 @@
         font-size: 0.8em;
         text-align: center;
     }
+    #top_banner {
+        font-size: 1.2em;
+        padding: 10px;
+        text-align: left;
+    }
+    .help_first_letter {
+        display: inline; /* Garde la première lettre et le reste du mot sur la même ligne */
+    }
+    #top_banner span:not(.help_first_letter) {
+        display: inline; /* Garde les mots sur la même ligne */
+        margin-bottom: 5px;
+    }
+    #top_banner h1 {
+        display: block;
+    }
 }
 
 
@@ -235,11 +276,6 @@
     .footer_content ul {
         justify-content: center;
     }
-}
-
-/* Pour la top_banner responsive */
-/* Moyen écran (tablette) */
-@media (max-width: 768px) {
     #top_banner {
         font-size: 1.5em;
         padding: 15px;
@@ -256,24 +292,3 @@
         display: block;
     }
 }
-
-/* Petit écran (téléphone) */
-@media (max-width: 480px) {
-    #top_banner {
-        font-size: 1.2em;
-        padding: 10px;
-        text-align: left;
-    }
-    .help_first_letter {
-        display: inline; /* Garde la première lettre et le reste du mot sur la même ligne */
-    }
-    #top_banner span:not(.help_first_letter) {
-        display: inline; /* Garde les mots sur la même ligne */
-        margin-bottom: 5px;
-    }
-    #top_banner h1 {
-        display: block;
-    }
-}
-
-/*test*/
