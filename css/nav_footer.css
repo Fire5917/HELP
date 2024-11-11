@@ -245,6 +245,8 @@ rotation a droite et a gauche, augmentation de taille et redevien normal. */
         font-size: 1.2em;
         padding: 10px;
         text-align: center;
+        animation: none;
+
     }
 
     .navbar {
@@ -304,11 +306,12 @@ rotation a droite et a gauche, augmentation de taille et redevien normal. */
 
 
 /* Responsive : moyen écran (tablette) */
-@media (max-width: 768px) {
+@media (max-width: 964px) {
     #top_banner {
         font-size: 1.5em;
         padding: 15px;
         flex-direction: column;
+        animation: none;
     }
 
     .navbar {

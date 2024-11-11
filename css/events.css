@@ -1,68 +1,60 @@
-/*CSS uniquement pour la page : events.html*/
+/* CSS uniquement pour la page : events.html */
 
-:root{
-    --couleur-croute: #f7e1bd;
-    --rouge-sauce: #cc452b;
-    --vert-basilic: #529c4a;
-    --couleur-fromage: #f4db95;
+:root {
+  --couleur-croute: #f7e1bd;
+  --rouge-sauce: #cc452b;
+  --vert-basilic: #529c4a;
+  --couleur-fromage: #f4db95;
 }
 
 html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 #cadre_diapo {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 #diapo {
-    display: flex;
-    flex-direction: row;
-    height: 100%;
-    width: 500%;
-
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 500%;
 }
 
 #diapo div {
-    width: 100%;
-    height: 70%;
-    border: solid red;
-    
-    animation-name: diapo;
-    animation-duration: 10s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  width: 100%;
+  height: 70%;
+  border: solid red;
+  
+  animation-name: diapo;
+  animation-duration: 120s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+}
+
+@keyframes diapo {
+  0% { transform: translateX(0); }             /* Event 1 visible */
+  18% { transform: translateX(0); }            /* Pause sur Event 1 */
+
+  20% { transform: translateX(-100%); }        /* Transition vers Event 2 */
+  38% { transform: translateX(-100%); }        /* Pause sur Event 2 */
+
+  40% { transform: translateX(-200%); }        /* Transition vers Event 3 */
+  58% { transform: translateX(-200%); }        /* Pause sur Event 3 */
+
+  60% { transform: translateX(-300%); }        /* Transition vers Event 4 */
+  78% { transform: translateX(-300%); }        /* Pause sur Event 4 */
+
+  80% { transform: translateX(-400%); }        /* Transition vers Event 5 */
+  98% { transform: translateX(-400%); }        /* Pause sur Event 5 */
+
+  100% { transform: translateX(0); }           /* Retour au début pour Event 1 */
 }
 
 
-@keyframes diapo{
-    from{
-      left: 0px;
-    }
-    10%{
-      left: 0px;
-    }
-    30%{
-      left: -100%;
-    }
-    40%{
-      left: -100%;
-    }
-    60%{
-      left: -200%;
-    }
-    70%{
-      left: -200%;
-    }
-    90%{
-      left: -300%;
-    }
-    to{
-      left: -300%;
-    }
-  }
