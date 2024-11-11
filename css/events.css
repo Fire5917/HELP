@@ -32,20 +32,20 @@ html, body {
   border: solid red;
   
   animation-name: diapo;
-  animation-duration: 50s;  /* Durée de 10 minutes (600s) pour une animation lente */
+  animation-duration: 50s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  animation-direction: normal; /* Pour un défilement de gauche à droite */
+  animation-direction: normal;
 }
 
 @keyframes diapo {
   0% { transform: translateX(0); }
-  20% { transform: translateX(0); }     /* Event 1 */
-  25% { transform: translateX(-100%); } /* Transition vers Event 2 */
-  45% { transform: translateX(-100%); } /* Event 2 */
-  50% { transform: translateX(-200%); } /* Transition vers Event 3 */
-  70% { transform: translateX(-200%); } /* Event 3 */
-  75% { transform: translateX(-300%); } /* Transition vers Event 4 */
-  95% { transform: translateX(-300%); } /* Event 4 */
-  100% { transform: translateX(-400%); } /* Retour au début avec Event 5 */
+  20% { transform: translateX(0); }
+  25% { transform: translateX(-100%); }
+  45% { transform: translateX(-100%); }
+  50% { transform: translateX(-200%); }
+  70% { transform: translateX(-200%); }
+  75% { transform: translateX(-300%); }
+  95% { transform: translateX(-300%); }
+  100% { transform: translateX(-400%); }
 }
