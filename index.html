@@ -18,8 +18,8 @@
     <meta property="og:type" content="website">
 </head>
 <body>
-<audio id="backgroundMusic" src="media/musique.mp3" loop></audio>  <!-- Musique de fond pour la blague-->
 <div id="top_banner">
+    
     <h1>
         <!-- Lettres indépendantes pour "HELP" -->
         <span class="help_first_letter">H</span><span>eritage </span>
@@ -37,6 +37,11 @@
     <a href="./pages/events.html">Evenements</a>
     <a href="./pages/recrutement.html">Recrutement</a>
 </nav>
+<div id="music_container">
+    <audio id="background_music" src="media/evenements.mp3" controls loop>
+        Votre navigateur ne supporte pas la balise audio.
+    </audio>
+</div>
 
 <section id="welcoming">
     <div class="welcome_banner"></div>
@@ -95,39 +100,6 @@
     </div>
 </footer>
 
-
-
-
-
-<!-- Pour la blague -->
-<script>
-    window.addEventListener('load', function() {
-        const audio = document.getElementById('backgroundMusic');
-        // Essayer de jouer le son directement
-        audio.play().catch(error => {
-            // Si le navigateur bloque, on affiche un bouton
-            const playButton = document.createElement('button');
-            playButton.innerText = "Activer le son";
-            playButton.style.position = 'fixed';
-            playButton.style.top = '10px';
-            playButton.style.right = '10px';
-            playButton.style.padding = '10px';
-            playButton.style.backgroundColor = '#cc452b';
-            playButton.style.color = 'white';
-            playButton.style.border = 'none';
-            playButton.style.borderRadius = '5px';
-            playButton.style.cursor = 'pointer';
-            
-            // Quand on clique sur le bouton, l'audio démarre
-            playButton.addEventListener('click', function() {
-                audio.play();
-                playButton.style.display = 'none';
-            });
-
-            document.body.appendChild(playButton);
-        });
-    });
-</script>
 </body>
 
 
