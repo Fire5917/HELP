@@ -1,56 +1,60 @@
-/* Pour menu.html */
-
-:root{
+/* Variables globales */
+:root {
     --couleur-croute: #f7e1bd;
     --rouge-sauce: #cc452b;
     --vert-basilic: #529c4a;
     --couleur-fromage: #f4db95;
 }
 
-/* Structure principale du conteneur */
+/* Structure principale du menu */
 #menu {
     padding: 20px;
-    background-color: #f7e1bd; /* Couleur de fond pour contraster */
+    background-color: var(--couleur-croute);
 }
 
-/* Style pour l'article "classiques" */
+/* Style pour chaque section du menu */
 .classiques {
     margin-bottom: 40px;
 }
 
-/* Titre de la sous-catégorie */
 .classiques h2 {
     text-align: center;
     font-size: 2em;
-    color: #cc452b;
+    color: var(--rouge-sauce);
     margin-bottom: 20px;
 }
 
-/* Conteneur pour aligner les pizzas */
+/* Conteneur pour aligner les articles */
 #classiques_container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Trois colonnes égales */
-    gap: 20px; /* Espace entre les éléments */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* S'adapte à la taille de l'écran */
+    gap: 20px; /* Espacement entre les éléments */
 }
 
-/* Style pour chaque contenu de pizza */
+/* Style pour chaque item */
 .classiques_content {
     background-color: var(--couleur-fromage);
     padding: 20px;
     text-align: center;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Nom de la pizza */
+.classiques_content:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Nom de la pizza ou article */
 .classiques_content h3 {
     font-size: 1.5em;
-    color: #cc452b;
+    color: var(--rouge-sauce);
     margin-bottom: 10px;
     background-color: var(--couleur-fromage);
 }
 
-/* Description de la pizza */
+/* Description */
 .classiques_content p {
     color: #333;
     font-size: 1em;
@@ -58,23 +62,48 @@
     background-color: var(--couleur-fromage);
 }
 
-/* Style du prix */
 .classiques_content .prix {
     font-weight: bold;
-    color: #529c4a;
+    color: var(--vert-basilic);
     font-size: 1.2em;
     background-color: var(--couleur-fromage);
 }
 
-/* Affichage en colonne sur les petits écrans */
+/* Responsiveness pour les petits écrans */
 @media (max-width: 768px) {
     #classiques_container {
-        grid-template-columns: 1fr; /* Une seule colonne */
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
     }
 }
 
-.classiques_content:hover {
+/* Espacement entre les catégories */
+article + article {
+    margin-top: 20px;
+}
+
+
+.cta_button {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 24px;
+    font-size: 1em;
+    color: var(--couleur-croute);
+    background-color: var(--rouge-sauce);
+    border: 2px solid var(--vert-basilic);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.cta_button:hover {
+    background-color: var(--vert-basilic);
+    color: var(--couleur-fromage);
     transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s;
+}
+
+
+#cta {
+    display: flex;
+    justify-content: center;
 }
