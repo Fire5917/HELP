@@ -167,6 +167,15 @@
 #background_music::-webkit-media-controls-time-remaining-display {
     color: var(--rouge-sauce); /* Couleur du texte pour le temps restant */
 }
+/* Réduire l'espace entre le lecteur audio et la section suivante */
+#music_container {
+    margin-bottom: 30px; /* Réduit l'espace en dessous du lecteur audio */
+}
+
+/* Réduire l'espace au-dessus du titre dans la section welcoming */
+#welcoming h2 {
+    margin-top: -80px; /* Réduit l'espace au-dessus du titre */
+}
 
 
 
