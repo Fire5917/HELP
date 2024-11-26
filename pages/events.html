@@ -34,12 +34,13 @@
     <div id="diapo">
         <div id="event1">
             <h1>Noël et Halloween, ça se fête !</h1>
-            <img src="../media/concours.jpg" alt="Halloween et Noël">
+            <img src="../media/halloween.png" alt="Halloween">
+            <img src="../media/noel.png" alt="Halloween et Noël">
         </div>
 
         <div id="event2">
             <h1>Notre grand concours !</h1>
-            <img src="../media/concours.jpg" alt="Concours">
+            <img src="../media/concours.png" alt="Concours">
         </div>
 
         <div id="event3">
@@ -56,8 +57,7 @@
             <h1>Et si le hasard choisissez pour vous ?</h1>
             <img src="../media/pizza_mystere.png" alt="Pizza Mystère">
         </div>
-    </div>
-
+    </w
 </div>
 
 
@@ -92,35 +92,5 @@
         <p>&copy; 2024 Help Pizza - Tous droits réservés</p>
     </div>
 </footer>
-
-<!-- Pour la blague -->
-<script>
-    window.addEventListener('load', function() {
-        const audio = document.getElementById('backgroundMusic');
-        // Essayer de jouer le son directement
-        audio.play().catch(error => {
-            // Si le navigateur bloque, on affiche un bouton
-            const playButton = document.createElement('button');
-            playButton.innerText = "Activer le son";
-            playButton.style.position = 'fixed';
-            playButton.style.top = '10px';
-            playButton.style.right = '10px';
-            playButton.style.padding = '10px';
-            playButton.style.backgroundColor = '#cc452b';
-            playButton.style.color = 'white';
-            playButton.style.border = 'none';
-            playButton.style.borderRadius = '5px';
-            playButton.style.cursor = 'pointer';
-            
-            // Quand on clique sur le bouton, l'audio démarre
-            playButton.addEventListener('click', function() {
-                audio.play();
-                playButton.style.display = 'none';
-            });
-
-            document.body.appendChild(playButton);
-        });
-    });
-</script>
 </body>
 </html>
