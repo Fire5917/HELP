@@ -75,14 +75,17 @@ main {
     justify-content: center; /* Centrer les photos */
     gap: 40px; /* Espace entre les photos */
     margin-top: 20px;
+    flex-wrap: wrap; /* Permet aux images de se réorganiser si nécessaire */
 }
 
 #team_photos .photo {
     text-align: center; /* Centrer les textes sous les photos */
+    flex-basis: 45%; /* Chaque image occupe environ la moitié de l'espace sur large écran */
+    margin: 10px; /* Ajoute un peu d'espace autour des images */
 }
 
 #team_photos img {
-    width: 450px; /* Taille encore augmentée */
+    width: 100%; /* L'image prend toute la largeur disponible */
     height: auto;
     border-radius: 15px; /* Bords arrondis */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Ombre légère */
@@ -101,4 +104,41 @@ main {
     color: var(--rouge-sauce);
     margin-top: 10px;
     font-weight: bold;
+}
+
+/* RESPONSIVITÉ : Adaptation sur les petites résolutions */
+
+/* Tablettes : réduire la taille des images */
+@media screen and (max-width: 768px) {
+    #team_photos {
+        gap: 20px;
+    }
+
+    #team_photos .photo {
+        flex-basis: 45%; /* Réduit la taille des images mais garde deux images sur la ligne */
+    }
+
+    #team_photos img {
+        width: 90%; /* Réduit la taille des images sur tablette */
+    }
+}
+
+/* Téléphones : Empilement des images verticalement */
+@media screen and (max-width: 480px) {
+    #team_photos {
+        flex-direction: column; /* Change la direction des éléments pour les empiler verticalement */
+        gap: 20px;
+    }
+
+    #team_photos .photo {
+        flex-basis: 100%; /* Chaque image prend la pleine largeur de l'écran */
+    }
+
+    #team_photos img {
+        width: 80%; /* Légèrement plus petit sur mobile */
+    }
+
+    #team_photos .photo p {
+        font-size: 1.1em; /* Réduire légèrement la taille du texte sur mobile */
+    }
 }
