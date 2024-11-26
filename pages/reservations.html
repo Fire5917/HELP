@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Réserver | Help</title>
     <link rel="stylesheet" href="../css/nav_footer.css">
+    <link rel="stylesheet" href="../css/reservation.css">
     <link rel="icon" href="../media/logo_help.ico" type="image/png">
 </head>
 <body>
@@ -27,6 +28,29 @@
 </nav>
 
 
+<main>
+    <form class="reservation-form" action="#" method="post" onsubmit="return false;">
+        <label for="name">Nom :</label>
+        <input type="text" id="name" name="name" placeholder="Votre nom" required>
+
+        <label for="email">E-mail :</label>
+        <input type="email" id="email" name="email" placeholder="Votre e-mail" required>
+
+        <label for="phone">Téléphone :</label>
+        <input type="tel" id="phone" name="phone" placeholder="Votre numéro de téléphone" required>
+
+        <label for="date">Date :</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="time">Heure :</label>
+        <input type="time" id="time" name="time" required>
+
+        <label for="guests">Nombre de personnes :</label>
+        <input type="number" id="guests" name="guests" min="1" max="20" value="2" required>
+
+        <button type="submit">Réserver</button>
+    </form>
+</main>
 
 
 <!-- Mettre le code de la page ICI -->
