@@ -1,0 +1,26 @@
+/* CSS uniquement pour la page : recrutement.html */
+
+:root {
+    --couleur-croute: #f7e1bd;
+    --rouge-sauce: #cc452b;
+    --vert-basilic: #529c4a;
+    --couleur-fromage: #f4db95;
+  }
+  
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  #explication p{
+    font-family: 'Cursive', sans-serif;
+  }
+
+  .image-manager { /* pour réduire la taille de la photo du manager */
+    width: 50%;
+    height: auto;
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+}

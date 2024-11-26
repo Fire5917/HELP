@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recrutement | Help</title>
     <link rel="stylesheet" href="../css/nav_footer.css">
+    <link rel="stylesheet" href="../css/recrutement.css">
     <link rel="icon" href="../media/logo_help.ico" type="image/png">
 </head>
 <body>
@@ -26,15 +27,70 @@
     <a href="./recrutement.html" class="current_page">Recrutement</a>
 </nav>
 
-
-
-
 <!-- Mettre le code de la page ICI -->
 
-<div id="presentation">
-    <p>Chez Heritage Eleganza Leggenda Pizza, chaque année est marquée par des événements uniques pour partager des moments festifs, surprenants, et conviviaux avec nos clients ! <br> Nous aimons célébrer chaque occasion spéciale en proposant des nouveautés et des animations qui feront de chaque visite une expérience mémorable !</p>
-</div>
+<section id="recruitment-form">
+    <h2>Formulaire de recrutement</h2>
+    <div id="explication">
+        <p> Votre amour pour la pizza est si grand que vous souhaitez nous rejoindre ? Nous vous en remercions !
+            Chez Heritage Eleganza Leggenda Pizza, nous vous acceptons comme vous êtes (avec bien évidement bac+8 et master en pizza qualita italia).
+            Vous souhaitez postuler ? C'est très simple:
+            <ul>
+                <li>Premièrement: Veuillez remplir le formulaire ci-dessous, et n'oubliez pas d'intégrer votre CV et votre adresse Email.</li>
+                <li>Ensuite: L'un de nos managers prendra contact avec vous par mail afin de planifier un rendez-vous.</li>
+                <li>Finalement: Une fois que tout est bon, enfilez votre tablier et commencez ! C'est aussi simple qu'une pizza margarita mozarella di buffala !</li>
+            </ul>
+        </p>
+    </div>
 
+
+    <form action="/submit-recruitment" method="POST">
+        
+        <div>
+            <label for="full-name">Nom complet :</label>
+            <input type="text" id="full-name" name="full-name" placeholder="Votre nom et prénom" required>
+        </div>
+
+        <div>
+            <label for="email">Adresse email :</label>
+            <input type="email" id="email" name="email" placeholder="Votre email" required>
+        </div>
+
+        <div>
+            <label for="phone">Numéro de téléphone :</label>
+            <input type="tel" id="phone" name="phone" placeholder="Votre numéro de téléphone" required>
+        </div>
+
+        <div>
+            <label for="position">Poste souhaité :</label>
+            <select id="position" name="position" required>
+                <option value="">-- Sélectionnez un poste --</option>
+                <option value="Cuisinier">Cuisinier</option>
+                <option value="Livreur">Livreur</option>
+                <option value="Caissier">Caissier</option>
+                <option value="Chercheur de la pizza 404">Chercheur de la pizza 404</option>
+                <option value="Fournisseur de MST">Fournisseur de MST</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="cv">Votre CV :</label>
+            <input type="file" id="cv" name="cv" accept=".pdf, .doc, .docx" required>
+        </div>
+
+        <div>
+            <label for="motivationLetter">Votre lettre de motivation :</label>
+            <input type="file" id="motivationLetter" name="motivationLetter" accept=".pdf, .doc, .docx" required>
+        </div>
+
+        <div>
+            <button type="submit">Postuler</button>
+        </div>
+    </form>
+</section>
+
+<p class="image-legende">Voici une image de notre manager actuel: Tomio Nicolato Kethirio</p>
+<img src="../media/manager.jpg" alt="Notre meilleur manager" class="image-manager">
 
 <footer>
     <div class="footer">
