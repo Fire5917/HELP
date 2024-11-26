@@ -66,3 +66,14 @@ html, body {
 }
 
 
+/*Ajustement de la taille des photos*/
+#event1 img{
+
+  width: 25%;
+
+}
+#event2 img{
+
+  width: 25%;
+
+}
