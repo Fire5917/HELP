@@ -32,7 +32,7 @@ html, body {
   font-family: 'Cursive', sans-serif;
 }
 
-#diapo div {
+#diapo #event1, #event2,#event3,#event4,#event5 {
   width: 100%;
   height: 70%;
   border-radius: 50px;
@@ -40,7 +40,7 @@ html, body {
   
   
   animation-name: diapo;
-  animation-duration: 100s;
+  animation-duration: 30s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: normal;
@@ -72,23 +72,38 @@ html, body {
   width: 25%;
 
 }
+#event1 #texte{
+  width: 50%;
+}
 #event2 img{
 
   width: 25%;
 
+}
+#event2 #texte{
+  width: 50%;
 }
 #event3 img{
 
   width: 25%;
 
 }
+#event3 #texte{
+  width: 50%;
+}
 #event4 img{
 
   width: 25%;
 
 }
+#event4 #texte{
+  width: 50%;
+}
 #event5 img{
 
   width: 25%;
 
+}
+#event5 #texte{
+  width: 50%;
 }
