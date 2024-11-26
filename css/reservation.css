@@ -1,0 +1,70 @@
+/* Cadre principal du formulaire */
+.reservation-form {
+    background: var(--couleur-fromage);
+    border: 2px solid var(--rouge-sauce); /* Cadre visible en rouge */
+    border-radius: 10px;
+    padding: 20px; /* Espacement interne pour un aspect aéré */
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto; /* Centrer horizontalement */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles des étiquettes */
+.reservation-form label {
+    display: block;
+    font-size: 1rem;
+    color: var(--rouge-sauce);
+    font-weight: bold;
+    margin-bottom: 10px; /* Espacement avec le champ */
+    text-align: left; /* Alignement à gauche */
+}
+
+/* Styles des champs de saisie */
+.reservation-form input {
+    width: 100%; /* Champs occupant toute la largeur */
+    padding: 10px; /* Espacement interne uniforme */
+    margin-bottom: 20px; /* Espacement vertical entre les champs */
+    border: 1px solid var(--vert-basilic);
+    border-radius: 5px;
+    background-color: var(--couleur-croute);
+    font-size: 1rem;
+    box-sizing: border-box; /* Inclure padding et bordures dans la largeur */
+}
+
+/* Bouton de soumission */
+.reservation-form button {
+    display: block; /* Prend toute la largeur disponible */
+    width: 100%;
+    padding: 12px;
+    background-color: var(--rouge-sauce);
+    color: var(--couleur-fromage);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reservation-form button:hover {
+    background-color: var(--vert-basilic);
+    color: var(--couleur-croute);
+}
+
+/* Centrer tout le contenu de la page */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    min-height: calc(100vh - 200px); /* Pour un centrage vertical avec header et footer */
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+

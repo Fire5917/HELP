@@ -28,7 +28,7 @@ html, body {
   justify-content: space-evenly;
   flex-direction: row;
   height: 100%;
-  width: 480%;
+  width: 500%;
   font-family: 'Cursive', sans-serif;
 }
 
@@ -66,3 +66,29 @@ html, body {
 }
 
 
+/*Ajustement de la taille des photos*/
+#event1 img{
+
+  width: 25%;
+
+}
+#event2 img{
+
+  width: 25%;
+
+}
+#event3 img{
+
+  width: 25%;
+
+}
+#event4 img{
+
+  width: 25%;
+
+}
+#event5 img{
+
+  width: 25%;
+
+}
