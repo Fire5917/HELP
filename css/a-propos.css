@@ -1,0 +1,104 @@
+:root {
+    --couleur-croute: #f7e1bd;
+    --rouge-sauce: #cc452b;
+    --vert-basilic: #529c4a;
+    --couleur-fromage: #f4db95;
+}
+
+body {
+    margin: 0;
+    background-color: var(--couleur-croute);
+    color: var(--rouge-sauce);
+}
+
+main {
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* TITRES ANIMÉS */
+.reveal-title {
+    font-size: 2.2em;
+    color: var(--rouge-sauce);
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+.reveal-title::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background-color: var(--vert-basilic);
+    bottom: 0;
+    left: -100%;
+    animation: slide-in-title 1.2s forwards;
+}
+
+/* ANIMATIONS */
+@keyframes slide-in-title {
+    to {
+        left: 0;
+    }
+}
+
+.fade-in {
+    animation: fade-in 1.5s ease-in;
+}
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-up {
+    animation: fade-up 1.5s ease-in;
+}
+@keyframes fade-up {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Conteneur des photos */
+#team_photos {
+    display: flex;
+    justify-content: center; /* Centrer les photos */
+    gap: 40px; /* Espace entre les photos */
+    margin-top: 20px;
+}
+
+#team_photos .photo {
+    text-align: center; /* Centrer les textes sous les photos */
+}
+
+#team_photos img {
+    width: 450px; /* Taille encore augmentée */
+    height: auto;
+    border-radius: 15px; /* Bords arrondis */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Ombre légère */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Effet au survol */
+#team_photos img:hover {
+    transform: scale(1.05); /* Zoom léger */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4); /* Ombre plus marquée */
+}
+
+/* Texte sous les images */
+#team_photos .photo p {
+    font-size: 1.2em;
+    color: var(--rouge-sauce);
+    margin-top: 10px;
+    font-weight: bold;
+}
