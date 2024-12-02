@@ -1,5 +1,11 @@
-/* A voir si on le met vraiment */
-/* Style de la section Horoscope (Responsive automatiaque car utilisation de grid auto)*/
+:root {
+    --couleur-croute: #f7e1bd;
+    --rouge-sauce: #cc452b;
+    --vert-basilic: #529c4a;
+    --couleur-fromage: #f4db95;
+}
+
+/* Style de la section Horoscope */
 .pizza-horoscope {
     padding: 40px;
     text-align: center;
@@ -23,71 +29,77 @@
     gap: 20px;
 }
 
-.sign {
+.horoscope-grid .sign {
     background-color: var(--couleur-fromage);
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
 }
 
-.sign h3 {
+.horoscope-grid .sign h3 {
     font-size: 1.4em;
     margin-bottom: 8px;
-    background-color: var(--couleur-fromage);
+    color: var(--rouge-sauce);
+    background-color: var(--couleur-fromage); /* Fond couleur fromage */
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    transition: color 0.3s ease-in-out;
 }
 
-.sign p {
+.horoscope-grid .sign p {
     color: #333;
     font-size: 1em;
-    background-color: var(--couleur-fromage);
     opacity: 0;
+    background-color: var(--couleur-fromage); /* Fond couleur fromage */
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    transition: opacity 0.5s ease-in-out;
 }
 
-.sign:hover {
-    transform: scale(1.05);
-    animation: rotation 1s forwards;
-    p {
-        animation: fadeIn 2s forwards;
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-.sign:hover h3 {
-    animation: changeColor 1s forwards;
-}
-
-.sign strong{
+/* Style des noms de pizzas (balises <strong> dans les <p>) */
+.horoscope-grid .sign p strong {
     background-color: var(--couleur-fromage);
     color: var(--rouge-sauce);
-    font-family: Georgia;
-    font-style: italic; 
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: Georgia, serif;
+    font-style: italic;
 }
 
+/* Animation épurée pour les signes astrologiques */
+.horoscope-grid .sign:hover {
+    animation: hoverUp 1s forwards ease-in-out;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
+}
 
-@keyframes changeColor {
+.horoscope-grid .sign:hover h3 {
+    animation: textPop 0.5s forwards;
+}
+
+.horoscope-grid .sign:hover p {
+    opacity: 1;
+}
+
+@keyframes hoverUp {
     0% {
-        background-color: var(--couleur-fromage);
-        border-radius: 8px;
-        color: inherit;
+        transform: translateY(0);
     }
     100% {
-        background-color: var(--vert-basilic);
-        border-radius: 75%;
+        transform: translateY(-10px);
     }
 }
 
-@keyframes rotation{
-    0%{
-        transform: rotate(0deg);
+@keyframes textPop {
+    0% {
+        letter-spacing: 0;
     }
-    100%{
-        transform: rotate(720deg);
+    100% {
+        letter-spacing: 2px;
     }
 }
