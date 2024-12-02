@@ -1,13 +1,21 @@
+:root {
+    --couleur-croute: #f7e1bd;
+    --rouge-sauce: #cc452b;
+    --vert-basilic: #529c4a;
+    --couleur-fromage: #f4db95;
+}
+
 /* Cadre principal du formulaire */
 .reservation-form {
     background: var(--couleur-fromage);
-    border: 2px solid var(--rouge-sauce); /* Cadre visible en rouge */
+    border: 2px solid var(--rouge-sauce);
     border-radius: 10px;
-    padding: 20px; /* Espacement interne pour un aspect aéré */
+    padding: 20px;
     max-width: 400px;
     width: 100%;
-    margin: 0 auto; /* Centrer horizontalement */
+    margin: 0 auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.8s ease-in-out; /* Animation d'apparition */
 }
 
 /* Styles des étiquettes */
@@ -16,25 +24,34 @@
     font-size: 1rem;
     color: var(--rouge-sauce);
     font-weight: bold;
-    margin-bottom: 10px; /* Espacement avec le champ */
-    text-align: left; /* Alignement à gauche */
+    margin-bottom: 10px;
+    text-align: left;
+    background-color: var(--couleur-fromage); /* Fond couleur fromage */
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
 /* Styles des champs de saisie */
 .reservation-form input {
-    width: 100%; /* Champs occupant toute la largeur */
-    padding: 10px; /* Espacement interne uniforme */
-    margin-bottom: 20px; /* Espacement vertical entre les champs */
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
     border: 1px solid var(--vert-basilic);
     border-radius: 5px;
     background-color: var(--couleur-croute);
     font-size: 1rem;
-    box-sizing: border-box; /* Inclure padding et bordures dans la largeur */
+    box-sizing: border-box;
+    transition: box-shadow 0.3s ease; /* Transition pour l'ombre */
+}
+
+/* Animation de l'ombre légère au hover */
+.reservation-form input:hover {
+    box-shadow: 0 0 8px var(--rouge-sauce); /* Ombre légère et subtile */
 }
 
 /* Bouton de soumission */
 .reservation-form button {
-    display: block; /* Prend toute la largeur disponible */
+    display: block;
     width: 100%;
     padding: 12px;
     background-color: var(--rouge-sauce);
@@ -58,13 +75,23 @@ main {
     justify-content: center;
     align-items: center;
     padding: 40px 0;
-    min-height: calc(100vh - 200px); /* Pour un centrage vertical avec header et footer */
+    min-height: calc(100vh - 200px);
     box-sizing: border-box;
 }
 
+/* Animation lors du focus sur les champs de saisie */
+.reservation-form input:focus {
+    box-shadow: 0 0 5px var(--rouge-sauce); /* Ombre légère lors du focus */
+}
 
-
-
-
-
-
+/* Animation d'apparition du formulaire */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
