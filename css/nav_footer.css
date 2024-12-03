@@ -298,7 +298,6 @@ rotation a droite et a gauche, augmentation de taille et redevien normal. */
         font-size: 1.2em;
         padding: 10px;
         text-align: left;
-        animation: none; /* Désactive toutes les animations */
     }
     .help_first_letter {
         display: inline; /* Garde la première lettre et le reste du mot sur la même ligne */
@@ -307,16 +306,7 @@ rotation a droite et a gauche, augmentation de taille et redevien normal. */
         display: inline; /* Garde les mots sur la même ligne */
         margin-bottom: 5px;
     }
-    
-    #top_banner .help_first_letter,
-    #top_banner span:not(.help_first_letter) {
-        display: block; /* Force chaque mot ou lettre sur une ligne */
-        animation: none; /* Supprime l'animation des lettres */
-    }
-    
     #top_banner h1 {
-        text-align: left; /* Aligne à gauche si nécessaire (peut être changé à "center") */
-        line-height: 1.5; /* Ajoute de l'espacement vertical */
         display: block;
     }
     
