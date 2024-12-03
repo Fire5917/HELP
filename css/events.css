@@ -12,8 +12,13 @@ html, body {
   margin: 0;
   padding: 0;
 }
+#presentation{
+  display: flex;
+  justify-content: center;
+}
 #presentation p{
   font-family: 'Cursive', sans-serif;
+  text-align: center;
 }
 
 #cadre_diapo {
@@ -81,7 +86,6 @@ html, body {
 #event2 img{
 
   width: 25%;
-  border-radius: 50px;
 
 }
 #event2 #texte{
