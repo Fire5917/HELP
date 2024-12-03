@@ -15,6 +15,10 @@ html, body {
 #presentation{
   display: flex;
   justify-content: center;
+  transition: transform 0.3s ease;
+}
+#presentation p:hover{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 #presentation p{
   font-family: 'Cursive', sans-serif;
@@ -24,7 +28,7 @@ html, body {
   color: #333;
   line-height: 1.5em;
   background-color: var(--couleur-fromage);
-  padding:30%;
+  padding:1.5%;
 }
 
 #cadre_diapo {
