@@ -12,9 +12,13 @@ html, body {
   margin: 0;
   padding: 0;
 }
-
+#presentation{
+  display: flex;
+  justify-content: center;
+}
 #presentation p{
   font-family: 'Cursive', sans-serif;
+  text-align: center;
 }
 
 #cadre_diapo {
@@ -32,18 +36,18 @@ html, body {
   font-family: 'Cursive', sans-serif;
 }
 
-#diapo #event1, #event2,#event3,#event4,#event5 {
+#event1, #event2,#event3,#event4,#event5 {
   width: 100%;
   height: 70%;
   border-radius: 50px;
   text-align: center;
-  
+  position: relative;
   
   animation-name: diapo;
-  animation-duration: 30s;
+  animation-duration: 15s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  animation-direction: normal;
+  animation-direction: alternate;
 }
 
 @keyframes diapo {
@@ -62,7 +66,7 @@ html, body {
   80% { transform: translateX(-400%); }        /* Transition vers Event 5 */
   98% { transform: translateX(-400%); }        /* Pause sur Event 5 */
 
-  100% { transform: translateX(0); }           /* Retour au début pour Event 1 */
+  100% { transform: translateX(-400%); }           /* Retour au début pour Event 1 */
 }
 
 
@@ -70,10 +74,14 @@ html, body {
 #event1 img{
 
   width: 25%;
+  border-radius: 50px;
 
 }
 #event1 #texte{
   width: 50%;
+  position: absolute;
+  left: 25%;
+  
 }
 #event2 img{
 
@@ -82,28 +90,39 @@ html, body {
 }
 #event2 #texte{
   width: 50%;
+  position: absolute;
+  left: 25%;
 }
 #event3 img{
 
   width: 25%;
+  border-radius: 50px;
 
 }
 #event3 #texte{
   width: 50%;
+  position: absolute;
+  left: 25%;
 }
 #event4 img{
 
   width: 25%;
+  border-radius: 50px;
 
 }
 #event4 #texte{
   width: 50%;
+  position: absolute;
+  left: 25%;
 }
 #event5 img{
 
   width: 25%;
+  border-radius: 50px;
 
 }
 #event5 #texte{
   width: 50%;
+  position: absolute;
+  left: 25%;
 }

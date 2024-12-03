@@ -247,7 +247,7 @@
 
 /* Animation épurée pour les signes astrologiques */
 .horoscope-grid .sign:hover {
-    animation: hoverUp 1s forwards ease-in-out;
+    animation: hoverUp 1s forwards ease-in;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     transform: translateY(-10px);
 }
@@ -265,9 +265,11 @@
         transform: translateY(0);
     }
     100% {
-        transform: translateY(-10px);
+        transform: translateY(-5px);
     }
 }
+
+
 
 @keyframes textPop {
     0% {

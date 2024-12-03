@@ -7,60 +7,301 @@
     <title>Commander | Help</title>
     <link rel="stylesheet" href="../css/nav_footer.css">
     <link rel="icon" href="../media/logo_help.ico" type="image/png">
+    <link rel="stylesheet" href="../css/commandes.css">
 </head>
 <body>
-<div id="top_banner">
-    <h1>
-        <span class="help_first_letter">H</span><span>eritage </span>
-        <span class="help_first_letter">E</span><span>leganza </span>
-        <span class="help_first_letter">L</span><span>eggenda </span>
-        <span class="help_first_letter">P</span><span>izza</span>
-    </h1>
-</div>
-<nav class="navbar">
-    <a href="../index.html">Accueil</a>
-    <a href="./menu.html">Menu</a>
-    <a href="./commandes.html" class="current_page">Commander</a>
-    <a href="./reservations.html">Réserver</a>
-    <a href="./a-propos.html">A propos</a>
-    <a href="./events.html">Evenements</a>
-    <a href="./recrutement.html">Recrutement</a>
-</nav>
-<bgsound src= "../media/musique.mp3" loop/> 
-
-
-
-<!-- Mettre le code de la page ICI -->
-
-
-
-<footer>
-    <div class="footer">
-        <div class="footer_content">
-            <h2>Coordonnées</h2>
-            <p>Adresse: 12 rue de la pizza, 75000 Paris</p>
-            <p>Téléphone: 01 23 45 67 89</p>
-            <p>Email: help-pizza@gmail.com</p>
-        </div>
-        <div class="footer_content">
-            <h2>Horaires d'ouverture</h2>
-            <p>Lundi - Samedi : 11h-22h</p>
-            <p>Dimanche et jours fériés : 19h-21h</p>
-        </div>
-        <div class="footer_content">
-            <h2>Liens utiles</h2>
-            <ul>
-                <li><a href="https://www.facebook.com/"><img src="../media/facebook.png" alt="facebook"></a></li>
-                <li><a href="https://www.instagram.com/"><img src="../media/instagram.png" alt="instagram"></a></li>
-                <li><a href="https://twitter.com/"><img src="../media/twitter.png" alt="twitter"></a></li>
-                <li><a href="https://www.linkedin.com/"><img src="../media/linkedin.png" alt="linkedin"></a></li>
-            </ul>
-            <a href="#top_banner" id="back_to_top"><img src="../media/arrow.png" alt="arrow"> Retourner en haut</a>
-        </div>
+    <div id="top_banner">
+        <h1>
+            <span class="help_first_letter">H</span><span>eritage </span>
+            <span class="help_first_letter">E</span><span>leganza </span>
+            <span class="help_first_letter">L</span><span>eggenda </span>
+            <span class="help_first_letter">P</span><span>izza</span>
+        </h1>
     </div>
-    <div class="footer_bottom">
-        <p>&copy; 2024 Help Pizza - Tous droits réservés</p>
-    </div>
-</footer>
-</body>
-</html>
+    <nav class="navbar">
+        <a href="../index.html">Accueil</a>
+        <a href="./menu.html">Menu</a>
+        <a href="./commandes.html" class="current_page">Commander</a>
+        <a href="./reservations.html">Réserver</a>
+        <a href="./a-propos.html">A propos</a>
+        <a href="./events.html">Evenements</a>
+        <a href="./recrutement.html">Recrutement</a>
+    </nav>
+
+    
+
+
+
+    <section id="menu">
+        <!-- Les classiques -->
+        <article class="classiques">
+            <h2>Les Pizzas classiques</h2>
+            <div id="classiques_container">
+                <div class="classiques_content">
+                    <h3>Margarita</h3>
+                    <p>Sauce tomate, mozzarella, basilic frais</p>
+                    <input type="number" id="pizza_pepperoni" name="margarita_mini" min="0" max="100"/>
+                    <label for="mini">mini</label><p class="prix">9,00 €</p>
+                    <input type="number" id="pizza_pepperoni" name="margarita_moyenne" min="0" max="100"/>
+                    <label for="moyenne">moyenne</label><p class="prix">10,00 €</p>
+                    <input type="number" id="pizza_pepperoni" name="margarita_maxi" min="0" max="100"/>
+                    <label for="maxi">maxi</label><p class="prix">12,00 €</p>
+                </div>
+                <div class="classiques_content">
+                    <h3>Pepperoni</h3>
+                    <p>Sauce tomate, mozzarella, pepperoni</p>
+                    <input type="number" id="pizza_pepperoni" name="pepperoni_mini" min="0" max="100"/>
+                    <label for="mini">mini</label><p class="prix">10,50 €</p>
+                    <input type="number" id="pizza_pepperoni" name="pepperoni_moyen" min="0" max="100"/>
+                    <label for="moyenne">moyenne</label><p class="prix">12,00 €</p>
+                    <input type="number" id="pizza_pepperoni" name="pepperoni_maxi" min="0" max="100"/>
+                    <label for="maxi">maxi</label><p class="prix">13,75 €</p>
+                </div>
+                <div class="classiques_content">
+                    <h3>Quatre Fromages</h3>
+                    <p>Mozzarella, gorgonzola, parmesan, fromage de chèvre</p>
+                    <p class="prix">11,50 €</p>
+                </div>
+            </div>
+        </article>
+
+        <!-- Les spéciales de la maison -->
+        <article class="classiques">
+            <h2>Les Spéciales de la Maison</h2>
+            <div id="classiques_container">
+                <div class="classiques_content">
+                    <h3>Pizza Help</h3>
+                    <p>Mozzarella di bufala, tomates cerises, basilic, filet d'huile d'olive</p>
+                    <p class="prix">12,00 €</p>
+                </div>
+                <div class="classiques_content">
+                    <h3>Gastronomique</h3>
+                    <p>Sauce à la truffe, mozzarella, champignons, roquette, copeaux de parmesan</p>
+                    <p class="prix">13,50 €</p>
+                </div>
+            </div>
+        </article>
+
+        <!-- Les végétariennes et végétaliennes -->
+        <article class="classiques">
+            <h2>Les Végétariennes et Végétaliennes</h2>
+            <div id="classiques_container">
+                <div class="classiques_content">
+                    <h3>Végétarienne</h3>
+                    <p>Sauce tomate, mozzarella, poivrons, champignons, oignons, olives</p>
+                    <p class="prix">10,50 €</p>
+                </div>
+                <div class="classiques_content">
+                    <h3>Végétalienne</h3>
+                    <p>Sauce tomate, fromage végétal, roquette, courgettes grillées, tomates cerises</p>
+                    <p class="prix">11,00 €</p>
+                </div>
+            </div>
+        </article>
+
+
+
+       
+
+
+
+
+
+
+        
+           
+        
+        
+            <!-- Les Pizzas du Chef -->
+            <article class="classiques">
+                <h2>Les Pizzas du Chef</h2>
+                <div id="classiques_container">
+                    <div class="classiques_content">
+                        <h3>Pizza du Mois</h3>
+                        <p>Varie chaque mois selon les saisons</p>
+                        <p class="prix">12,50 €</p>
+                    </div>
+                    <div class="classiques_content">
+                        <h3>Pizza des fêtes</h3>
+                        <p>Pizza en forme de bûche avec sa fêve à l'intérieur.</p>
+                        <p class="prix">12,50 €</p>
+                    </div>
+                </div>
+        
+            </article>
+        
+            <!-- Les Desserts -->
+            <article class="classiques">
+                <h2>Les Desserts</h2>
+                <div id="classiques_container">
+                    <div class="classiques_content">
+                        <h3>Pizza Nutella</h3>
+                        <p>Base fine, Nutella, fruits frais (banane, fraises)</p>
+                        <p class="prix">7,00 €</p>
+                    </div>
+                    <div class="classiques_content">
+                        <h3>Tiramisu Maison</h3>
+                        <p>Classique italien fait maison</p>
+                        <p class="prix">5,50 €</p>
+                    </div>
+                    <div class="classiques_content">
+                        <h3>Cannoli</h3>
+                        <p>Pâtisserie sicilienne, ricotta sucrée</p>
+                        <p class="prix">4,00 €</p>
+                    </div>
+                </div>
+            </article>
+        
+            <!-- Les Boissons -->
+            <article class="classiques">
+                <h2>Les Boissons</h2>
+                <div id="classiques_container">
+                    <div class="classiques_content">
+                        <h3>Sodas</h3>
+                        <p>Coca-Cola, Sprite, etc.</p>
+                        <p class="prix">2,50 €</p>
+                    </div>
+                    <div class="classiques_content">
+                        <h3>Bières Italiennes</h3>
+                        <p>Peroni, Moretti</p>
+                        <p class="prix">5,00 €</p>
+                    </div>
+                    <div class="classiques_content">
+                        <h3>Vins Italiens</h3>
+                        <p>Sélection de vins rouges et blancs</p>
+                        <p class="prix">Verre 4,00 € | Bouteille 18,00 €</p>
+                    </div>
+                    <div class="classiques_content">
+                        <h3>Café Italien</h3>
+                        <p>Espresso, cappuccino</p>
+                        <p class="prix">2,00 €</p>
+                    </div>
+                </div>
+            </article>
+        
+            <!-- Les Offres et Menus -->
+            <article class="classiques">
+                <h2>Les Offres et Menus</h2>
+                <div id="classiques_container">
+                    <div class="classiques_content">
+                        <h3>Menu Midi</h3>
+                        <p>Petite pizza au choix + boisson</p>
+                        <p class="prix">12,00 €</p>
+                    </div>
+                    <div class="classiques_content">
+                        <h3>Menu Famille</h3>
+                        <p>pizzas + 2 boissons</p>
+                        <p class="prix">25,00 €</p>
+                    </div>
+                    <div class="classiques_content">
+                        <h3>Menu Étudiant</h3>      
+                        <p>Tarif augmenté sur les pizzas pour les étudiants</p>
+                        <p class="prix">-15% sur toute les pizza</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+      
+
+
+        <form>
+            <fieldset>
+                <legend>Informations</legend>
+
+                <label for="nom">Nom :</label>
+                <input type="text" name="nom" id="nom" placeholder="Votre nom">
+                <br><br>
+
+                <label for="prenom">Prénom :</label>
+                <input type="text" name="prenom" id="prenom" placeholder="Votre prénom">
+                <br><br>
+
+                <label for="heure">Heures de retrait : </label>
+                <input type="time" name="heure" id="heure">
+
+                <label>Retrait sur place ou livraison ?</label>
+                <br>
+                <input type="radio" name="retrait/livraison" id="retrait">
+                <label for="retrait">retrait sur place</label>
+                <br>
+                <input type="radio" name="retrait/livraison" id="livraison">
+                <label for="livraison">livraison</label>
+
+
+
+                <br>
+                <br>
+                <label>Adresse</label>
+                <input type="text" name="adresse" id="adresse">
+                <br>
+                <label>Numéro de téléphone</label>
+                <input type="tel" name="téléphone" id="téléphone">
+
+        
+                <input type="submit" name="commander" id="commander">
+                <!--mettre le nom sur le bouttton-->
+                <input type="reset" name="recommencer">
+            </fieldset>
+
+            <br>
+            <div id="cta">
+                <a href="./commandes.html" class="cta_button">Commander Maintenant</a>
+            </div>
+
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <footer>
+            <div class="footer">
+                <div class="footer_content">
+                    <h2>Coordonnées</h2>
+                    <p>Adresse: 12 rue de la pizza, 75000 Paris</p>
+                    <p>Téléphone: 01 23 45 67 89</p>
+                    <p>Email: help-pizza@gmail.com</p>
+                </div>
+                <div class="footer_content">
+                    <h2>Horaires d'ouverture</h2>
+                    <p>Lundi - Samedi : 11h-22h</p>
+                    <p>Dimanche et jours fériés : 19h-21h</p>
+                </div>
+                <div class="footer_content">
+                    <h2>Liens utiles</h2>
+                    <ul>
+                        <li><a href="https://www.facebook.com/"><img src="../media/facebook.png" alt="facebook"></a></li>
+                        <li><a href="https://www.instagram.com/"><img src="../media/instagram.png" alt="instagram"></a></li>
+                        <li><a href="https://twitter.com/"><img src="../media/twitter.png" alt="twitter"></a></li>
+                        <li><a href="https://www.linkedin.com/"><img src="../media/linkedin.png" alt="linkedin"></a></li>
+                    </ul>
+                    <a href="#top_banner" id="back_to_top"><img src="../media/arrow.png" alt="arrow"> Retourner en haut</a>
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <p>&copy; 2024 Help Pizza - Tous droits non réservés</p>
+            </div>
+        </footer>
+        </body>
+        </html>
+        

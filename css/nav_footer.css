@@ -253,6 +253,10 @@ rotation a droite et a gauche, augmentation de taille et redevien normal. */
     .navbar {
         flex-direction: column;
         padding: 5px;
+        align-items: center; /* Centre les liens verticalement */
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
     }
 
     .navbar a {
@@ -275,10 +279,12 @@ rotation a droite et a gauche, augmentation de taille et redevien normal. */
     }
 
     .footer_content ul {
-        flex-direction: column;
-        gap: 5px;
-    }
+        flex-direction: row;
+        gap: 10px;
+        justify-content: center;
 
+        
+    }
     #back_to_top img {
         width: 20px;
         height: 20px;
@@ -303,6 +309,7 @@ rotation a droite et a gauche, augmentation de taille et redevien normal. */
     #top_banner h1 {
         display: block;
     }
+    
 }
 
 
