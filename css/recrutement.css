@@ -6,21 +6,186 @@
     --vert-basilic: #529c4a;
     --couleur-fromage: #f4db95;
   }
-  
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
 
-  #explication p{
-    font-family: 'Cursive', sans-serif;
-  }
 
-  .image-manager { /* pour réduire la taille de la photo du manager */
-    width: 50%;
-    height: auto;
-    max-width: 300px;
-    display: block;
-    margin: 0 auto;
+/* CSS DE LA PRESENTATION DE LA PAGE DE RECRUTEMENT: */
+
+/* Header */
+header {
+  text-align: center;
+  padding: 30px 20px;
+  border-bottom: 2px solid var(--vert-basilic);
 }
+header h1 {
+  font-size: 2.5em;
+  margin: 0;
+  color: var(--rouge-sauce);
+}
+header p {
+  font-size: 1.1em;
+  margin-top: 10px;
+  color: var(--vert-basilic);
+}
+
+#intro_recrue {
+  text-align: center;
+  padding: 30px;
+  margin-bottom: 20px;
+  background-color: var(--couleur-fromage);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 1.2em;
+  color: var(--rouge-sauce);
+  line-height: 1.8em;
+  transition: transform 0.3s ease;
+}
+
+#intro_recrue:hover {
+  transform: scale(1.02);
+}
+
+#intro_recrue h3 {
+  font-family: 'Cursive', sans-serif;
+  color: var(--rouge-sauce);
+  margin-bottom: 15px;
+  background-color: var(--couleur-fromage);
+}
+
+#intro_recrue p {
+  margin: 0 auto;
+  max-width: 80%;
+  font-size: 1em;
+  color: #333;
+  background-color: transparent;
+}
+
+#métiers {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  background-color: var(--couleur-croute);
+}
+
+.job {
+  text-align: center;
+  width: 30%;
+  padding: 15px;
+  background-color: var(--couleur-fromage);
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.job:hover {
+  transform: scale(1.05);
+}
+
+.job img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.job h3 {
+  font-family: 'Cursive', sans-serif;
+  color: var(--rouge-sauce);
+  margin: 10px 0;
+  background-color: var(--couleur-fromage);
+}
+
+.job p {
+  font-size: 1em;
+  color: #333;
+  line-height: 1.5em;
+  background-color: var(--couleur-fromage);
+}
+
+/* FIN DU CSS DE LA PRESENTATION: */
+/* CSS DU FORMULAIRE: */
+
+/* Cadre principal du formulaire */
+.recrutement-form {
+  background: var(--couleur-fromage);
+  border: 2px solid var(--rouge-sauce);
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.recrutement-form label {
+  display: block;
+  font-size: 1rem;
+  color: var(--rouge-sauce);
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: left;
+  background-color: var(--couleur-fromage);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.recrutement-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid var(--vert-basilic);
+  border-radius: 5px;
+  background-color: var(--couleur-croute);
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s ease;
+}
+
+.recrutement-form input:hover {
+  box-shadow: 0 0 8px var(--rouge-sauce);
+}
+
+.recrutement-form button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: var(--rouge-sauce);
+  color: var(--couleur-fromage);
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.recrutement-form button:hover {
+  background-color: var(--vert-basilic);
+  color: var(--couleur-croute);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+  min-height: calc(100vh - 200px);
+  box-sizing: border-box;
+}
+
+.recrutement-form input:focus {
+  box-shadow: 0 0 5px var(--rouge-sauce); 
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* FIN DU CSS DU FORMULAIRE: */
