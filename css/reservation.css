@@ -1,3 +1,4 @@
+/* Variables CSS */
 :root {
     --couleur-croute: #f7e1bd;
     --rouge-sauce: #cc452b;
@@ -5,20 +6,20 @@
     --couleur-fromage: #f4db95;
 }
 
-/* Cadre principal du formulaire */
+/* Styles pour le formulaire de réservation */
 .reservation-form {
     background: var(--couleur-fromage);
     border: 2px solid var(--rouge-sauce);
     border-radius: 10px;
     padding: 20px;
-    max-width: 400px;
-    width: 100%;
-    margin: 0 auto;
+    width: 100%; /* Prend toute la largeur de la colonne */
+    box-sizing: border-box;
+    max-width: none; /* Supprime la largeur maximale pour égaliser avec les colonnes latérales */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 0.8s ease-in-out; /* Animation d'apparition */
+    animation: fadeIn 0.8s ease-in-out;
 }
 
-/* Styles des étiquettes */
+/* Styles des étiquettes du formulaire */
 .reservation-form label {
     display: block;
     font-size: 1rem;
@@ -26,12 +27,12 @@
     font-weight: bold;
     margin-bottom: 10px;
     text-align: left;
-    background-color: var(--couleur-fromage); /* Fond couleur fromage */
+    background-color: var(--couleur-fromage);
     padding: 5px 10px;
     border-radius: 5px;
 }
 
-/* Styles des champs de saisie */
+/* Styles des champs de saisie du formulaire */
 .reservation-form input {
     width: 100%;
     padding: 10px;
@@ -41,12 +42,16 @@
     background-color: var(--couleur-croute);
     font-size: 1rem;
     box-sizing: border-box;
-    transition: box-shadow 0.3s ease; /* Transition pour l'ombre */
+    transition: box-shadow 0.3s ease;
 }
 
-/* Animation de l'ombre légère au hover */
+/* Effets au survol et au focus des champs */
 .reservation-form input:hover {
-    box-shadow: 0 0 8px var(--rouge-sauce); /* Ombre légère et subtile */
+    box-shadow: 0 0 8px var(--rouge-sauce);
+}
+
+.reservation-form input:focus {
+    box-shadow: 0 0 5px var(--rouge-sauce);
 }
 
 /* Bouton de soumission */
@@ -69,19 +74,134 @@
     color: var(--couleur-croute);
 }
 
-/* Centrer tout le contenu de la page */
-main {
+/* Grille pour le contenu principal */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Colonnes de largeur égale */
+    align-items: stretch;
+    min-height: calc(100vh - 200px); /* Ajuster selon la hauteur de la bannière et du footer */
+}
+
+/* Colonnes gauche et droite */
+.left-column, .right-column {
+    position: relative; /* Pour positionner l'image absolument à l'intérieur */
+    background-color: var(--couleur-croute); /* Fond uni */
+    overflow: hidden; /* Pour cacher le débordement éventuel de l'image */
+    padding-top: 20px; /* Marges pour éviter que les logos touchent le haut/bas */
+    padding-bottom: 20px;
+}
+
+/* Colonne centrale */
+.center-column {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 0;
-    min-height: calc(100vh - 200px);
+    padding: 20px;
     box-sizing: border-box;
 }
 
-/* Animation lors du focus sur les champs de saisie */
-.reservation-form input:focus {
-    box-shadow: 0 0 5px var(--rouge-sauce); /* Ombre légère lors du focus */
+/* Styles pour les logos avec animation */
+.logo-animation {
+    position: absolute;
+    width: 140px; /* Taille des logos */
+    height: auto;
+}
+
+/* Logos dans la colonne de gauche */
+.left-column .logo1 {
+    animation: moveLogo1 8s linear infinite;
+}
+
+.left-column .logo2 {
+    animation: moveLogo2 9s linear infinite;
+}
+
+.left-column .logo3 {
+    animation: moveLogo3 7s linear infinite;
+}
+
+/* Logos dans la colonne de droite */
+.right-column .logo4 {
+    animation: moveLogo4 8.5s linear infinite;
+}
+
+.right-column .logo5 {
+    animation: moveLogo5 9.5s linear infinite;
+}
+
+.right-column .logo6 {
+    animation: moveLogo6 7.5s linear infinite;
+}
+
+/* Animations pour les logos de la colonne de gauche */
+/* Création de trajectoires plus aléatoires */
+
+/* Logo 1 */
+@keyframes moveLogo1 {
+    0% { top: 0%; left: 0%; }
+    16% { top: 20%; left: 50%; }
+    32% { top: 60%; left: 10%; }
+    48% { top: 30%; left: 40%; }
+    64% { top: 70%; left: 20%; }
+    80% { top: 40%; left: 60%; }
+    100% { top: 0%; left: 0%; }
+}
+
+/* Logo 2 */
+@keyframes moveLogo2 {
+    0% { top: 70%; left: 0%; }
+    16% { top: 50%; left: 40%; }
+    32% { top: 10%; left: 20%; }
+    48% { top: 60%; left: 30%; }
+    64% { top: 20%; left: 50%; }
+    80% { top: 80%; left: 10%; }
+    100% { top: 70%; left: 0%; }
+}
+
+/* Logo 3 */
+@keyframes moveLogo3 {
+    0% { top: 30%; left: 20%; }
+    16% { top: 10%; left: 0%; }
+    32% { top: 50%; left: 40%; }
+    48% { top: 20%; left: 10%; }
+    64% { top: 60%; left: 30%; }
+    80% { top: 40%; left: 0%; }
+    100% { top: 30%; left: 20%; }
+}
+
+/* Animations pour les logos de la colonne de droite */
+
+/* Logo 4 */
+@keyframes moveLogo4 {
+    0% { top: 0%; left: 20%; }
+    16% { top: 30%; left: 0%; }
+    32% { top: 60%; left: 40%; }
+    48% { top: 10%; left: 10%; }
+    64% { top: 50%; left: 20%; }
+    80% { top: 20%; left: 50%; }
+    100% { top: 0%; left: 20%; }
+}
+
+/* Logo 5 */
+@keyframes moveLogo5 {
+    0% { top: 80%; left: 30%; }
+    16% { top: 60%; left: 0%; }
+    32% { top: 20%; left: 40%; }
+    48% { top: 70%; left: 10%; }
+    64% { top: 30%; left: 50%; }
+    80% { top: 90%; left: 20%; }
+    100% { top: 80%; left: 30%; }
+}
+
+/* Logo 6 */
+@keyframes moveLogo6 {
+    0% { top: 50%; left: 10%; }
+    16% { top: 20%; left: 50%; }
+    32% { top: 70%; left: 0%; }
+    48% { top: 40%; left: 30%; }
+    64% { top: 10%; left: 20%; }
+    80% { top: 60%; left: 40%; }
+    100% { top: 50%; left: 10%; }
 }
 
 /* Animation d'apparition du formulaire */
@@ -93,5 +213,20 @@ main {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Média queries pour la réactivité */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .left-column, .right-column {
+        display: none;
+    }
+
+    .reservation-form {
+        max-width: 400px; /* Limite la largeur du formulaire sur les petits écrans */
     }
 }
