@@ -60,12 +60,50 @@
                 <div class="classiques_content">
                     <h3>Quatre Fromages</h3>
                     <p>Mozzarella, gorgonzola, parmesan, fromage de chèvre</p>
-                    <input type="number" id="pizza_quatrefromages" name="quatrefromages_mni" min="1" max="100"/>
+                    <input type="number" id="pizza_quatrefromages" name="quatrefromages_mini" min="1" max="100"/>
                     <label for="mini">mini</label><p class="prix">10,50 €</p>
                     <input type="number" id="pizza_quatrefromages" name="quatrefromages_moyenne" min="1" max="100"/>
                     <label for="moyenne">moyenne</label><p class="prix">12,00 €</p>
                     <input type="number" id="pizza_quatrefromages" name="quatrefromages_maxi" min="1" max="100"/>
                     <label for="maxi">maxi</label><p class="prix">13,75 €</p>
+                </div>
+            </div>
+            <h2></h2>
+            <div id="classiques_container">
+                <div class="classiques_content">
+                    <h3>Basilico</h3>
+                    <p>Sauce tomate, mozzarella, basilic frais, huile d'olive</p>
+                    <input type="number" id="pizza_basilico" name="basilico_mini" min="1" max="100"/>
+                    <label for="mini">mini</label><p class="prix">9,00 €</p>
+                    <input type="number" id="pizza_basilico" name="basilico_moyenne" min="1" max="100"/>
+                    <label for="moyenne">moyenne</label><p class="prix">10,50 €</p>
+                    <input type="number" id="pizza_basilico" name="basilico_maxi" min="1" max="100"/>
+                    <label for="maxi">maxi</label><p class="prix">12,25 €</p>
+                </div>
+                <div class="classiques_content">
+                    <h3>Diavola</h3>
+                    <p>Sauce tomate, mozzarella, chorizo épicé, olives noires</p>
+                    <input type="number" id="pizza_diavola" name="diavola_mini" min="1" max="100"/>
+                    <label for="mini">mini</label><p class="prix">10,00 €</p>
+                    <input type="number" id="pizza_diavola" name="diavola_moyenne" min="1" max="100"/>
+                    <label for="moyenne">moyenne</label><p class="prix">11,50 €</p>
+                    <input type="number" id="pizza_diavola" name="diavola_maxi" min="1" max="100"/>
+                    <label for="maxi">maxi</label><p class="prix">13,50 €</p>
+                </div>
+                <div class="classiques_content">
+                    <h3>404</h3>
+                    <p>Ingrédients : Inconnus, car la pizza n’a pas été trouvée.</p>
+                    <p>Non disponible.</p>
+                </div>
+                <div class="classiques_content">
+                    <h3>Triple Crème</h3>
+                    <p>Mozzarella, brie, bleu, ricotta</p>
+                    <input type="number" id="pizza_triplecreme" name="triplecreme_mini" min="1" max="100"/>
+                    <label for="mini">mini</label><p class="prix">12,00 €</p>
+                    <input type="number" id="pizza_triplecreme" name="triplecreme_moyenne" min="1" max="100"/>
+                    <label for="moyenne">moyenne</label><p class="prix">14,00 €</p>
+                    <input type="number" id="pizza_triplecreme" name="triplecreme_maxi" min="1" max="100"/>
+                    <label for="maxi">maxi</label><p class="prix">16,75 €</p>
                 </div>
             </div>
         </article>
@@ -210,11 +248,18 @@
                         <h3>Menu Famille</h3>
                         <p>2 pizzas + 2 boissons</p>
                         <p class="prix">25,00 €</p>
+                        <label for="position">Poste souhaité :</label>
+                        <select id="position" name="position" required>
+                            <option value="">-- Sélectionnez un poste --</option>
+                            <option value="Cuisinier">Cuisinier</option>
+                            <option value="Livreur">Livreur</option>
+                            <option value="Caissier">Caissier</option>
                     </div>
                     <div class="classiques_content">
                         <h3>Menu Étudiant</h3>      
-                        <p>Tarif augmenté sur les pizzas pour les étudiants</p>
-                        <p class="prix">-15% sur toute les pizza</p>
+                        <p>Tarif réduit sur les pizzas pour les étudiants</p>
+                        <p class="prix">-15% sur toutes les pizza</p>
+                        <input type ="radio">
                     </div>
                 </div>
             </article>
@@ -223,7 +268,6 @@
 
 
         <form>
-            <fieldset>
                 <legend>Informations</legend>
 
                 <label for="nom">Nom :</label>
@@ -259,7 +303,6 @@
                 <input type="submit" name="commander" id="commander">
                 <!--mettre le nom sur le bouttton-->
                 <input type="reset" name="recommencer">
-            </fieldset>
 
             <br>
             <div id="cta">

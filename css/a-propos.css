@@ -130,3 +130,115 @@ main {
         font-size: 1.1em; /* Réduire légèrement la taille du texte sur mobile */
     }
 }
+
+
+/* Témoignages clients */
+#testimonials {
+    margin-top: 40px;
+    text-align: center;
+    color: var(--rouge-sauce);
+}
+
+#testimonial_container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espace entre les avis */
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.testimonial {
+    background-color: var(--couleur-fromage);
+    border-radius: 10px; /* Bords arrondis */
+    padding: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 300px; /* Taille maximale */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animations */
+}
+
+.testimonial:hover {
+    transform: scale(1.05); /* Zoom au hover */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Ombre plus marquée */
+}
+
+.testimonial img {
+    width: 80px; /* Taille des photos */
+    height: 80px;
+    border-radius: 50%; /* Ronde par défaut */
+    margin-bottom: 10px;
+    object-fit: cover;
+    transition: border-radius 0.3s ease; /* Animation de la bordure */
+}
+
+.testimonial:hover img {
+    border-radius: 15%; /* Plus carré au hover */
+}
+
+.testimonial p {
+    font-size: 1em;
+    color: var(--rouge-sauce);
+    background-color: var(--couleur-fromage);
+}
+
+.testimonial strong {
+    color: var(--rouge-sauce);
+    font-weight: bold;
+    font-size: 1.1em;
+    display: block;
+    margin-top: 10px;
+    background-color: var(--couleur-fromage);
+}
+
+
+/* Section Pourquoi Nous Choisir ? */
+#why_choose_us {
+    margin-top: 40px;
+    text-align: center;
+    color: var(--rouge-sauce);
+}
+
+#advantages_container {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Espace entre les cartes */
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.advantage {
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    max-width: 300px; /* Largeur fixe pour les cartes */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--couleur-fromage);
+}
+
+.advantage:hover {
+    transform: scale(1.05); /* Zoom au hover */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.advantage img {
+    width: 120px; /* Taille des images augmentée */
+    height: 120px; /* Images carrées */
+    margin-bottom: 15px;
+    border-radius: 15px; /* Bords arrondis */
+    object-fit: cover; /* Maintient un bon cadrage des images */
+}
+
+.advantage h3 {
+    font-size: 1.2em;
+    color: var(--rouge-sauce);
+    margin-bottom: 10px;
+    background-color: var(--couleur-fromage);
+}
+
+.advantage p {
+    font-size: 0.95em;
+    color: #333;
+    line-height: 1.4;
+    background-color: var(--couleur-fromage);
+}
