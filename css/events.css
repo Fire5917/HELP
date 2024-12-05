@@ -15,11 +15,12 @@ html, body {
 #presentation{
   display: flex;
   justify-content: center;
-  transition: transform 0.3s ease;
 }
-#presentation p:hover{
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+#presentation p:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre qui apparaîtra progressivement */
 }
+
+
 #presentation p{
   font-family: 'Cursive', sans-serif;
   text-align: center;
@@ -29,6 +30,7 @@ html, body {
   line-height: 1.5em;
   background-color: var(--couleur-fromage);
   padding:1.5%;
+  transition: box-shadow 0.5s ease-in-out; /* Transition progressive pour l'ombre */
 }
 
 #cadre_diapo {
@@ -44,6 +46,7 @@ html, body {
   height: 100%;
   width: 500%;
   font-family: 'Cursive', sans-serif;
+  
 }
 
 #event1, #event2,#event3,#event4,#event5 {
@@ -52,6 +55,7 @@ html, body {
   border-radius: 50px;
   text-align: center;
   position: relative;
+  
   
   animation-name: diapo;
   animation-duration: 15s;
