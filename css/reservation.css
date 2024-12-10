@@ -6,20 +6,74 @@
     --couleur-fromage: #f4db95;
 }
 
-/* Styles pour le formulaire de réservation */
+/* Grille principale : min-height pour s'adapter au contenu sans chevaucher le footer */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: stretch;
+    min-height: calc(100vh - 200px); /* Laisse de la place pour la bannière et le footer */
+    position: relative;
+}
+
+/* Colonnes gauche et droite */
+.left-column, .right-column {
+    position: relative;
+    background-color: var(--couleur-croute);
+    overflow: hidden;
+    padding: 20px 0;
+    /* Pas de hauteur fixe, s’adapte à la hauteur de .grid-container */
+}
+
+/* Colonne centrale */
+.center-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+    padding: 20px;
+    /* Pas de hauteur fixe, s'adapte au contenu du formulaire */
+}
+
+/* Formulaire : min-height pour donner une référence aux logos, 
+   mais pas de height fixe. Le formulaire peut grandir si besoin. */
 .reservation-form {
     background: var(--couleur-fromage);
     border: 2px solid var(--rouge-sauce);
     border-radius: 10px;
     padding: 20px;
-    width: 100%; /* Prend toute la largeur de la colonne */
+    width: 100%;
     box-sizing: border-box;
-    max-width: none; /* Supprime la largeur maximale pour égaliser avec les colonnes latérales */
+    max-width: 400px;
+    min-height: 600px; /* Hauteur minimale pour les logos */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     animation: fadeIn 0.8s ease-in-out;
+    overflow: auto; 
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: var(--rouge-sauce) var(--couleur-croute);
 }
 
-/* Styles des étiquettes du formulaire */
+/* Scrollbar Webkit */
+.reservation-form::-webkit-scrollbar {
+    width: 12px;
+}
+
+.reservation-form::-webkit-scrollbar-track {
+    background: var(--couleur-croute);
+    border-radius: 10px;
+}
+
+.reservation-form::-webkit-scrollbar-thumb {
+    background-color: var(--rouge-sauce);
+    border-radius: 10px;
+    border: 3px solid var(--couleur-croute);
+}
+
+.reservation-form::-webkit-scrollbar-thumb:hover {
+    background-color: var(--vert-basilic);
+}
+
+/* Etiquettes du formulaire */
 .reservation-form label {
     display: block;
     font-size: 1rem;
@@ -32,7 +86,7 @@
     border-radius: 5px;
 }
 
-/* Styles des champs de saisie du formulaire */
+/* Champs de saisie */
 .reservation-form input {
     width: 100%;
     padding: 10px;
@@ -45,7 +99,6 @@
     transition: box-shadow 0.3s ease;
 }
 
-/* Effets au survol et au focus des champs */
 .reservation-form input:hover {
     box-shadow: 0 0 8px var(--rouge-sauce);
 }
@@ -66,7 +119,7 @@
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .reservation-form button:hover {
@@ -74,134 +127,113 @@
     color: var(--couleur-croute);
 }
 
-/* Grille pour le contenu principal */
-.grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* Colonnes de largeur égale */
-    align-items: stretch;
-    min-height: calc(100vh - 200px); /* Ajuster selon la hauteur de la bannière et du footer */
-}
-
-/* Colonnes gauche et droite */
-.left-column, .right-column {
-    position: relative; /* Pour positionner l'image absolument à l'intérieur */
-    background-color: var(--couleur-croute); /* Fond uni */
-    overflow: hidden; /* Pour cacher le débordement éventuel de l'image */
-    padding-top: 20px; /* Marges pour éviter que les logos touchent le haut/bas */
-    padding-bottom: 20px;
-}
-
-/* Colonne centrale */
-.center-column {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-/* Styles pour les logos avec animation */
+/* Logos */
 .logo-animation {
     position: absolute;
-    width: 140px; /* Taille des logos */
-    height: auto;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    will-change: transform;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
-/* Logos dans la colonne de gauche */
+/* Animations pseudo-aléatoires 
+   On utilise les pourcentages, avec min-height: 600px du formulaire, 
+   les pourcentages top se rapportent au conteneur. 
+   Les logos bougent entre ~5% et ~90% de la hauteur minimale. */
+
+/* Colonne gauche */
+/* Logo 1 (haut) */
+@keyframes moveLogo1 {
+    0%   { top:10%; left:10%; }
+    20%  { top:15%; left:75%; }
+    40%  { top:10%; left:30%; }
+    60%  { top:25%; left:60%; }
+    80%  { top:20%; left:50%; }
+    100% { top:10%; left:10%; }
+}
+
+/* Logo 2 (milieu) */
+@keyframes moveLogo2 {
+    0%   { top:40%; left:20%; }
+    20%  { top:50%; left:65%; }
+    40%  { top:45%; left:40%; }
+    60%  { top:55%; left:30%; }
+    80%  { top:35%; left:70%; }
+    100% { top:40%; left:20%; }
+}
+
+/* Logo 3 (bas) */
+@keyframes moveLogo3 {
+    0%   { top:70%; left:30%; }
+    20%  { top:80%; left:10%; }
+    40%  { top:85%; left:60%; }
+    60%  { top:75%; left:20%; }
+    80%  { top:90%; left:50%; }
+    100% { top:70%; left:30%; }
+}
+
+/* Colonne droite */
+/* Logo 4 (haut) */
+@keyframes moveLogo4 {
+    0%   { top:10%; left:20%; }
+    20%  { top:5%;  left:60%; }
+    40%  { top:20%; left:30%; }
+    60%  { top:15%; left:70%; }
+    80%  { top:25%; left:50%; }
+    100% { top:10%; left:20%; }
+}
+
+/* Logo 5 (milieu) */
+@keyframes moveLogo5 {
+    0%   { top:40%; left:30%; }
+    20%  { top:50%; left:60%; }
+    40%  { top:45%; left:20%; }
+    60%  { top:60%; left:75%; }
+    80%  { top:55%; left:45%; }
+    100% { top:40%; left:30%; }
+}
+
+/* Logo 6 (bas) */
+@keyframes moveLogo6 {
+    0%   { top:75%; left:40%; }
+    20%  { top:85%; left:20%; }
+    40%  { top:80%; left:65%; }
+    60%  { top:90%; left:35%; }
+    80%  { top:85%; left:60%; }
+    100% { top:75%; left:40%; }
+}
+
+/* Application des animations */
 .left-column .logo1 {
-    animation: moveLogo1 8s linear infinite;
+    animation: moveLogo1 9s linear infinite;
+    z-index: 2;
 }
 
 .left-column .logo2 {
-    animation: moveLogo2 9s linear infinite;
+    animation: moveLogo2 11s linear infinite;
+    z-index: 3;
 }
 
 .left-column .logo3 {
-    animation: moveLogo3 7s linear infinite;
+    animation: moveLogo3 10s linear infinite;
+    z-index: 1;
 }
 
-/* Logos dans la colonne de droite */
 .right-column .logo4 {
-    animation: moveLogo4 8.5s linear infinite;
+    animation: moveLogo4 8s linear infinite;
+    z-index: 4;
 }
 
 .right-column .logo5 {
-    animation: moveLogo5 9.5s linear infinite;
+    animation: moveLogo5 10s linear infinite;
+    z-index: 5;
 }
 
 .right-column .logo6 {
-    animation: moveLogo6 7.5s linear infinite;
-}
-
-/* Animations pour les logos de la colonne de gauche */
-/* Création de trajectoires plus aléatoires */
-
-/* Logo 1 */
-@keyframes moveLogo1 {
-    0% { top: 0%; left: 0%; }
-    16% { top: 20%; left: 50%; }
-    32% { top: 60%; left: 10%; }
-    48% { top: 30%; left: 40%; }
-    64% { top: 70%; left: 20%; }
-    80% { top: 40%; left: 60%; }
-    100% { top: 0%; left: 0%; }
-}
-
-/* Logo 2 */
-@keyframes moveLogo2 {
-    0% { top: 70%; left: 0%; }
-    16% { top: 50%; left: 40%; }
-    32% { top: 10%; left: 20%; }
-    48% { top: 60%; left: 30%; }
-    64% { top: 20%; left: 50%; }
-    80% { top: 80%; left: 10%; }
-    100% { top: 70%; left: 0%; }
-}
-
-/* Logo 3 */
-@keyframes moveLogo3 {
-    0% { top: 30%; left: 20%; }
-    16% { top: 10%; left: 0%; }
-    32% { top: 50%; left: 40%; }
-    48% { top: 20%; left: 10%; }
-    64% { top: 60%; left: 30%; }
-    80% { top: 40%; left: 0%; }
-    100% { top: 30%; left: 20%; }
-}
-
-/* Animations pour les logos de la colonne de droite */
-
-/* Logo 4 */
-@keyframes moveLogo4 {
-    0% { top: 0%; left: 20%; }
-    16% { top: 30%; left: 0%; }
-    32% { top: 60%; left: 40%; }
-    48% { top: 10%; left: 10%; }
-    64% { top: 50%; left: 20%; }
-    80% { top: 20%; left: 50%; }
-    100% { top: 0%; left: 20%; }
-}
-
-/* Logo 5 */
-@keyframes moveLogo5 {
-    0% { top: 80%; left: 30%; }
-    16% { top: 60%; left: 0%; }
-    32% { top: 20%; left: 40%; }
-    48% { top: 70%; left: 10%; }
-    64% { top: 30%; left: 50%; }
-    80% { top: 90%; left: 20%; }
-    100% { top: 80%; left: 30%; }
-}
-
-/* Logo 6 */
-@keyframes moveLogo6 {
-    0% { top: 50%; left: 10%; }
-    16% { top: 20%; left: 50%; }
-    32% { top: 70%; left: 0%; }
-    48% { top: 40%; left: 30%; }
-    64% { top: 10%; left: 20%; }
-    80% { top: 60%; left: 40%; }
-    100% { top: 50%; left: 10%; }
+    animation: moveLogo6 12s linear infinite;
+    z-index: 2;
 }
 
 /* Animation d'apparition du formulaire */
@@ -216,17 +248,44 @@
     }
 }
 
-/* Média queries pour la réactivité */
-@media (max-width: 768px) {
+/* Responsive : 
+   On masque les colonnes latérales et les logos.
+   Le formulaire reste centré et garde la même largeur (max 400px).
+   Grâce au min-height et pas de height fixe, si le contenu augmente, 
+   le footer est repoussé en bas sans chevauchement. */
+@media (max-width: 1200px) {
     .grid-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
+        min-height: calc(100vh - 200px) !important;
     }
 
     .left-column, .right-column {
-        display: none;
+        display: none !important;
+    }
+
+    .logo-animation {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        animation: none !important;
+    }
+
+    .center-column {
+        grid-column: 1 / -1 !important;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        padding: 0 !important;
+        margin-top: 20px !important;
+        /* Pas de height fixe, s'adapte au contenu et repousse le footer */
     }
 
     .reservation-form {
-        max-width: 400px; /* Limite la largeur du formulaire sur les petits écrans */
+        max-width: 400px !important;
+        width: 100% !important;
+        min-height: 600px !important; /* Conserve la zone mini pour les logos (même si cachés) */
+        margin: 0 auto !important;
+        overflow: auto !important;
     }
 }
