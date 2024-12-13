@@ -10,6 +10,10 @@
 #commande {
     padding: 20px;
     background-color: var(--couleur-croute);
+}
+
+@media (min-width: 768px){
+    #commande { 
     display:grid;
     grid-template-columns: 2fr 2fr;
     grid-template-rows: 1fr 0.5fr 0.4fr 0.5fr 1.1fr;
@@ -19,6 +23,7 @@
                         "desserts boissons"
                         "offres offres";
     column-gap:20px;
+    } 
 }
 
 
@@ -125,15 +130,8 @@ h2 {
 /* Responsiveness pour les petits écrans */
 @media (max-width: 768px) {
     #classiques_container {
-        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
-        grid-template-rows:1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-template-areas: "classiques"
-        "maison"
-        "végé"
-        "chef"
-        "desserts"
-        "boissons"
-        "offres";
+        display :flex;
+        flex-direction : column;
     }
 }
 
