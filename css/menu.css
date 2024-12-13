@@ -10,11 +10,58 @@
 #menu {
     padding: 20px;
     background-color: var(--couleur-croute);
+    /* Animation fade-in pour le menu entier */
+    opacity: 0;
+    animation: menuFadeIn 1s ease forwards;
+}
+
+@keyframes menuFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Style pour chaque section du menu */
 .classiques {
     margin-bottom: 40px;
+    /* Animation fade-in pour chaque section avec délai progressif */
+    opacity: 0;
+    animation: sectionFadeIn 1s ease forwards;
+}
+
+.classiques:nth-child(1) {
+    animation-delay: 0.3s;
+}
+.classiques:nth-child(2) {
+    animation-delay: 0.5s;
+}
+.classiques:nth-child(3) {
+    animation-delay: 0.7s;
+}
+.classiques:nth-child(4) {
+    animation-delay: 0.9s;
+}
+.classiques:nth-child(5) {
+    animation-delay: 1.1s;
+}
+.classiques:nth-child(6) {
+    animation-delay: 1.3s;
+}
+
+@keyframes sectionFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .classiques h2 {
@@ -22,10 +69,54 @@
     font-size: 2em;
     color: var(--rouge-sauce);
     margin-bottom: 20px;
+    position: relative; /* Nécessaire pour le pseudo-élément */
+    overflow: hidden;
+    cursor: default;
+    /* Animation sur le titre */
+    animation: titleFadeIn 1s ease forwards;
+}
+
+@keyframes titleFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Séparateur animé sous le titre */
+.classiques h2::after {
+    content: "";
+    display: block;
+    height: 4px;
+    background-color: var(--vert-basilic);
+    margin: 0 auto;
+    margin-top: 10px;
+    border-radius: 2px;
+    width: 0; /* Départ à 0 de largeur */
+    animation: underlineExpand 0.8s forwards ease-out;
+    transition: background-color 0.3s ease, width 0.3s ease;
+}
+
+@keyframes underlineExpand {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 80px; /* Largeur finale du séparateur */
+    }
+}
+
+/* Extension du séparateur au survol de la catégorie */
+.classiques:hover h2::after {
+    width: 120px; /* Largeur augmentée au survol */
 }
 
 /* Conteneur pour aligner les articles */
-#classiques_container {
+.classiques_container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* S'adapte à la taille de l'écran */
     gap: 20px; /* Espacement entre les éléments */
@@ -38,12 +129,40 @@
     text-align: center;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: box-shadow 0.3s, background-color 0.3s;
+    /* Ajout fade-in depuis le bas */
+    opacity: 0;
+    animation: fadeInUp 0.7s ease forwards;
+    /* Animation cascade */
+    animation-delay: calc(0.2s * var(--i));
 }
 
+/* Définition des délais pour l'animation des cartes */
+.classiques_content {
+    --i: 1;
+}
+.classiques_content:nth-child(2) { --i: 2; }
+.classiques_content:nth-child(3) { --i: 3; }
+.classiques_content:nth-child(4) { --i: 4; }
+.classiques_content:nth-child(5) { --i: 5; }
+.classiques_content:nth-child(6) { --i: 6; }
+.classiques_content:nth-child(7) { --i: 7; }
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Effet au survol des cartes sans transformation */
 .classiques_content:hover {
-    transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    /* Suppression de la transformation et du changement de couleur */
 }
 
 /* Nom de la pizza ou article */
@@ -52,6 +171,21 @@
     color: var(--rouge-sauce);
     margin-bottom: 10px;
     background-color: var(--couleur-fromage);
+    position: relative;
+    /* Animation de titre */
+    opacity: 0;
+    animation: titleCardFadeIn 0.5s ease forwards;
+}
+
+@keyframes titleCardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Description */
@@ -62,6 +196,7 @@
     background-color: var(--couleur-fromage);
 }
 
+/* Prix */
 .classiques_content .prix {
     font-weight: bold;
     color: var(--vert-basilic);
@@ -81,7 +216,7 @@ article + article {
     margin-top: 20px;
 }
 
-
+/* Bouton CTA */
 .cta_button {
     display: inline-block;
     margin: 10px;
@@ -94,16 +229,70 @@ article + article {
     text-decoration: none;
     transition: all 0.3s ease;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    /* Animation de pulsation */
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
 }
 
 .cta_button:hover {
     background-color: var(--vert-basilic);
     color: var(--couleur-fromage);
-    transform: scale(1.05);
+    transform: scale(1.05) rotate(-2deg);
+    /* Arrêt temporaire de la pulsation au hover */
+    animation: none;
 }
-
 
 #cta {
     display: flex;
     justify-content: center;
+}
+
+/* Animation du menu entier */
+@keyframes menuFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation des sections */
+@keyframes sectionFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation des titres des cartes */
+@keyframes titleCardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
