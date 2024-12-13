@@ -87,7 +87,7 @@ html, body {
 
 
 /*Ajustement de la taille des photos*/
-#event1 img,#event2 img,#event3 img,#event4 img,#event5 img{
+#event1 img,#event3 img,#event4 img,#event5 img{
 
   width: 25%;
   border-radius: 50px;
@@ -96,11 +96,20 @@ html, body {
   margin: 1%;
 
 }
-#event1 img:hover,#event2 img:hover,#event3 img:hover,#event4 img:hover,#event5 img:hover {
+#event2 img{
+  width: 25%;
+  border-radius: 50px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  margin: 1%;
+}
+#event1 img:hover,#event3 img:hover,#event4 img:hover,#event5 img:hover {
   transform: scale(1.05); /* Zoom léger */
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4); /* Ombre plus marquée */
 }
-#event1 #texte,#event2 #texte,#event3 #texte,#event4 #texte,#event5 #texte{
+#event2 img:hover{
+  transform: scale(1.05); /* Zoom léger */
+}
+#event1 #texte, #event2 #texte, #event3 #texte, #event4 #texte, #event5 #texte {
   width: 50%;
   position: absolute;
   left: 25%;
@@ -110,10 +119,17 @@ html, body {
   font-family: 'Cursive', sans-serif;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   padding-bottom: 5%;
-  
+  line-height: 1.6em; /* Augmentation de l'espacement entre les lignes */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* Ombre subtile pour améliorer la lisibilité */
+  padding: 10px;
+  border-radius: 10px; /* Ajout d'un léger arrondi aux bords */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ombre légère pour donner de la profondeur */
 }
-#event1 #texte:hover,#event2 #texte:hover,#event3 #texte:hover,#event4 #texte:hover,#event5 #texte:hover{
+
+#event1 #texte:hover, #event2 #texte:hover, #event3 #texte:hover, #event4 #texte:hover, #event5 #texte:hover {
   transform: scale(1.05); /* Zoom léger */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Ombre plus marquée lors du survol */
+}
 }
 h1 {
   text-align: center;
@@ -190,8 +206,6 @@ h1 {
     margin: 20px auto; /* Centre les sections avec un espacement suffisant */
     height: auto; /* Permet à la hauteur de s'ajuster */
     padding: 15px; /* Ajoute de l'espace intérieur pour respirer */
-    border-radius: 20px; /* Arrondi pour plus de fluidité */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre douce */
     text-align: center; /* Centre le texte */
     display: flex;
     flex-direction: column; /* Organise le contenu verticalement */
