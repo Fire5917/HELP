@@ -13,6 +13,13 @@ html, body {
   padding: 0;
   
 }
+h2 {
+  text-align: center;
+  font-size: 2em;
+  color: var(--rouge-sauce);
+  margin-bottom: 20px;
+  position: relative;
+}
 
 #presentation{
   display: flex;
@@ -130,7 +137,7 @@ html, body {
   transform: scale(1.05); /* Zoom léger */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Ombre plus marquée lors du survol */
 }
-}
+
 h1 {
   text-align: center;
   font-size: 2em;
