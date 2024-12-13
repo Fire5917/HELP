@@ -78,13 +78,15 @@ h2 {
 /* Style pour chaque item */
 @media (min-width: 768px) {
     .classiques_content {
-        background-color: var(--couleur-fromage);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+}
+.classiques_content {
+    background-color: var(--couleur-fromage);
         padding: 20px;
         text-align: center;
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
 }
 
 .classiques_content:hover {
@@ -115,10 +117,6 @@ h2 {
     background-color: var(--couleur-fromage);
 }
 
-#nondisponible{
-    color: var(--vert-basilic);
-    font-size: 1.2em;
-}
 
 /* Responsiveness pour les petits écrans */
 @media (max-width: 768px) {
