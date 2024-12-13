@@ -21,7 +21,7 @@
     column-gap:20px;
 }
 
-/* Style pour chaque section du menu */
+
 #classiques {
     margin-bottom: 40px;
     grid-area: classiques;
@@ -59,6 +59,12 @@
     font-size :0.8em;
 }
 
+
+img {
+    height:90px;
+    width:auto;
+    border-radius:5px;
+}
 
 h2 {
     text-align: center;
@@ -120,6 +126,14 @@ h2 {
 @media (max-width: 768px) {
     #classiques_container {
         grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+        grid-template-rows:1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: "classiques"
+        "maison"
+        "végé"
+        "chef"
+        "desserts"
+        "boissons"
+        "offres";
     }
 }
 
