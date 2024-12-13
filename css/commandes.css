@@ -7,17 +7,60 @@
 }
 
 /* Structure principale du menu */
-#menu {
+#commande {
     padding: 20px;
     background-color: var(--couleur-croute);
+    display:grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 1fr 0.5fr 0.4fr 0.5fr 1.1fr;
+    grid-template-areas: "classiques classiques"
+                        "maison végé"
+                        "chef chef"
+                        "desserts boissons"
+                        "offres offres";
+    column-gap:20px;
 }
 
 /* Style pour chaque section du menu */
-.classiques {
-    margin-bottom: 40px;
+#classiques {
+    margin-bottom: 20px;
+    grid-area: classiques;
+}
+#spécialités{
+    margin-bottom: 20px;
+    grid-area: maison;
+}
+#végé {
+    margin-bottom: 20px;
+    grid-area: végé;
+}
+#chef{
+    margin-bottom: 20px;
+    grid-area: chef;
+}
+#desserts {
+    margin-bottom: 20px;
+    grid-area: desserts;
+}
+#boissons{
+    margin-bottom: 20px;
+    grid-area: boissons;
+}
+#offres {
+    margin-bottom: 20px;
+    grid-area: offres;
 }
 
-.classiques h2 {
+
+
+#classiques_container label{
+    background-color : var(--couleur-fromage);
+    color : black;
+    font-size :0.8em;
+}
+
+
+h2 {
     text-align: center;
     font-size: 2em;
     color: var(--rouge-sauce);
@@ -33,13 +76,15 @@
 }
 
 /* Style pour chaque item */
-.classiques_content {
-    background-color: var(--couleur-fromage);
-    padding: 20px;
-    text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+@media (min-width: 768px) {
+    .classiques_content {
+        background-color: var(--couleur-fromage);
+        padding: 20px;
+        text-align: center;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
 }
 
 .classiques_content:hover {
@@ -68,6 +113,11 @@
     color: var(--vert-basilic);
     font-size: 1.2em;
     background-color: var(--couleur-fromage);
+}
+
+#nondisponible{
+    color: var(--vert-basilic);
+    font-size: 1.2em;
 }
 
 /* Responsiveness pour les petits écrans */
