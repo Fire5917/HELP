@@ -79,7 +79,7 @@ h2 {
 
 .classiques_content {
     background-color: var(--couleur-fromage);
-    padding: 20px;
+    padding: 5%;
     text-align: center;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -104,7 +104,7 @@ h2 {
 .classiques_content p {
     color: #333;
     font-size: 1em;
-    margin: 10px 0;
+    margin: 10px 2%;
     background-color: var(--couleur-fromage);
 }
 
