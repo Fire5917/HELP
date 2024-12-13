@@ -76,6 +76,7 @@ h2 {
 }
 
 /* Style pour chaque item */
+
 .classiques_content {
     background-color: var(--couleur-fromage);
     padding: 20px;
@@ -85,9 +86,6 @@ h2 {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.classiques_content {
-    background-color: var(--couleur-fromage);
-    
 
 .classiques_content:hover {
     transform: scale(1.05);
