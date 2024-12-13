@@ -13,6 +13,13 @@ html, body {
   padding: 0;
   
 }
+h2 {
+  text-align: center;
+  font-size: 2em;
+  color: var(--rouge-sauce);
+  margin-bottom: 20px;
+  position: relative;
+}
 
 #presentation{
   display: flex;
@@ -26,7 +33,7 @@ html, body {
 #presentation p{
   font-family: 'Cursive', sans-serif;
   text-align: center;
-  font-size: 1em;
+  font-size: 20px;
   border-radius: 50px;
   color: #333;
   line-height: 1.5em;
@@ -122,15 +129,19 @@ html, body {
   line-height: 1.6em; /* Augmentation de l'espacement entre les lignes */
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* Ombre subtile pour améliorer la lisibilité */
   padding: 10px;
-  border-radius: 10px; /* Ajout d'un léger arrondi aux bords */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ombre légère pour donner de la profondeur */
+
+}
+#event1 #texte p, #event2 #texte p, #event3 #texte p, #event4 #texte p, #event5 #texte p {
+background-color: var(--couleur-fromage);
+padding: 1%;
+border-radius: 55px; /* Ajout d'un léger arrondi aux bords */
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ombre légère pour donner de la profondeur */
 }
 
 #event1 #texte:hover, #event2 #texte:hover, #event3 #texte:hover, #event4 #texte:hover, #event5 #texte:hover {
   transform: scale(1.05); /* Zoom léger */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Ombre plus marquée lors du survol */
 }
-}
+
 h1 {
   text-align: center;
   font-size: 2em;
@@ -219,6 +230,7 @@ h1 {
     display: block; /* Assure un bon comportement sur mobile */
   }
 
+
   #event1 #texte, #event2 #texte, #event3 #texte, #event4 #texte, #event5 #texte {
     position: static;
     width: 100%; /* Les textes occupent toute la largeur disponible */
@@ -227,6 +239,12 @@ h1 {
     line-height: 1.4em; /* Augmente l'espacement entre les lignes */
     margin-top: 10px; /* Ajoute un espace entre l'image et le texte */
   }
+  #event1 #texte p, #event2 #texte p, #event3 #texte p, #event4 #texte p, #event5 #texte p {
+    background-color: var(--couleur-fromage);
+    padding: 5%;
+    border-radius: 25px; /* Ajout d'un léger arrondi aux bords */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ombre légère pour donner de la profondeur */
+    }
 
   /* Présentation */
   #presentation {
