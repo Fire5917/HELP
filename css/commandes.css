@@ -23,31 +23,31 @@
 
 /* Style pour chaque section du menu */
 #classiques {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     grid-area: classiques;
 }
 #spécialités{
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     grid-area: maison;
 }
 #végé {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     grid-area: végé;
 }
 #chef{
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     grid-area: chef;
 }
 #desserts {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     grid-area: desserts;
 }
 #boissons{
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     grid-area: boissons;
 }
 #offres {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     grid-area: offres;
 }
 
