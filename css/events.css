@@ -296,10 +296,8 @@ h1 {
     margin-top: 10px; /* Ajoute un espace entre l'image et le texte */
   }
   #event1 #texte p, #event2 #texte p, #event3 #texte p, #event4 #texte p, #event5 #texte p {
-    background-color: var(--couleur-fromage);
     padding: 5%;
     border-radius: 25px; /* Ajout d'un léger arrondi aux bords */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ombre légère pour donner de la profondeur */
     }
 
   /* Présentation */
@@ -442,10 +440,8 @@ h1 {
     margin-top: 10px; /* Ajoute un espace entre l'image et le texte */
   }
   #event1 #texte p, #event2 #texte p, #event3 #texte p, #event4 #texte p, #event5 #texte p {
-    background-color: var(--couleur-fromage);
     padding: 2%;
     border-radius: 25px; /* Ajout d'un léger arrondi aux bords */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ombre légère pour donner de la profondeur */
     }
 
   /* Présentation */
