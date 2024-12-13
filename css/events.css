@@ -46,7 +46,6 @@ h2 {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  
 }
 
 #diapo {
@@ -92,6 +91,11 @@ h2 {
   100% { transform: translateX(-400%); }           /* Retour au début pour Event 1 */
 }
 
+#images{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 
 /*Ajustement de la taille des photos*/
 #event1 img,#event3 img,#event4 img,#event5 img{
@@ -121,21 +125,22 @@ h2 {
   position: absolute;
   left: 25%;
   color: #333;
-  font-size: 20px;
   margin: 10px 0;
   font-family: 'Cursive', sans-serif;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  padding-bottom: 5%;
   line-height: 1.6em; /* Augmentation de l'espacement entre les lignes */
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* Ombre subtile pour améliorer la lisibilité */
   padding: 10px;
 
 }
 #event1 #texte p, #event2 #texte p, #event3 #texte p, #event4 #texte p, #event5 #texte p {
-background-color: var(--couleur-fromage);
+
 padding: 1%;
 border-radius: 55px; /* Ajout d'un léger arrondi aux bords */
-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ombre légère pour donner de la profondeur */
+font-size: 1.2em;
+color: var(--vert-basilic);
+margin: 15px 0;
+
 }
 
 #event1 #texte:hover, #event2 #texte:hover, #event3 #texte:hover, #event4 #texte:hover, #event5 #texte:hover {
@@ -194,10 +199,60 @@ h1 {
   margin-bottom: 30px; /* Réduit l'espace en dessous du lecteur audio */
 }
 
+#resume {
+  width: 80%;
+  position: relative;
+  left: 10%;
+  padding: 10px;
+  background-color: var(--couleur-fromage);
+  border-radius: 50px;
+  transition: transform 0.6s ease-in-out, box-shadow 0.6s ease-in-out;
+
+}
+#resume:hover{
+  transform: scale(1.05); 
+}
+
+#resume h2 {
+  background-color: var(--couleur-fromage);
+  text-align: center;
+  font-size: 2em;
+  color: var(--rouge-sauce);
+  margin-bottom: 20px;
+  position: relative;
+}
+
+#resume p {
+  background-color: var(--couleur-fromage);
+  font-size: 18px;
+  color: #555;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#resume ul {
+  background-color: var(--couleur-fromage);
+  list-style-type: none;
+  text-align: center;
+}
+
+#resume ul li {
+  background-color: var(--couleur-fromage);
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+#resume ul li strong {
+  background-color: var(--couleur-fromage);
+  font-weight: bold;
+  color: #1e7e34;
+}
 
 
 /* Adaptation pour affichage mobile et tablettes */
-@media (max-width: 768px) {
+@media (max-width: 768px){
   /* Diaporama */
   #diapo {
     flex-direction: column; /* Affiche les événements en colonnes */
@@ -228,6 +283,7 @@ h1 {
     max-width: 300px; /* Limite la largeur maximale pour éviter les écrasements */
     margin: 10px auto; /* Centre les images */
     display: block; /* Assure un bon comportement sur mobile */
+    margin: 1%;
   }
 
 
@@ -268,6 +324,143 @@ h1 {
   #background_music {
     max-width: 100%; /* S'étend sur toute la largeur disponible */
   }
+
+  #resume {
+    width: 80%;
+    position: relative;
+    padding: 10px;
+    background-color: var(--couleur-fromage);
+    border-radius: 50px;
+  
+  }
+  
+  #resume h2 {
+    background-color: var(--couleur-fromage);
+    text-align: center;
+    font-size: 2em;
+    color: var(--rouge-sauce);
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  #resume p {
+    background-color: var(--couleur-fromage);
+    font-size: 18px;
+    color: #555;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  #resume ul {
+    background-color: var(--couleur-fromage);
+    list-style-type: none;
+    text-align: center;
+    padding: 0px;
+  }
+  
+  #resume ul li {
+    background-color: var(--couleur-fromage);
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  #resume ul li strong {
+    background-color: var(--couleur-fromage);
+    font-weight: bold;
+    color: #1e7e34;
+  }
+}
+
+
+/* Adaptation pour écrans très étroits (moins de 480px) */
+@media (max-width: 480px) {
+  /* Images des événements */
+  #event1 img, #event2 img, #event3 img, #event4 img, #event5 img {
+    width: 90%; /* Les images occupent plus d'espace */
+  }
+
+  /* Textes des événements */
+  #event1 #texte, #event2 #texte, #event3 #texte, #event4 #texte, #event5 #texte {
+    font-size: 0.9em; /* Réduit légèrement la taille de police */
+    line-height: 1.4em;
+  }
+
+  /* Présentation */
+  #presentation p {
+    font-size: 0.9em;
+  }
+  
+}
+
+@media (max-height: 770px){ /*Quand la hauteur devient trop petite pour gérer correctement le diaporama*/
+  /* Diaporama */
+  #diapo {
+    flex-direction: column; /* Affiche les événements en colonnes */
+    width: 100%; /* Assure une largeur adaptée */
+    
+  }
+
+  #cadre_diapo {
+    height: auto; /* Ajuste automatiquement la hauteur */
+    overflow: visible; /* Permet de voir tout le contenu */
+  }
+
+  /* Événements */
+  #event1, #event2, #event3, #event4, #event5 {
+    animation: none; /* Désactive l'animation */
+    width: 90%; /* Réduit la largeur des sections */
+    margin: 20px auto; /* Centre les sections avec un espacement suffisant */
+    height: auto; /* Permet à la hauteur de s'ajuster */
+    padding: 15px; /* Ajoute de l'espace intérieur pour respirer */
+    text-align: center; /* Centre le texte */
+    display: flex;
+    flex-direction: column; /* Organise le contenu verticalement */
+    align-items: center; /* Centre le contenu horizontalement */
+  }
+  #images{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  #event1 img, #event2 img, #event3 img, #event4 img, #event5 img {
+    width: 25%; /* Les images prennent 25% de la largeur */
+
+    margin: 10px auto; /* Centre les images */
+    display: block; /* Assure un bon comportement sur mobile */
+    margin: 1%;
+  }
+
+
+  #event1 #texte, #event2 #texte, #event3 #texte, #event4 #texte, #event5 #texte {
+    position: static;
+    width: 100%; /* Les textes occupent toute la largeur disponible */
+    padding: 10px; /* Ajoute de l'espace intérieur pour éviter que le texte soit trop serré */
+    font-size: 1em; /* Taille de police lisible */
+    line-height: 1.4em; /* Augmente l'espacement entre les lignes */
+    margin-top: 10px; /* Ajoute un espace entre l'image et le texte */
+  }
+  #event1 #texte p, #event2 #texte p, #event3 #texte p, #event4 #texte p, #event5 #texte p {
+    background-color: var(--couleur-fromage);
+    padding: 2%;
+    border-radius: 25px; /* Ajout d'un léger arrondi aux bords */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ombre légère pour donner de la profondeur */
+    }
+
+  /* Présentation */
+  #presentation {
+    flex-direction: column; /* Assure un affichage vertical */
+    padding: 20px; /* Ajoute un espacement général */
+  }
+
+  #presentation p {
+    font-size: 1em; /* Taille de texte lisible */
+    padding: 15px;
+    line-height: 1.5em; /* Meilleur espacement entre lignes */
+  }
+
+
 
   
 }
