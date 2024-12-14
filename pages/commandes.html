@@ -347,7 +347,8 @@
                     <div class="classiques_content">
                         <h3>Menu Midi</h3>
                         <p>Petite pizza au choix + boisson</p>
-                        <p class="prix">12,00 €</p>
+                        <p class="prix">12,00 €
+                        <br>
                         <label for="pizza">Pizza :</label>
                         <select id="pizza" name="pizza">
                             <option value="">-- Sélectionnez une pizza --</option>
@@ -372,6 +373,7 @@
                             <option value="Orangina">Orangina</option>
                             <option value="Lipton">Lipton</option>
                         </select>
+                        </p>
                     </div>
                     <div class="classiques_content">
                         <h3>Menu Famille</h3>
@@ -435,72 +437,49 @@
 
         <form>
                 <legend>Informations</legend>
-
+                <br>
                 <label for="nom">Nom :</label>
-                <input type="text" name="nom" id="nom" placeholder="Votre nom">
+                <br>
+                <input type="text" name="nom" id="nom" placeholder="Votre nom" required>
                 <br><br>
-
                 <label for="prenom">Prénom :</label>
+                <br>
                 <input type="text" name="prenom" id="prenom" placeholder="Votre prénom">
                 <br><br>
-
-                <label for="heure">Heures de retrait : </label>
-                <input type="time" name="heure" id="heure">
-
                 <label>Retrait sur place ou livraison ?</label>
                 <br>
-                <input type="radio" name="retrait/livraison" id="retrait">
+                <input type="radio" name="retrait/livraison" id="retrait" required>
                 <label for="retrait">retrait sur place</label>
                 <br>
                 <input type="radio" name="retrait/livraison" id="livraison">
                 <label for="livraison">livraison</label>
-
+                <br><br>
+                <label for="heure">Heures de retrait : </label>
+                <input type="time" name="heure" id="heure" required>
 
 
                 <br>
                 <br>
                 <label>Adresse</label>
-                <input type="text" name="adresse" id="adresse">
                 <br>
+                <input type="text" name="adresse" id="adresse">
+                <br><br>
                 <label>Numéro de téléphone</label>
+                <br>
                 <input type="tel" name="téléphone" id="téléphone">
 
-                <br>
-                <label for="etudiant">Menu Etudiant : -15% sur toutes les pizzas, classiques et végé</label>
+                <br><br>
+                <label for="etudiant">Menu Etudiant* :</label>
                 <input type="checkbox" name="etudiant" id="etudiant">
+                <p id="etudiant">*-15% sur toutes les pizzas, classiques et végé</p>
+                
         
                 <br>
-                <input type="submit" name="commander" id="commander">
+                <input type="submit" name="commander" id="commander" value="Commander">
                 <input type="reset" name="recommencer">
-
-                
-
-            <br>
-            <div id="cta">
-                <a href="./commandes.html" class="cta_button">Commander</a>
-            </div>
+            
 
         </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

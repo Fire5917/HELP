@@ -16,7 +16,7 @@
     #commande { 
     display:grid;
     grid-template-columns: 2fr 2fr;
-    grid-template-rows: 1fr 0.5fr 0.4fr 0.5fr 1.1fr;
+    grid-template-rows: 1fr 0.5fr 0.4fr 0.5fr 0.5fr;
     grid-template-areas: "classiques classiques"
                         "maison végé"
                         "chef chef"
@@ -52,7 +52,6 @@
     grid-area: boissons;
 }
 #offres {
-    margin-bottom: 40px;
     grid-area: offres;
 }
 
@@ -126,6 +125,91 @@ h2 {
     background-color: var(--couleur-fromage);
 }
 
+form {
+    background: var(--couleur-fromage);
+    border: 2px solid var(--rouge-sauce);
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size:1em;
+}
+
+
+form label,
+form legend{
+    background-color:var(--couleur-fromage);
+    color:var(--rouge-sauce);
+    font-weight: bold;
+}
+
+form legend{
+    text-align:center;
+}
+
+
+#etudiant{
+    color:black;
+    background-color:var(--couleur-fromage);
+    font-size:0.7em;
+}
+
+
+form input{
+    padding: 10px;
+    border: 1px solid var(--vert-basilic);
+    border-radius: 5px;
+    background-color: var(--couleur-croute);
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+form input[type="text"]{
+    width:100%;
+}
+
+
+label[for = "livraison"],
+label[for = "retrait"]{
+    color:black;
+    font-weight: normal;
+}
+
+form input[type="radio"]{
+    appearance: none;
+    border-color: var(--rouge-sauce);
+    border-radius: 80%;
+}
+
+form input[type="radio"]:checked{
+    background-color:var(--rouge-sauce);
+}
+
+form input[type="checkbox"]{
+    appearance: none;
+    border-color: var(--rouge-sauce);
+}
+
+form input[type="checkbox"]:checked{
+    background-color:var(--rouge-sauce);
+}
+
+
+
+input, 
+select{
+  padding: 10px;
+  border: 1px solid var(--vert-basilic);
+  border-radius: 5px;
+  background-color: var(--couleur-croute);
+  font-size: 0.5em;
+  box-sizing: border-box;
+}
+
+
+
 
 /* Responsiveness pour les petits écrans */
 @media (max-width: 768px) {
@@ -141,39 +225,3 @@ article + article {
 }
 
 
-.cta_button {
-    display: inline-block;
-    margin: 10px;
-    padding: 12px 24px;
-    font-size: 1em;
-    color: var(--couleur-croute);
-    background-color: var(--rouge-sauce);
-    border: 2px solid var(--vert-basilic);
-    border-radius: 8px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.cta_button:hover {
-    background-color: var(--vert-basilic);
-    color: var(--couleur-fromage);
-    transform: scale(1.05);
-}
-
-
-#cta {
-    display: flex;
-    justify-content: center;
-}
-
-.sc-quantity-stepper::after {
-    content: url(2KViI4b7ZZCNtr3.png);
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    height: 20px;
-    width: 20px;
-    pointer-events: none;
-  }
