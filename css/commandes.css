@@ -179,6 +179,8 @@ label[for = "retrait"]{
 
 form input[type="radio"]{
     appearance: none;
+    position:relative;
+    top:6px;
     border-color: var(--rouge-sauce);
     border-radius: 80%;
 }
@@ -189,13 +191,15 @@ form input[type="radio"]:checked{
 
 form input[type="checkbox"]{
     appearance: none;
+    position:relative;
+    top:8px;
     border-color: var(--rouge-sauce);
+    border-radius: 40%;
 }
 
 form input[type="checkbox"]:checked{
     background-color:var(--rouge-sauce);
 }
-
 
 
 input, 
