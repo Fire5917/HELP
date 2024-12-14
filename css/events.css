@@ -1,5 +1,3 @@
-/* CSS uniquement pour la page : events.html */
-
 :root {
   --couleur-croute: #f7e1bd;
   --rouge-sauce: #cc452b;
@@ -7,479 +5,262 @@
   --couleur-fromage: #f4db95;
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  
-}
-h2 {
-  text-align: center;
-  font-size: 2em;
-  color: var(--rouge-sauce);
-  margin-bottom: 20px;
-  position: relative;
-}
-
-#presentation{
-  display: flex;
-  justify-content: center;
-}
-#presentation p:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre qui apparaîtra progressivement */
-}
-
-
-#presentation p{
-  font-family: 'Cursive', sans-serif;
-  text-align: center;
-  font-size: 20px;
-  border-radius: 50px;
-  color: #333;
-  line-height: 1.5em;
-  background-color: var(--couleur-fromage);
-  padding:1.5%;
-  transition: box-shadow 0.5s ease-in-out; /* Transition progressive pour l'ombre */
-}
-
-#cadre_diapo {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-#diapo {
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: row;
-  height: 100%;
-  width: 500%;
-  
-}
-
-#event1, #event2,#event3,#event4,#event5 {
-  width: 100%;
-  height: 70%;
-  border-radius: 50px;
-  text-align: center;
-  position: relative;
-
-  
-  animation-name: diapo;
-  animation-duration: 120s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-@keyframes diapo {
-  0% { transform: translateX(0); }             /* Event 1 visible */
-  18% { transform: translateX(0); }            /* Pause sur Event 1 */
-
-  20% { transform: translateX(-100%); }        /* Transition vers Event 2 */
-  38% { transform: translateX(-100%); }        /* Pause sur Event 2 */
-
-  40% { transform: translateX(-200%); }        /* Transition vers Event 3 */
-  58% { transform: translateX(-200%); }        /* Pause sur Event 3 */
-
-  60% { transform: translateX(-300%); }        /* Transition vers Event 4 */
-  78% { transform: translateX(-300%); }        /* Pause sur Event 4 */
-
-  80% { transform: translateX(-400%); }        /* Transition vers Event 5 */
-  98% { transform: translateX(-400%); }        /* Pause sur Event 5 */
-
-  100% { transform: translateX(-400%); }           /* Retour au début pour Event 1 */
-}
-
-#images{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-/*Ajustement de la taille des photos*/
-#event1 img,#event3 img,#event4 img,#event5 img{
-
-  width: 25%;
-  border-radius: 50px;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Ombre légère */
-  margin: 1%;
-
-}
-#event2 img{
-  width: 25%;
-  border-radius: 50px;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  margin: 1%;
-}
-#event1 img:hover,#event3 img:hover,#event4 img:hover,#event5 img:hover {
-  transform: scale(1.05); /* Zoom léger */
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4); /* Ombre plus marquée */
-}
-#event2 img:hover{
-  transform: scale(1.05); /* Zoom léger */
-}
-#event1 #texte, #event2 #texte, #event3 #texte, #event4 #texte, #event5 #texte {
-  width: 50%;
-  position: absolute;
-  left: 25%;
-  color: #333;
-  margin: 10px 0;
-  font-family: 'Cursive', sans-serif;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  line-height: 1.6em; /* Augmentation de l'espacement entre les lignes */
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* Ombre subtile pour améliorer la lisibilité */
-  padding: 10px;
-
-}
-#event1 #texte p, #event2 #texte p, #event3 #texte p, #event4 #texte p, #event5 #texte p {
-
-padding: 1%;
-border-radius: 55px; /* Ajout d'un léger arrondi aux bords */
-font-size: 1.2em;
-color: var(--vert-basilic);
-margin: 15px 0;
-
-}
-
-#event1 #texte:hover, #event2 #texte:hover, #event3 #texte:hover, #event4 #texte:hover, #event5 #texte:hover {
-  transform: scale(1.05); /* Zoom léger */
-}
-
-h1 {
-  text-align: center;
-  font-size: 2em;
-  color: var(--rouge-sauce);
-  margin-bottom: 20px;
-}
-
-#music_container {
-  text-align: center;
-  margin: 20px auto;
-  background-color: var(--couleur-croute);
+main {
   padding: 20px;
-  border-radius: 8px; /* Coins arrondis pour un effet visuel */
+  line-height: 1.6;
 }
 
-/* Texte explicatif */
-#music_container p {
+/* Titres animés */
+.title {
+  font-size: 2.2em;
+  color: var(--rouge-sauce);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.title::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background-color: var(--vert-basilic);
+  bottom: 0;
+  left: -100%;
+  animation: slide-left 1.2s forwards;
+}
+
+@keyframes slide-left {
+  to {
+      left: 0;
+  }
+}
+@keyframes slide-right {
+  to {
+      right: 0;
+  }
+}
+
+.fade-in {
+  animation: fade-in 0.5s ease-in;
+}
+@keyframes fade-in {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+#event1{
+  position: relative;
+  left: -100%;
+  animation: slide-left 1.4s forwards;
+}
+#event2{
+  position: relative;
+  left: -100%;
+  animation: slide-left 1.2s forwards;
+}
+#event3{
+  position: relative;
+  left: -100%;
+  animation: slide-left 1s forwards;
+}
+
+#event4{
+  position: relative;
+  right: -100%;
+  animation: slide-right 1s forwards;
+}
+#event5{
+  position: relative;
+  right: -100%;
+  animation: slide-right 1.2s forwards;
+}
+#event6{
+  position: relative;
+  right: -100%;
+  animation: slide-right 1.4s forwards;
+}
+
+#resume1{
+  position: relative;
+  left: -100%;
+  animation: slide-left 1.4s forwards;
+}
+#resume2{
+  position: relative;
+  left: -100%;
+  animation: slide-left 1.2s forwards;
+}
+#resume3{
+  position: relative;
+  left: -100%;
+  animation: slide-left 1s forwards;
+}
+#resume4{
+  position: relative;
+  right: -100%;
+  animation: slide-right 1s forwards;
+}
+#resume5{
+  position: relative;
+  right: -100%;
+  animation: slide-right 1.2s forwards;
+}
+#resume6{
+  position: relative;
+  right: -100%;
+  animation: slide-right 1.4s forwards;
+}
+/* Intro section */
+#intro_events p {
+  text-align: center;
+  max-width: 700px;
+  margin: 10px auto;
+  color: #333;
+}
+
+/* Music section */
+#music_section p {
+  text-align: center;
+  max-width: 700px;
+  margin: 10px auto;
+  color: #333;
+}
+#music_section {
+  margin-top: 40px;
+  text-align: center;
+}
+#music_container {
+  margin: 20px auto;
+  background-color: var(--couleur-fromage);
+  padding: 20px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+/* Style du lecteur audio */
+#background_music {
+  width: 100%;
+  max-width: 300px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+}
+
+/* Events Grid */
+#events {
+  margin-top: 40px;
+  text-align: center;
+}
+#events_grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.event{
+  background-color: var(--couleur-fromage);
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 250px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.event:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 15px rgba(0,0,0,0.2);
+  border: 0.5px green solid;
+}
+
+.event img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+.event h3 {
   font-size: 1.2em;
   color: var(--rouge-sauce);
-  margin-bottom: 15px;
-}
-
-/* Style général du lecteur audio */
-#background_music {
-  width: 100%; /* Le lecteur occupe toute la largeur du conteneur */
-  max-width: 300px; /* Limite la largeur maximale */
-  border: none; /* Pas de bordure autour du lecteur */
-  border-radius: 8px; /* Coins arrondis */
-  outline: none; /* Enlève les bordures de focus */
-}
-
-/* Personnalisation des contrôles natifs pour Webkit (Chrome, Edge, Safari) */
-#background_music::-webkit-media-controls-panel {
-  background-color: var(--couleur-fromage); /* Fond des contrôles */
-  border-radius: 8px;
-}
-
-#background_music::-webkit-media-controls-play-button,
-#background_music::-webkit-media-controls-pause-button {
-  background-color: var(--rouge-sauce); /* Couleur des boutons Play/Pause */
-  border-radius: 50%; /* Boutons arrondis */
-  border: 2px solid var(--rouge-sauce); /* Bordure des boutons */
-}
-
-#background_music::-webkit-media-controls-time-remaining-display {
-  color: var(--rouge-sauce); /* Couleur du texte pour le temps restant */
-}
-/* Réduire l'espace entre le lecteur audio et la section suivante */
-#music_container {
-  margin-bottom: 30px; /* Réduit l'espace en dessous du lecteur audio */
-}
-
-#resume {
-  width: 80%;
-  position: relative;
-  left: 10%;
-  padding: 10px;
+  margin-bottom: 10px;
   background-color: var(--couleur-fromage);
-  border-radius: 50px;
-  transition: transform 0.6s ease-in-out, box-shadow 0.6s ease-in-out;
-
 }
-#resume:hover{
-  transform: scale(1.05); 
-}
-
-#resume h2 {
-  background-color: var(--couleur-fromage);
-  text-align: center;
-  font-size: 2em;
-  color: var(--rouge-sauce);
-  margin-bottom: 20px;
-  position: relative;
-}
-
-#resume p {
-  background-color: var(--couleur-fromage);
-  font-size: 18px;
-  color: #555;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-#resume ul {
-  background-color: var(--couleur-fromage);
-  list-style-type: none;
-  text-align: center;
-}
-
-#resume ul li {
-  background-color: var(--couleur-fromage);
-  font-size: 16px;
+.event p {
+  font-size: 0.95em;
   color: #333;
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-
-#resume ul li strong {
+  line-height: 1.4;
   background-color: var(--couleur-fromage);
-  font-weight: bold;
-  color: #1e7e34;
 }
 
+/* Resume section */
+#resume_section {
+  margin-top: 40px;
+  text-align: center;
+}
+#resume_section p {
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+  color: #333;
+}
 
-/* Adaptation pour affichage mobile et tablettes */
-@media (max-width: 768px){
-  /* Diaporama */
-  #diapo {
-    flex-direction: column; /* Affiche les événements en colonnes */
-    width: 100%; /* Assure une largeur adaptée */
-    
+#resume_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.resume_item {
+  background-color: var(--couleur-fromage);
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+  max-width: 250px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resume_item:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+  border: 0.5px green solid;
+}
+
+.resume_item h3 {
+  font-size: 1.2em;
+  color: var(--rouge-sauce);
+  margin-bottom: 10px;
+  background: none;
+}
+
+.resume_item p {
+  font-size: 0.95em;
+  color: #333;
+  line-height: 1.4;
+  background: none;
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+  .event, .resume_item {
+      max-width: 100%;
   }
-
-  #cadre_diapo {
-    height: auto; /* Ajuste automatiquement la hauteur */
-    overflow: visible; /* Permet de voir tout le contenu */
-  }
-
-  /* Événements */
-  #event1, #event2, #event3, #event4, #event5 {
-    animation: none; /* Désactive l'animation */
-    width: 90%; /* Réduit la largeur des sections */
-    margin: 20px auto; /* Centre les sections avec un espacement suffisant */
-    height: auto; /* Permet à la hauteur de s'ajuster */
-    padding: 15px; /* Ajoute de l'espace intérieur pour respirer */
-    text-align: center; /* Centre le texte */
-    display: flex;
-    flex-direction: column; /* Organise le contenu verticalement */
-    align-items: center; /* Centre le contenu horizontalement */
-  }
-
-  #event1 img, #event2 img, #event3 img, #event4 img, #event5 img {
-    width: 80%; /* Les images prennent 80% de la largeur */
-    max-width: 300px; /* Limite la largeur maximale pour éviter les écrasements */
-    margin: 10px auto; /* Centre les images */
-    display: block; /* Assure un bon comportement sur mobile */
-    margin: 1%;
-  }
-
-
-  #event1 #texte, #event2 #texte, #event3 #texte, #event4 #texte, #event5 #texte {
-    position: static;
-    width: 100%; /* Les textes occupent toute la largeur disponible */
-    padding: 10px; /* Ajoute de l'espace intérieur pour éviter que le texte soit trop serré */
-    font-size: 1em; /* Taille de police lisible */
-    line-height: 1.4em; /* Augmente l'espacement entre les lignes */
-    margin-top: 10px; /* Ajoute un espace entre l'image et le texte */
-  }
-  #event1 #texte p, #event2 #texte p, #event3 #texte p, #event4 #texte p, #event5 #texte p {
-    background-color: var(--couleur-fromage);
-    padding: 5%;
-    border-radius: 25px; /* Ajout d'un léger arrondi aux bords */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ombre légère pour donner de la profondeur */
-    }
-
-  /* Présentation */
-  #presentation {
-    flex-direction: column; /* Assure un affichage vertical */
-    padding: 20px; /* Ajoute un espacement général */
-  }
-
-  #presentation p {
-    font-size: 1em; /* Taille de texte lisible */
-    padding: 15px;
-    line-height: 1.5em; /* Meilleur espacement entre lignes */
-  }
-
-  /* Musique */
-  #music_container {
-    max-width: 90%; /* Réduit la largeur pour mieux s'adapter */
-    padding: 15px;
-    margin: 20px auto;
-  }
-
-  #background_music {
-    max-width: 100%; /* S'étend sur toute la largeur disponible */
-  }
-
-  #resume {
-    width: 80%;
+  #event1,#event2,#event3,#event4,#event5,#event6,#resume1,#resume2,#resume3,#resume4,#resume5,#resume6{
+    animation: none;
     position: relative;
-    padding: 10px;
-    background-color: var(--couleur-fromage);
-    border-radius: 50px;
-  
-  }
-  
-  #resume h2 {
-    background-color: var(--couleur-fromage);
-    text-align: center;
-    font-size: 2em;
-    color: var(--rouge-sauce);
-    margin-bottom: 20px;
-    position: relative;
-  }
-  
-  #resume p {
-    background-color: var(--couleur-fromage);
-    font-size: 18px;
-    color: #555;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  #resume ul {
-    background-color: var(--couleur-fromage);
-    list-style-type: none;
-    text-align: center;
-    padding: 0px;
-  }
-  
-  #resume ul li {
-    background-color: var(--couleur-fromage);
-    font-size: 16px;
-    color: #333;
-    line-height: 1.6;
-    margin-bottom: 15px;
-  }
-  
-  #resume ul li strong {
-    background-color: var(--couleur-fromage);
-    font-weight: bold;
-    color: #1e7e34;
+    left: 0;
   }
 }
 
-
-/* Adaptation pour écrans très étroits (moins de 480px) */
 @media (max-width: 480px) {
-  /* Images des événements */
-  #event1 img, #event2 img, #event3 img, #event4 img, #event5 img {
-    width: 90%; /* Les images occupent plus d'espace */
+  #top_banner h1 {
+      font-size: 1.5em;
   }
-
-  /* Textes des événements */
-  #event1 #texte, #event2 #texte, #event3 #texte, #event4 #texte, #event5 #texte {
-    font-size: 0.9em; /* Réduit légèrement la taille de police */
-    line-height: 1.4em;
-  }
-
-  /* Présentation */
-  #presentation p {
-    font-size: 0.9em;
-  }
-  
-}
-
-@media (max-height: 770px){ /*Quand la hauteur devient trop petite pour gérer correctement le diaporama*/
-  /* Diaporama */
-  #diapo {
-    flex-direction: column; /* Affiche les événements en colonnes */
-    width: 100%; /* Assure une largeur adaptée */
-    
-  }
-
-  #cadre_diapo {
-    height: auto; /* Ajuste automatiquement la hauteur */
-    overflow: visible; /* Permet de voir tout le contenu */
-  }
-
-  /* Événements */
-  #event1, #event2, #event3, #event4, #event5 {
-    animation: none; /* Désactive l'animation */
-    width: 90%; /* Réduit la largeur des sections */
-    margin: 20px auto; /* Centre les sections avec un espacement suffisant */
-    height: auto; /* Permet à la hauteur de s'ajuster */
-    padding: 15px; /* Ajoute de l'espace intérieur pour respirer */
-    text-align: center; /* Centre le texte */
-    display: flex;
-    flex-direction: column; /* Organise le contenu verticalement */
-    align-items: center; /* Centre le contenu horizontalement */
-  }
-  #images{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-  #event1 img, #event2 img, #event3 img, #event4 img, #event5 img {
-    width: 25%; /* Les images prennent 25% de la largeur */
-
-    margin: 10px auto; /* Centre les images */
-    display: block; /* Assure un bon comportement sur mobile */
-    margin: 1%;
-  }
-
-
-  #event1 #texte, #event2 #texte, #event3 #texte, #event4 #texte, #event5 #texte {
-    position: static;
-    width: 100%; /* Les textes occupent toute la largeur disponible */
-    padding: 10px; /* Ajoute de l'espace intérieur pour éviter que le texte soit trop serré */
-    font-size: 1em; /* Taille de police lisible */
-    line-height: 1.4em; /* Augmente l'espacement entre les lignes */
-    margin-top: 10px; /* Ajoute un espace entre l'image et le texte */
-  }
-  #event1 #texte p, #event2 #texte p, #event3 #texte p, #event4 #texte p, #event5 #texte p {
-    padding: 2%;
-    border-radius: 25px; /* Ajout d'un léger arrondi aux bords */
-    }
-
-  /* Présentation */
-  #presentation {
-    flex-direction: column; /* Assure un affichage vertical */
-    padding: 20px; /* Ajoute un espacement général */
-  }
-
-  #presentation p {
-    font-size: 1em; /* Taille de texte lisible */
-    padding: 15px;
-    line-height: 1.5em; /* Meilleur espacement entre lignes */
-  }
-
-
-
-  
-}
-
-
-/* Adaptation pour écrans très étroits (moins de 480px) */
-@media (max-width: 480px) {
-  /* Images des événements */
-  #event1 img, #event2 img, #event3 img, #event4 img, #event5 img {
-    width: 90%; /* Les images occupent plus d'espace */
-  }
-
-  /* Textes des événements */
-  #event1 #texte, #event2 #texte, #event3 #texte, #event4 #texte, #event5 #texte {
-    font-size: 0.9em; /* Réduit légèrement la taille de police */
-    line-height: 1.4em;
-  }
-
-  /* Présentation */
-  #presentation p {
-    font-size: 0.9em;
+  .event p, .resume_item p {
+      font-size: 0.9em;
   }
 }
-
