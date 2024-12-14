@@ -57,7 +57,7 @@
 
 
 
-#classiques_container label{
+.classiques_container label{
     background-color : var(--couleur-fromage);
     color : black;
     font-size :0.8em;
@@ -79,7 +79,7 @@ h2 {
 /**/
 
 /* Conteneur pour aligner les articles */
-#classiques_container {
+.classiques_container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* S'adapte à la taille de l'écran */
     gap: 20px; /* Espacement entre les éléments */
@@ -192,7 +192,7 @@ form input[type="radio"]:checked{
 form input[type="checkbox"]{
     appearance: none;
     position:relative;
-    top:8px;
+    top:10px;
     border-color: var(--rouge-sauce);
     border-radius: 40%;
 }
