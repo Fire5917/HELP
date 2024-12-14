@@ -139,13 +139,13 @@ form {
 
 
 form label,
-form legend{
+#titre{
     background-color:var(--couleur-fromage);
     color:var(--rouge-sauce);
     font-weight: bold;
 }
 
-form legend{
+#titre{
     text-align:center;
 }
 
