@@ -1,28 +1,17 @@
-/* CSS uniquement pour la nav bar et le footer */
-/* 
-> Classe navbar --> .navbar
-> ID banière du haut --> #top_banner
-> Classe footer --> .footer
-> Classe contenu footer --> .footer_content
-> Classe page courante --> .current_page
-> Bas de footer --> .footer_bottom
-*/
-
-/* Couleurs personnalisées */
-:root{
+:root {
+    /* Couleurs du thème pizza */
     --couleur-croute: #f7e1bd;
     --rouge-sauce: #cc452b;
     --vert-basilic: #529c4a;
     --couleur-fromage: #f4db95;
 }
 
-
-
+/* Fond par défaut */
 * {
     background-color: var(--couleur-croute);
 }
 
-
+/* Bannière du haut avec le titre "HELP" animé */
 #top_banner {
     display: flex;
     justify-content: center;
@@ -33,100 +22,61 @@
     text-align: center;
 }
 
+/* Lettres initiales H, E, L, P */
 .help_first_letter {
     color: var(--rouge-sauce);
     font-weight: bold;
     display: inline-block;
-}
-#top_banner .help_first_letter {
-    animation-duration: 8s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    animation-delay: 0s;
+    /* Animations définies plus bas */
 }
 
-/* Appliquer une animation de visibilité aux mots entiers sans la première lettre */
+/* Les mots complets (après la première lettre) ont une animation de visibilité */
 #top_banner span:not(.help_first_letter) {
     display: inline-block;
     animation: toggleVisibility 8s ease-in-out 0s infinite;
 }
 
-/* Animation de visibilité pour les mots */
+/* Animation d'apparition/disparition des mots */
 @keyframes toggleVisibility {
-    0% {
-        opacity: 1;
-    }
-    37.5% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
-    87.5% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+    0%, 37.5% { opacity: 1; }
+    50%, 87.5% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
-/* Animation de déplacement pour chaque lettre "HELP" */
+/* Animations spécifiques pour chaque lettre de "HELP" */
 #top_banner .help_first_letter:nth-of-type(1) {
     animation: moveH 8s ease-in-out 3s infinite;
 }
-
 #top_banner .help_first_letter:nth-of-type(3) {
     animation: moveE 8s ease-in-out 3s infinite;
 }
-
 #top_banner .help_first_letter:nth-of-type(5) {
     animation: moveL 8s ease-in-out 3s infinite;
 }
-
 #top_banner .help_first_letter:nth-of-type(7) {
     animation: moveP 8s ease-in-out 3s infinite;
 }
 
-/* Définition des animations spécifiques pour chaque lettre */
+/* Animations de déplacement horizontal des lettres initiales */
 @keyframes moveH {
-    40%, 60% {
-        transform: translateX(350px);
-    }
-    60% {
-        transform: translateX(0);
-    }
+    40%, 60% { transform: translateX(350px); }
+    60% { transform: translateX(0); }
 }
-
 @keyframes moveE {
-    40%, 60% {
-        transform: translateX(150px);
-    }
-    60% {
-        transform: translateX(0);
-    }
+    40%, 60% { transform: translateX(150px); }
+    60% { transform: translateX(0); }
 }
-
 @keyframes moveL {
-    40%, 60%  {
-        transform: translateX(-1em);
-    }
-    60% {
-        transform: translateX(0);
-    }
+    40%, 60% { transform: translateX(-1em); }
+    60% { transform: translateX(0); }
 }
-
 @keyframes moveP {
-    40%, 60%  {
-        transform: translateX(-300px);
-    }
-    60% {
-        transform: translateX(0);
-    }
+    40%, 60% { transform: translateX(-300px); }
+    60% { transform: translateX(0); }
 }
 
-
-
-.navbar{
+/* Barre de navigation */
+.navbar {
     display: flex;
     justify-content: center;
     align-self: center;
@@ -135,9 +85,9 @@
     border-radius: 25px;
 }
 
-.navbar a{
+.navbar a {
     text-decoration: none;
-    color : var(--rouge-sauce);
+    color: var(--rouge-sauce);
     padding: 10px 20px;
     margin: 0 10px;
     font-weight: bold;
@@ -147,15 +97,16 @@
     border-radius: 18px;
 }
 
-.navbar a.current_page{ 
+.navbar a.current_page {
     text-decoration: underline;
 }
 
-.navbar a:hover{
+.navbar a:hover {
     color: var(--vert-basilic);
     text-decoration: underline;
 }
 
+/* Pied de page */
 .footer {
     display: flex;
     justify-content: space-around; 
@@ -170,49 +121,36 @@
     margin-bottom: 10px;
 }
 
-
 .footer_content p {
     margin: 5px 0;
 }
 
 .footer_content ul {
-    list-style-type: none; /* Supprime les puces */
+    list-style-type: none;
     display: flex;
     padding: 0;
     gap: 10px;
 }
 
-/* Pour mettre les images correctement */
+/* Icônes des réseaux sociaux */
 .footer_content ul li a img {
     width: 24px; 
     height: 24px;
 }
 
-
-
 .footer_content ul li a:hover img {
-    animation: socialMedia 1.5s ease; /* Animation pour hover */
-    
-}
-/* Animation pour les images des réseaux sociaux:
-rotation a droite et a gauche, augmentation de taille et redevien normal. */
-@keyframes socialMedia {
-    0% {
-        rotate: 0deg;
-        scale: 1;
-    }
-    10% {
-        rotate: 10deg;
-    }
-    20% {
-        rotate:-10deg;
-    }
-    30% {
-        rotate: 0deg;
-        scale: 1.2;
-    } 
+    animation: socialMedia 1.5s ease;
 }
 
+/* Animation sur les icônes de réseaux sociaux :
+   rotation légère, oscillation, puis légère augmentation de taille */
+@keyframes socialMedia {
+    0% { rotate: 0deg; scale: 1; }
+    10% { rotate: 10deg; }
+    20% { rotate:-10deg; }
+    30% { rotate: 0deg; scale: 1.2; }
+    100% { rotate: 0deg; scale: 1; }
+}
 
 .footer_bottom {
     display: flex;
@@ -220,6 +158,11 @@ rotation a droite et a gauche, augmentation de taille et redevien normal. */
     color: var(--rouge-sauce);
     padding: 10px 0;
     font-size: 0.9em;
+}
+
+#back_to_top {
+    text-decoration: none;
+    color: black;
 }
 
 #back_to_top img {
@@ -233,13 +176,6 @@ rotation a droite et a gauche, augmentation de taille et redevien normal. */
     transform: rotate(315deg);
 }
 
-#back_to_top{
-    text-decoration: none;
-    color: black;
-}
-
-
-
 /* Responsive : petit écran (téléphone) */
 @media (max-width: 480px) {
     #top_banner {
@@ -247,15 +183,12 @@ rotation a droite et a gauche, augmentation de taille et redevien normal. */
         padding: 10px;
         text-align: center;
         animation: none;
-
     }
 
     .navbar {
         flex-direction: column;
         padding: 5px;
-        align-items: center; /* Centre les liens verticalement */
-        flex-direction: column;
-        display: flex;
+        align-items: center;
         justify-content: center;
     }
 
@@ -282,9 +215,8 @@ rotation a droite et a gauche, augmentation de taille et redevien normal. */
         flex-direction: row;
         gap: 10px;
         justify-content: center;
-
-        
     }
+
     #back_to_top img {
         width: 20px;
         height: 20px;
@@ -294,25 +226,27 @@ rotation a droite et a gauche, augmentation de taille et redevien normal. */
         font-size: 0.8em;
         text-align: center;
     }
+
     #top_banner {
         font-size: 1.2em;
         padding: 10px;
         text-align: left;
+        animation: none;
     }
+
     .help_first_letter {
-        display: inline; /* Garde la première lettre et le reste du mot sur la même ligne */
+        display: inline; 
     }
+
     #top_banner span:not(.help_first_letter) {
-        display: inline; /* Garde les mots sur la même ligne */
+        display: inline; 
         margin-bottom: 5px;
     }
+
     #top_banner h1 {
         display: block;
     }
-    
-    
 }
-
 
 /* Responsive : moyen écran (tablette) */
 @media (max-width: 964px) {
@@ -346,18 +280,22 @@ rotation a droite et a gauche, augmentation de taille et redevien normal. */
     .footer_content ul {
         justify-content: center;
     }
+
     #top_banner {
         font-size: 1.5em;
         padding: 15px;
         text-align: left;
     }
+
     .help_first_letter {
-        display: inline; /* Garde la première lettre et le reste du mot sur la même ligne */
+        display: inline;
     }
+
     #top_banner span:not(.help_first_letter) {
-        display: inline; /* Garde les mots sur la même ligne */
+        display: inline; 
         margin-bottom: 5px;
     }
+
     #top_banner h1 {
         display: block;
     }
