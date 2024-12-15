@@ -1,17 +1,18 @@
+/* Variables globales */
 :root {
-    /* Couleurs du thème pizza */
-    --couleur-croute: #f7e1bd;
-    --rouge-sauce: #cc452b;
-    --vert-basilic: #529c4a;
-    --couleur-fromage: #f4db95;
+    /* Palette de couleurs du thème pizza */
+    --couleur-croute: #f7e1bd; /* Couleur beige de fond, évoquant la croûte */
+    --rouge-sauce: #cc452b; /* Rouge de la sauce tomate */
+    --vert-basilic: #529c4a; /* Vert rappelant le basilic */
+    --couleur-fromage: #f4db95; /* Couleur jaune pâle pour le fromage */
 }
 
-/* Fond par défaut */
+/* Applique la couleur de fond globale à tous les éléments */
 * {
     background-color: var(--couleur-croute);
 }
 
-/* Bannière du haut avec le titre "HELP" animé */
+/* ---------- Bannière du haut avec le titre "HELP" ---------- */
 #top_banner {
     display: flex;
     justify-content: center;
@@ -19,45 +20,52 @@
     font-size: 2em;
     font-weight: bold;
     color: var(--rouge-sauce);
-    text-align: center;
+    text-align: center; /* Centrage du texte */
 }
 
-/* Lettres initiales H, E, L, P */
+/* Style spécifique pour chaque lettre initiale "H", "E", "L", "P" */
 .help_first_letter {
-    color: var(--rouge-sauce);
+    color: var(--rouge-sauce); /* Couleur rouge pour la première lettre */
     font-weight: bold;
-    display: inline-block;
-    /* Animations définies plus bas */
+    display: inline-block; /* Permet de manipuler chaque lettre indépendamment */
 }
 
-/* Les mots complets (après la première lettre) ont une animation de visibilité */
+/* Animation des lettres initiales dans la bannière */
+#top_banner .help_first_letter {
+    animation-duration: 8s; /* Durée de chaque cycle d'animation */
+    animation-timing-function: ease-in-out; /* Animation fluide */
+    animation-iteration-count: infinite; /* Animation en boucle */
+    animation-delay: 0s; /* Pas de délai initial */
+}
+
+/* Animation pour afficher ou masquer les mots entiers après la première lettre */
 #top_banner span:not(.help_first_letter) {
     display: inline-block;
     animation: toggleVisibility 8s ease-in-out 0s infinite;
 }
 
-/* Animation d'apparition/disparition des mots */
+/* Définition de l'animation pour rendre les mots visibles ou invisibles */
 @keyframes toggleVisibility {
-    0%, 37.5% { opacity: 1; }
-    50%, 87.5% { opacity: 0; }
-    100% { opacity: 1; }
+    0%, 37.5% { opacity: 1; } /* Mots visibles */
+    50%, 87.5% { opacity: 0; } /* Mots masqués */
+    100% { opacity: 1; } /* Retour à visible */
 }
 
-/* Animations spécifiques pour chaque lettre de "HELP" */
+/* Animations de déplacement pour chaque lettre "H", "E", "L", "P" */
 #top_banner .help_first_letter:nth-of-type(1) {
-    animation: moveH 8s ease-in-out 3s infinite;
+    animation: moveH 8s ease-in-out 3s infinite; /* Animation personnalisée pour H */
 }
 #top_banner .help_first_letter:nth-of-type(3) {
-    animation: moveE 8s ease-in-out 3s infinite;
+    animation: moveE 8s ease-in-out 3s infinite; /* Animation personnalisée pour E */
 }
 #top_banner .help_first_letter:nth-of-type(5) {
-    animation: moveL 8s ease-in-out 3s infinite;
+    animation: moveL 8s ease-in-out 3s infinite; /* Animation personnalisée pour L */
 }
 #top_banner .help_first_letter:nth-of-type(7) {
-    animation: moveP 8s ease-in-out 3s infinite;
+    animation: moveP 8s ease-in-out 3s infinite; /* Animation personnalisée pour P */
 }
 
-/* Animations de déplacement horizontal des lettres initiales */
+/* Déplacements spécifiques des lettres de la bannière */
 @keyframes moveH {
     40%, 60% { transform: translateX(350px); }
     60% { transform: translateX(0); }
@@ -67,69 +75,75 @@
     60% { transform: translateX(0); }
 }
 @keyframes moveL {
-    40%, 60%  { transform: translateX(-1em); }
+    40%, 60% { transform: translateX(-1em); }
     60% { transform: translateX(0); }
 }
 @keyframes moveP {
-    40%, 60%  { transform: translateX(-300px); }
+    40%, 60% { transform: translateX(-300px); }
     60% { transform: translateX(0); }
 }
 
-/* Barre de navigation */
+/* ---------- Barre de navigation ---------- */
 .navbar {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Centre les liens horizontalement */
     align-self: center;
     background-color: var(--couleur-fromage); 
-    padding: 10px 20px; 
-    border-radius: 25px;
+    padding: 10px 20px; /* Espacement interne */
+    border-radius: 25px; /* Arrondit les coins */
 }
 
+/* Style des liens de navigation */
 .navbar a {
-    text-decoration: none;
-    color: var(--rouge-sauce);
-    padding: 10px 20px;
-    margin: 0 10px;
-    font-weight: bold;
+    text-decoration: none; /* Supprime le soulignement par défaut */
+    color: var(--rouge-sauce); /* Couleur rouge */
+    padding: 10px 20px; /* Espacement interne */
+    margin: 0 10px; /* Espace entre les liens */
+    font-weight: bold; /* Met le texte en gras */
     font-size: large;
-    background-color: var(--couleur-fromage);
-    transition: color 0.3s ease;
-    border-radius: 18px;
+    background-color: var(--couleur-fromage); /* Couleur de fond */
+    transition: color 0.3s ease; /* Transition fluide sur le changement de couleur */
+    border-radius: 18px; /* Coins arrondis */
 }
 
-.navbar a.current_page {
-    text-decoration: underline;
+/* Style du lien de la page courante */
+.navbar a.current_page { 
+    text-decoration: underline; /* Souligne pour indiquer la page active */
 }
 
+/* Effet au survol des liens */
 .navbar a:hover {
-    color: var(--vert-basilic);
-    text-decoration: underline;
+    color: var(--vert-basilic); /* Change la couleur en vert */
+    text-decoration: underline; /* Ajoute un soulignement */
 }
 
-/* Pied de page */
+/* ---------- Pied de page ---------- */
 .footer {
     display: flex;
-    justify-content: space-around; 
-    align-items: flex-start; 
+    justify-content: space-around; /* Répartit les sections horizontalement */
+    align-items: flex-start; /* Aligne les éléments en haut */
     background-color: var(--couleur-croute); 
-    padding: 20px;
+    padding: 20px; /* Espacement interne */
 }
 
+/* Titres des sections du footer */
 .footer_content h2 {
     color: var(--rouge-sauce);
     font-size: 1.2em;
     margin-bottom: 10px;
 }
 
+/* Paragraphe du footer */
 .footer_content p {
     margin: 5px 0;
 }
 
+/* Liste des icônes des réseaux sociaux */
 .footer_content ul {
-    list-style-type: none;
-    display: flex;
+    list-style-type: none; /* Supprime les puces */
+    display: flex; /* Affiche les icônes en ligne */
     padding: 0;
-    gap: 10px;
+    gap: 10px; /* Espacement entre les icônes */
 }
 
 /* Icônes des réseaux sociaux */
@@ -138,11 +152,12 @@
     height: 24px;
 }
 
+/* Effet au survol des icônes */
 .footer_content ul li a:hover img {
-    animation: socialMedia 1.5s ease;
+    animation: socialMedia 1.5s ease; /* Ajoute une animation */
 }
 
-/* Animation sur les icônes de réseaux sociaux : rotation et mise à l'échelle */
+/* Animation des icônes : rotation et mise à l'échelle */
 @keyframes socialMedia {
     0% { transform: rotate(0deg) scale(1); }
     10% { transform: rotate(10deg); }
@@ -151,12 +166,26 @@
     100% { transform: rotate(0deg) scale(1); }
 }
 
+/* Bas du footer */
 .footer_bottom {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Centre le texte */
     color: var(--rouge-sauce);
     padding: 10px 0;
     font-size: 0.9em;
+}
+
+/* Bouton retour en haut */
+#back_to_top img {
+    width: 24px; 
+    height: 24px;
+    transform: scale(0.9);
+    transition: transform 0.6s ease; /* Transition fluide */
+}
+
+/* Effet au survol du bouton */
+#back_to_top:hover img {
+    transform: rotate(315deg); /* Rotation au survol */
 }
 
 #back_to_top {
@@ -164,28 +193,19 @@
     color: black;
 }
 
-#back_to_top img {
-    width: 24px; 
-    height: 24px;
-    transform: scale(0.9);
-    transition: transform 0.6s ease;
-}
+/* ---------- Responsive ---------- */
 
-#back_to_top:hover img {
-    transform: rotate(315deg) scale(1);
-}
-
-/* Responsive : petit écran (téléphone) */
+/* Petits écrans (téléphones) */
 @media (max-width: 480px) {
     #top_banner {
         font-size: 1.2em;
         padding: 10px;
         text-align: center;
-        animation: none;
+        animation: none; /* Désactive les animations */
     }
 
     .navbar {
-        flex-direction: column;
+        flex-direction: column; /* Les liens passent en colonne */
         padding: 5px;
         align-items: center;
         justify-content: center;
@@ -198,7 +218,7 @@
     }
 
     .footer {
-        flex-direction: column;
+        flex-direction: column; /* Les sections passent en colonne */
         padding: 10px;
     }
 
@@ -211,7 +231,7 @@
     }
 
     .footer_content ul {
-        flex-direction: row;
+        flex-direction: row; /* Les icônes restent en ligne */
         gap: 10px;
         justify-content: center;
     }
@@ -227,13 +247,12 @@
     }
 }
 
-/* Responsive : moyen écran (tablette) */
+/* Écrans moyens (tablettes) */
 @media (max-width: 964px) {
     #top_banner {
         font-size: 1.5em;
         padding: 15px;
-        flex-direction: column;
-        animation: none;
+        text-align: left;
     }
 
     .navbar {
@@ -254,9 +273,5 @@
     .footer_content {
         margin-bottom: 15px;
         text-align: center;
-    }
-
-    .footer_content ul {
-        justify-content: center;
     }
 }
