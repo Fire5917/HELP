@@ -31,9 +31,6 @@ README.md
 ## Installation
 
 1. **Cloner le dépôt** : Clonez le projet sur votre machine locale en utilisant la commande suivante :
-    ```bash
-    git clone https://github.com/Rimbaud1/HELP.git
-    ```
 
 2. **Accéder au projet** :
     ```bash
@@ -65,8 +62,3 @@ Les couleurs principales utilisées sont les suivantes :
 ## Contact
 
 Regardez #annonces sur Discord!
-
-
-## Apercu
-
-Un aperçu du site est disponible à l'adresse suivante : [HELP pizza](https://help-lime.vercel.app)
