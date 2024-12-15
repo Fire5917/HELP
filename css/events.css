@@ -39,9 +39,7 @@ main {
 }
 
 /* Plus aucune animation sur events ou resumes */
-.event, .resume_item {
-  /* Juste le style statique */
-}
+
 
 /* Section d'introduction */
 #intro_events p {
