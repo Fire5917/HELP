@@ -14,9 +14,15 @@
 
 /* ---------- Bannière du haut avec le titre "HELP" ---------- */
 #top_banner {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     font-size: 2em;
     font-weight: bold;
     color: var(--rouge-sauce);
@@ -41,7 +47,8 @@
 /* Animation pour afficher ou masquer les mots entiers après la première lettre */
 #top_banner span:not(.help_first_letter) {
     display: inline-block;
-    animation: toggleVisibility 8s ease-in-out 0s infinite;
+    -webkit-animation: toggleVisibility 8s ease-in-out 0s infinite;
+            animation: toggleVisibility 8s ease-in-out 0s infinite;
 }
 
 /* Définition de l'animation pour rendre les mots visibles ou invisibles */
@@ -67,12 +74,20 @@
 
 /* Déplacements spécifiques des lettres de la bannière */
 @keyframes moveH {
-    40%, 60% { transform: translateX(350px); }
-    60% { transform: translateX(0); }
+    40%, 60% { -webkit-transform: translateX(350px); transform: translateX(350px); }
+    60% { -webkit-transform: translateX(0); transform: translateX(0); }
+}
+@-webkit-keyframes moveE {
+    40%, 60% { -webkit-transform: translateX(150px); transform: translateX(150px); }
+    60% { -webkit-transform: translateX(0); transform: translateX(0); }
 }
 @keyframes moveE {
-    40%, 60% { transform: translateX(150px); }
-    60% { transform: translateX(0); }
+    40%, 60% { -webkit-transform: translateX(150px); transform: translateX(150px); }
+    60% { -webkit-transform: translateX(0); transform: translateX(0); }
+}
+@-webkit-keyframes moveL {
+    40%, 60%  { -webkit-transform: translateX(-1em); transform: translateX(-1em); }
+    60% { -webkit-transform: translateX(0); transform: translateX(0); }
 }
 @keyframes moveL {
     40%, 60% { transform: translateX(-1em); }
@@ -85,6 +100,8 @@
 
 /* ---------- Barre de navigation ---------- */
 .navbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     justify-content: center; /* Centre les liens horizontalement */
     align-self: center;
@@ -119,6 +136,8 @@
 
 /* ---------- Pied de page ---------- */
 .footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     justify-content: space-around; /* Répartit les sections horizontalement */
     align-items: flex-start; /* Aligne les éléments en haut */
@@ -159,15 +178,17 @@
 
 /* Animation des icônes : rotation et mise à l'échelle */
 @keyframes socialMedia {
-    0% { transform: rotate(0deg) scale(1); }
-    10% { transform: rotate(10deg); }
-    20% { transform: rotate(-10deg); }
-    30% { transform: rotate(0deg) scale(1.2); }
-    100% { transform: rotate(0deg) scale(1); }
+    0% { -webkit-transform: rotate(0deg) scale(1); transform: rotate(0deg) scale(1); }
+    10% { -webkit-transform: rotate(10deg); transform: rotate(10deg); }
+    20% { -webkit-transform: rotate(-10deg); transform: rotate(-10deg); }
+    30% { -webkit-transform: rotate(0deg) scale(1.2); transform: rotate(0deg) scale(1.2); }
+    100% { -webkit-transform: rotate(0deg) scale(1); transform: rotate(0deg) scale(1); }
 }
 
 /* Bas du footer */
 .footer_bottom {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     justify-content: center; /* Centre le texte */
     color: var(--rouge-sauce);
@@ -207,8 +228,12 @@
     .navbar {
         flex-direction: column; /* Les liens passent en colonne */
         padding: 5px;
-        align-items: center;
-        justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
     }
 
     .navbar a {
@@ -233,7 +258,9 @@
     .footer_content ul {
         flex-direction: row; /* Les icônes restent en ligne */
         gap: 10px;
-        justify-content: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
     }
 
     #back_to_top img {
@@ -256,7 +283,10 @@
     }
 
     .navbar {
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         padding: 10px;
     }
 
@@ -266,8 +296,13 @@
     }
 
     .footer {
-        flex-direction: column;
-        align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
     }
 
     .footer_content {
