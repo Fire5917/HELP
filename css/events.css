@@ -38,88 +38,9 @@ main {
   }
 }
 
-/* Animation de soulignement de droite à gauche */
-@keyframes slide-right {
-  to {
-    right: 0;
-  }
-}
-
-/* Effet de fondu entrant */
-.fade-in {
-  animation: fade-in 0.5s ease-in;
-}
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* Animations de glissement pour les événements */
-#event1 {
-  position: relative;
-  left: -100%;
-  animation: slide-left 1.4s forwards;
-}
-#event2 {
-  position: relative;
-  left: -100%;
-  animation: slide-left 1.2s forwards;
-}
-#event3 {
-  position: relative;
-  left: -100%;
-  animation: slide-left 1s forwards;
-}
-
-#event4 {
-  position: relative;
-  right: -100%;
-  animation: slide-right 1s forwards;
-}
-#event5 {
-  position: relative;
-  right: -100%;
-  animation: slide-right 1.2s forwards;
-}
-#event6 {
-  position: relative;
-  right: -100%;
-  animation: slide-right 1.4s forwards;
-}
-
-#resume1 {
-  position: relative;
-  left: -100%;
-  animation: slide-left 1.4s forwards;
-}
-#resume2 {
-  position: relative;
-  left: -100%;
-  animation: slide-left 1.2s forwards;
-}
-#resume3 {
-  position: relative;
-  left: -100%;
-  animation: slide-left 1s forwards;
-}
-#resume4 {
-  position: relative;
-  right: -100%;
-  animation: slide-right 1s forwards;
-}
-#resume5 {
-  position: relative;
-  right: -100%;
-  animation: slide-right 1.2s forwards;
-}
-#resume6 {
-  position: relative;
-  right: -100%;
-  animation: slide-right 1.4s forwards;
+/* Plus aucune animation sur events ou resumes */
+.event, .resume_item {
+  /* Juste le style statique */
 }
 
 /* Section d'introduction */
@@ -273,15 +194,6 @@ main {
 @media (max-width: 768px) {
   .event, .resume_item {
     max-width: 100%;
-  }
-  
-  /* Sur mobile, pas d'animation de slide */
-  #event1, #event2, #event3, #event4, #event5, #event6,
-  #resume1, #resume2, #resume3, #resume4, #resume5, #resume6 {
-    animation: none;
-    position: relative;
-    left: 0;
-    right: 0;
   }
 }
 
