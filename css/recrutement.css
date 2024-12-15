@@ -104,17 +104,47 @@ header p {
 /* CSS DU FORMULAIRE: */
 
 /* version PC (celle par défaut) */
-
 .recrutement-form {
   background: var(--couleur-fromage);
   border: 2px solid var(--rouge-sauce);
   border-radius: 10px;
   padding: 20px;
-  max-width: 400px;
+  max-width: 700px;
   width: 100%;
   margin: 0 auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   animation: fadeIn 0.8s ease-in-out;
+}
+
+.form-title {
+  text-align: center;
+  font-weight: bold;
+  color: var(--rouge-sauce);
+  margin-bottom: 20px;
+  background: var(--couleur-fromage); /* Assure le fond fromage */
+  font-size: 2em;
+  text-shadow: 1px 1px var(--vert-basilic);
+}
+
+.form-content {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  background: var(--couleur-fromage); /* Fond fromage */
+}
+
+.form-group,
+.form-group-fullwidth {
+  width: 48%;
+  background: var(--couleur-fromage); /* Fond fromage */
+  border: none;
+  box-shadow: none;
+  margin-bottom: 20px;
+}
+
+.form-group-fullwidth {
+  width: 100%;
+  text-align: center;
+  background: var(--couleur-fromage);
 }
 
 .recrutement-form label {
@@ -122,11 +152,11 @@ header p {
   font-size: 1rem;
   color: var(--rouge-sauce);
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   text-align: left;
-  background-color: var(--couleur-fromage);
-  padding: 5px 10px;
-  border-radius: 5px;
+  background: var(--couleur-fromage); /* Fond fromage pour le label */
+  padding: 0;
+  border-radius: 0;
 }
 
 .recrutement-form input,
@@ -134,10 +164,10 @@ header p {
 .recrutement-form button {
   width: 100%;
   padding: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   border: 1px solid var(--vert-basilic);
   border-radius: 5px;
-  background-color: var(--couleur-croute);
+  background-color: var(--couleur-croute); /* Champs en croute */
   font-size: 1rem;
   box-sizing: border-box;
   transition: box-shadow 0.3s ease;
@@ -151,6 +181,9 @@ header p {
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: 30%;
+  min-width: 120px;
+  margin: 0 auto; /* Centrer le bouton */
 }
 
 .recrutement-form button:hover {
@@ -167,23 +200,25 @@ main {
   box-sizing: border-box;
 }
 
-.recrutement-form input:focus {
-  box-shadow: 0 0 5px var(--rouge-sauce); 
+.recrutement-form input:focus,
+.recrutement-form select:focus {
+  box-shadow: 0 0 5px var(--rouge-sauce);
 }
 
-.recrutement-form input:hover {
+.recrutement-form input:hover,
+.recrutement-form select:hover {
   box-shadow: 0 0 8px var(--rouge-sauce);
 }
 
 /* Animation d'apparition du formulaire */
 @keyframes fadeIn {
   from {
-      opacity: 0;
-      transform: translateY(20px);
+    opacity: 0;
+    transform: translateY(20px);
   }
   to {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -191,32 +226,36 @@ main {
 @media screen and (max-width: 768px) {
   .recrutement-form {
     max-width: 90%;
-    margin: 20px auto;
-    padding: 15px;
+  }
+
+  .form-content {
+    flex-direction: column;
+    margin-bottom: 15px;
+    background: var(--couleur-fromage);
+  }
+
+  .form-group {
+    width: 100%;
+    background: var(--couleur-fromage);
+  }
+
+  .form-group-fullwidth button {
+    width: 100%;
   }
 
   .recrutement-form label {
     font-size: 0.9rem;
-    margin-bottom: 5px;
   }
 
   .recrutement-form input,
   .recrutement-form select,
   .recrutement-form button {
-    width: 100%;
-    margin-bottom: 15px;
     font-size: 0.9rem;
     padding: 8px;
   }
-
-  .recrutement-form button {
-    padding: 10px;
-    font-size: 1rem;
-  }
-
-  main {
-    padding: 20px 0;
-  }
 }
 
-/* FIN DU CSS DU FORMULAIRE: */
+
+
+
+/* FIN CSS FORMULAIRE */

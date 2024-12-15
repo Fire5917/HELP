@@ -65,31 +65,52 @@
 </section>
 
 <form class="recrutement-form" action="#" method="post" onsubmit="return false;">
-    <label for="name">Nom :</label>
-    <input type="text" id="name" name="name" placeholder="Votre nom" required>
-
-    <label for="email">E-mail :</label>
-    <input type="email" id="email" name="email" placeholder="Votre e-mail" required>
-
-    <label for="phone">Téléphone :</label>
-    <input type="tel" id="phone" name="phone" placeholder="Votre numéro de téléphone" required>
-
-    <label for="position">Poste souhaité :</label>
-    <select id="position" name="position" required>
-        <option value="">-- Sélectionnez un poste --</option>
-        <option value="Cuisinier">Cuisinier</option>
-        <option value="Livreur">Livreur</option>
-        <option value="Caissier">Caissier</option>
-    </select>
-
-    <label for="cv">Votre CV :</label>
-    <input type="file" id="cv" name="cv" accept=".pdf, .doc, .docx" required>
-
-    <label for="motivationLetter">Votre lettre de motivation :</label>
-    <input type="file" id="motivationLetter" name="motivationLetter" accept=".pdf, .doc, .docx" required>
-
-    <button type="submit">Postuler</button>
-</form>
+    <h2 class="form-title">Candidater</h2>
+    
+    <div class="form-content">
+      <div class="form-group">
+        <label for="name">Nom :</label>
+        <input type="text" id="name" name="name" placeholder="Votre nom" required>
+      </div>
+      <div class="form-group">
+        <label for="position">Poste souhaité :</label>
+        <select id="position" name="position" required>
+          <option value="">-- Sélectionnez un poste --</option>
+          <option value="Cuisinier">Cuisinier</option>
+          <option value="Livreur">Livreur</option>
+          <option value="Caissier">Caissier</option>
+        </select>
+      </div>
+    </div>
+  
+    <div class="form-content">
+      <div class="form-group">
+        <label for="email">E-mail :</label>
+        <input type="email" id="email" name="email" placeholder="Votre e-mail" required>
+      </div>
+      <div class="form-group">
+        <label for="cv">Votre CV :</label>
+        <input type="file" id="cv" name="cv" accept=".pdf, .doc, .docx" required>
+      </div>
+    </div>
+  
+    <div class="form-content">
+      <div class="form-group">
+        <label for="phone">Téléphone :</label>
+        <input type="tel" id="phone" name="phone" placeholder="Votre numéro de téléphone" required>
+      </div>
+      <div class="form-group">
+        <label for="motivationLetter">Votre lettre de motivation :</label>
+        <input type="file" id="motivationLetter" name="motivationLetter" accept=".pdf, .doc, .docx" required>
+      </div>
+    </div>
+    
+    <div class="form-group-fullwidth">
+      <button type="submit">Postuler</button>
+    </div>
+  </form>
+  
+  
 
 
 <footer>
