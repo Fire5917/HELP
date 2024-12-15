@@ -122,58 +122,6 @@ main {
   margin: 10px auto;
   color: #333;
 }
-
-/* Music section */
-#music_section p {
-  text-align: center;
-  max-width: 700px;
-  margin: 10px auto;
-  color: #333;
-}
-#music_section {
-  margin-top: 40px;
-  text-align: center;
-}
-#music_container {
-  margin: 20px auto;
-  background-color: var(--couleur-fromage);
-  padding: 20px;
-  border-radius: 8px;
-  display: inline-block;
-}
-
-/* Style du lecteur audio */
-#music_container p {
-  font-size: 1.2em;
-  color: var(--rouge-sauce);
-  margin-bottom: 15px;
-}
-
-/* Style général du lecteur audio */
-#background_music {
-  width: 100%; /* Le lecteur occupe toute la largeur du conteneur */
-  max-width: 300px; /* Limite la largeur maximale */
-  border: none; /* Pas de bordure autour du lecteur */
-  border-radius: 8px; /* Coins arrondis */
-  outline: none; /* Enlève les bordures de focus */
-}
-
-/* Personnalisation des contrôles natifs pour Webkit (Chrome, Edge, Safari) */
-#background_music::-webkit-media-controls-panel {
-  background-color: var(--couleur-fromage); /* Fond des contrôles */
-  border-radius: 8px;
-}
-
-#background_music::-webkit-media-controls-play-button,
-#background_music::-webkit-media-controls-pause-button {
-  background-color: var(--rouge-sauce); /* Couleur des boutons Play/Pause */
-  border-radius: 50%; /* Boutons arrondis */
-  border: 2px solid var(--rouge-sauce); /* Bordure des boutons */
-}
-
-#background_music::-webkit-media-controls-time-remaining-display {
-  color: var(--rouge-sauce); /* Couleur du texte pour le temps restant */
-}
 /* Events Grid */
 #events {
   margin-top: 40px;
@@ -267,6 +215,52 @@ main {
   background: none;
 }
 
+/* Conteneur principal */
+#music_container {
+  text-align: center;
+  margin: 20px auto;
+  background-color: var(--couleur-croute);
+  padding: 20px;
+  border-radius: 8px; /* Coins arrondis pour un effet visuel */
+}
+
+/* Texte explicatif */
+#music_description {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+  text-align: center; 
+}
+
+/* Style général du lecteur audio */
+#background_music {
+  width: 100%; /* Le lecteur occupe toute la largeur du conteneur */
+  max-width: 300px; /* Limite la largeur maximale */
+  border: none; /* Pas de bordure autour du lecteur */
+  border-radius: 8px; /* Coins arrondis */
+  outline: none; /* Enlève les bordures de focus */
+}
+
+/* Personnalisation des contrôles natifs pour Webkit (Chrome, Edge, Safari) */
+#background_music::-webkit-media-controls-panel {
+  background-color: var(--couleur-fromage); /* Fond des contrôles */
+  border-radius: 8px;
+}
+
+#background_music::-webkit-media-controls-play-button,
+#background_music::-webkit-media-controls-pause-button {
+  background-color: var(--rouge-sauce); /* Couleur des boutons Play/Pause */
+  border-radius: 50%; /* Boutons arrondis */
+  border: 2px solid var(--rouge-sauce); /* Bordure des boutons */
+}
+
+#background_music::-webkit-media-controls-time-remaining-display {
+  color: var(--rouge-sauce); /* Couleur du texte pour le temps restant */
+}
+/* Réduire l'espace entre le lecteur audio et la section suivante */
+#music_container {
+  margin-bottom: 30px; /* Réduit l'espace en dessous du lecteur audio */
+}
+
 /* Responsivité */
 @media (max-width: 768px) {
   .event, .resume_item {
@@ -277,56 +271,8 @@ main {
     position: relative;
     left: 0;
   }
-  #music_section p {
-    text-align: center;
-    max-width: 700px;
-    margin: 10px auto;
-    color: #333;
-  }
-  #music_section {
-    margin-top: 40px;
-    text-align: center;
-  }
-  #music_container {
-    margin: 20px auto;
-    background-color: var(--couleur-fromage);
-    padding: 20px;
-    border-radius: 8px;
-    display: inline-block;
-  }
+
   
-  /* Style du lecteur audio */
-  #music_container p {
-    font-size: 1.2em;
-    color: var(--rouge-sauce);
-    margin-bottom: 15px;
-  }
-  
-  /* Style général du lecteur audio */
-  #background_music {
-    width: 100%; /* Le lecteur occupe toute la largeur du conteneur */
-    max-width: 300px; /* Limite la largeur maximale */
-    border: none; /* Pas de bordure autour du lecteur */
-    border-radius: 8px; /* Coins arrondis */
-    outline: none; /* Enlève les bordures de focus */
-  }
-  
-  /* Personnalisation des contrôles natifs pour Webkit (Chrome, Edge, Safari) */
-  #background_music::-webkit-media-controls-panel {
-    background-color: var(--couleur-fromage); /* Fond des contrôles */
-    border-radius: 8px;
-  }
-  
-  #background_music::-webkit-media-controls-play-button,
-  #background_music::-webkit-media-controls-pause-button {
-    background-color: var(--rouge-sauce); /* Couleur des boutons Play/Pause */
-    border-radius: 50%; /* Boutons arrondis */
-    border: 2px solid var(--rouge-sauce); /* Bordure des boutons */
-  }
-  
-  #background_music::-webkit-media-controls-time-remaining-display {
-    color: var(--rouge-sauce); /* Couleur du texte pour le temps restant */
-  }
 }
 
 @media (max-width: 480px) {
@@ -335,55 +281,5 @@ main {
   }
   .event p, .resume_item p {
       font-size: 0.9em;
-  }
-  #music_section p {
-    text-align: center;
-    max-width: 700px;
-    margin: 10px auto;
-    color: #333;
-  }
-  #music_section {
-    margin-top: 40px;
-    text-align: center;
-  }
-  #music_container {
-    margin: 20px auto;
-    background-color: var(--couleur-fromage);
-    padding: 20px;
-    border-radius: 8px;
-    display: inline-block;
-  }
-  
-  /* Style du lecteur audio */
-  #music_container p {
-    font-size: 1.2em;
-    color: var(--rouge-sauce);
-    margin-bottom: 15px;
-  }
-  
-  /* Style général du lecteur audio */
-  #background_music {
-    width: 100%; /* Le lecteur occupe toute la largeur du conteneur */
-    max-width: 300px; /* Limite la largeur maximale */
-    border: none; /* Pas de bordure autour du lecteur */
-    border-radius: 8px; /* Coins arrondis */
-    outline: none; /* Enlève les bordures de focus */
-  }
-  
-  /* Personnalisation des contrôles natifs pour Webkit (Chrome, Edge, Safari) */
-  #background_music::-webkit-media-controls-panel {
-    background-color: var(--couleur-fromage); /* Fond des contrôles */
-    border-radius: 8px;
-  }
-  
-  #background_music::-webkit-media-controls-play-button,
-  #background_music::-webkit-media-controls-pause-button {
-    background-color: var(--rouge-sauce); /* Couleur des boutons Play/Pause */
-    border-radius: 50%; /* Boutons arrondis */
-    border: 2px solid var(--rouge-sauce); /* Bordure des boutons */
-  }
-  
-  #background_music::-webkit-media-controls-time-remaining-display {
-    color: var(--rouge-sauce); /* Couleur du texte pour le temps restant */
   }
 }
