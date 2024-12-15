@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 :root {
     /* Couleurs du thème pizza */
     --couleur-croute: #f7e1bd;
@@ -15,16 +22,21 @@
 /* Mise en page en grille sur écrans larges */
 @media (min-width: 768px) {
     #commande {
+        display: -ms-grid;
         display: grid;
+        -ms-grid-columns: 2fr 20px 2fr;
         grid-template-columns: 2fr 2fr;
+        -ms-grid-rows: 1fr 0.5fr 0.4fr 0.5fr 0.5fr;
         grid-template-rows: 1fr 0.5fr 0.4fr 0.5fr 0.5fr;
-        grid-template-areas:
+            grid-template-areas:
             "classiques classiques"
             "maison végé"
             "chef chef"
             "desserts boissons"
             "offres offres";
-        column-gap: 20px;
+        -webkit-column-gap: 20px;
+           -moz-column-gap: 20px;
+                column-gap: 20px;
     }
 }
 
@@ -36,6 +48,39 @@
 #desserts { margin-bottom: 40px; grid-area: desserts; }
 #boissons { margin-bottom: 40px; grid-area: boissons; }
 #offres { grid-area: offres; }
+@media (min-width: 768px) {
+    #classiques {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 3;
+    }
+    #spécialités {
+        -ms-grid-row: 2;
+        -ms-grid-column: 1;
+    }
+    #végé {
+        -ms-grid-row: 2;
+        -ms-grid-column: 3;
+    }
+    #chef {
+        -ms-grid-row: 3;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 3;
+    }
+    #desserts {
+        -ms-grid-row: 4;
+        -ms-grid-column: 1;
+    }
+    #boissons {
+        -ms-grid-row: 4;
+        -ms-grid-column: 3;
+    }
+    #offres {
+        -ms-grid-row: 5;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 3;
+    }
+}
 
 .classiques_container label {
     background-color: var(--couleur-fromage);
@@ -59,6 +104,7 @@ h2 {
 
 /* Conteneur adaptable pour les articles (pizzas, boissons, etc.) */
 .classiques_container {
+    display: -ms-grid;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
@@ -70,13 +116,21 @@ h2 {
     padding: 5%;
     text-align: center;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    -webkit-transition: -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
+    transition: -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
+    -o-transition: transform 0.3s, box-shadow 0.3s;
     transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
 }
 
 .classiques_content:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+            transform: scale(1.05);
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
 
 /* Titres de chaque article */
@@ -111,7 +165,8 @@ form {
     max-width: 400px;
     width: 100%;
     margin: 0 auto;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     font-size: 1em;
 }
 
@@ -137,7 +192,8 @@ form input {
     border-radius: 5px;
     background-color: var(--couleur-croute);
     font-size: 1em;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 form input[type="text"] {
@@ -152,7 +208,9 @@ label[for="retrait"] {
 
 /* Styles des inputs radio */
 form input[type="radio"] {
-    appearance: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
     position: relative;
     top: 6px;
     border-color: var(--rouge-sauce);
@@ -165,7 +223,9 @@ form input[type="radio"]:checked {
 
 /* Styles des inputs checkbox */
 form input[type="checkbox"] {
-    appearance: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
     position: relative;
     top: 10px;
     border-color: var(--rouge-sauce);
@@ -182,14 +242,20 @@ input, select {
     border-radius: 5px;
     background-color: var(--couleur-croute);
     font-size: 0.5em;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 /* Responsive : sur petits écrans */
 @media (max-width: 768px) {
     #classiques_container {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
 }
 
