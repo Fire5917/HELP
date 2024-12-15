@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 :root{
     --couleur-croute: #f7e1bd;
     --rouge-sauce: #cc452b;
@@ -40,20 +47,29 @@
     border: 2px solid var(--vert-basilic);
     border-radius: 8px;
     text-decoration: none;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .cta_button:hover {
     background-color: var(--vert-basilic);
     color: var(--couleur-fromage);
-    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+            transform: scale(1.05);
 }
 
 /* Section about us */
 #about_us {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     gap: 20px;
     padding: 20px;
     background-color: var(--couleur-croute);
@@ -65,12 +81,19 @@
     padding: 15px;
     background-color: var(--couleur-fromage);
     border-radius: 15px;
+    -webkit-transition: -webkit-transform 0.3s ease;
+    transition: -webkit-transform 0.3s ease;
+    -o-transition: transform 0.3s ease;
     transition: transform 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+    -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .about_item:hover {
-    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+            transform: scale(1.05);
 }
 
 .about_item img {
@@ -96,8 +119,13 @@
 /* Responsive about_us */
 @media (max-width: 768px) {
     #about_us {
-        flex-direction: column;
-        align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         gap: 15px;
     }
     .about_item {
@@ -171,6 +199,7 @@
 }
 
 .horoscope-grid {
+    display: -ms-grid;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
@@ -180,8 +209,13 @@
     background-color: var(--couleur-fromage);
     border-radius: 8px;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    -webkit-transition: -webkit-transform 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
+    transition: -webkit-transform 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
+    -o-transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
     position: relative;
     overflow: hidden;
 }
@@ -194,6 +228,8 @@
     padding: 5px 10px;
     border-radius: 5px;
     display: inline-block;
+    -webkit-transition: color 0.3s ease-in-out;
+    -o-transition: color 0.3s ease-in-out;
     transition: color 0.3s ease-in-out;
 }
 
@@ -205,6 +241,8 @@
     padding: 5px 10px;
     border-radius: 5px;
     display: inline-block;
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -o-transition: opacity 0.5s ease-in-out;
     transition: opacity 0.5s ease-in-out;
 }
 
@@ -218,25 +256,52 @@
 }
 
 .horoscope-grid .sign:hover {
-    animation: hoverUp 1s forwards ease-in;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    transform: translateY(-10px);
+    -webkit-animation: hoverUp 1s forwards ease-in;
+            animation: hoverUp 1s forwards ease-in;
+    -webkit-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    -webkit-transform: translateY(-10px);
+        -ms-transform: translateY(-10px);
+            transform: translateY(-10px);
 }
 
 .horoscope-grid .sign:hover h3 {
-    animation: textPop 0.5s forwards;
+    -webkit-animation: textPop 0.5s forwards;
+            animation: textPop 0.5s forwards;
 }
 
 .horoscope-grid .sign:hover p {
     opacity: 1;
 }
 
-@keyframes hoverUp {
+@-webkit-keyframes hoverUp {
     0% {
-        transform: translateY(0);
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
     }
     100% {
-        transform: translateY(-5px);
+        -webkit-transform: translateY(-5px);
+                transform: translateY(-5px);
+    }
+}
+
+@keyframes hoverUp {
+    0% {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+    }
+    100% {
+        -webkit-transform: translateY(-5px);
+                transform: translateY(-5px);
+    }
+}
+
+@-webkit-keyframes textPop {
+    0% {
+        letter-spacing: 0;
+    }
+    100% {
+        letter-spacing: 2px;
     }
 }
 
