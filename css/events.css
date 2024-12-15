@@ -1,4 +1,5 @@
 :root {
+  /* Variables de couleurs inspirées des saveurs de la pizza */
   --couleur-croute: #f7e1bd;
   --rouge-sauce: #cc452b;
   --vert-basilic: #529c4a;
@@ -10,7 +11,7 @@ main {
   line-height: 1.6;
 }
 
-/* Titres animés */
+/* Titres avec animation de soulignement */
 .title {
   font-size: 2.2em;
   color: var(--rouge-sauce);
@@ -30,110 +31,119 @@ main {
   animation: slide-left 1.2s forwards;
 }
 
+/* Animation de soulignement de gauche à droite */
 @keyframes slide-left {
   to {
-      left: 0;
-  }
-}
-@keyframes slide-right {
-  to {
-      right: 0;
+    left: 0;
   }
 }
 
+/* Animation de soulignement de droite à gauche */
+@keyframes slide-right {
+  to {
+    right: 0;
+  }
+}
+
+/* Effet de fondu entrant */
 .fade-in {
   animation: fade-in 0.5s ease-in;
 }
 @keyframes fade-in {
   from {
-      opacity: 0;
+    opacity: 0;
   }
   to {
-      opacity: 1;
+    opacity: 1;
   }
 }
 
-#event1{
+/* Animations de glissement pour les événements */
+#event1 {
   position: relative;
   left: -100%;
   animation: slide-left 1.4s forwards;
 }
-#event2{
+#event2 {
   position: relative;
   left: -100%;
   animation: slide-left 1.2s forwards;
 }
-#event3{
+#event3 {
   position: relative;
   left: -100%;
   animation: slide-left 1s forwards;
 }
 
-#event4{
+#event4 {
   position: relative;
   right: -100%;
   animation: slide-right 1s forwards;
 }
-#event5{
+#event5 {
   position: relative;
   right: -100%;
   animation: slide-right 1.2s forwards;
 }
-#event6{
+#event6 {
   position: relative;
   right: -100%;
   animation: slide-right 1.4s forwards;
 }
 
-#resume1{
+#resume1 {
   position: relative;
   left: -100%;
   animation: slide-left 1.4s forwards;
 }
-#resume2{
+#resume2 {
   position: relative;
   left: -100%;
   animation: slide-left 1.2s forwards;
 }
-#resume3{
+#resume3 {
   position: relative;
   left: -100%;
   animation: slide-left 1s forwards;
 }
-#resume4{
+#resume4 {
   position: relative;
   right: -100%;
   animation: slide-right 1s forwards;
 }
-#resume5{
+#resume5 {
   position: relative;
   right: -100%;
   animation: slide-right 1.2s forwards;
 }
-#resume6{
+#resume6 {
   position: relative;
   right: -100%;
   animation: slide-right 1.4s forwards;
 }
-/* Intro section */
+
+/* Section d'introduction */
 #intro_events p {
   text-align: center;
   max-width: 700px;
   margin: 10px auto;
   color: #333;
 }
-/* Events Grid */
+
+/* Section des événements */
 #events {
   margin-top: 40px;
   text-align: center;
 }
+
 #events_grid {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
 }
-.event{
+
+.event {
   background-color: var(--couleur-fromage);
   border-radius: 15px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -142,6 +152,7 @@ main {
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .event:hover {
   transform: scale(1.05);
   box-shadow: 0px 8px 15px rgba(0,0,0,0.2);
@@ -155,12 +166,14 @@ main {
   margin-bottom: 15px;
   object-fit: cover;
 }
+
 .event h3 {
   font-size: 1.2em;
   color: var(--rouge-sauce);
   margin-bottom: 10px;
   background-color: var(--couleur-fromage);
 }
+
 .event p {
   font-size: 0.95em;
   color: #333;
@@ -168,11 +181,12 @@ main {
   background-color: var(--couleur-fromage);
 }
 
-/* Resume section */
+/* Section résumé */
 #resume_section {
   margin-top: 40px;
   text-align: center;
 }
+
 #resume_section p {
   max-width: 700px;
   margin: 0 auto 30px auto;
@@ -205,81 +219,77 @@ main {
   font-size: 1.2em;
   color: var(--rouge-sauce);
   margin-bottom: 10px;
-  background: none;
+  background-color: transparent; 
 }
 
 .resume_item p {
   font-size: 0.95em;
   color: #333;
   line-height: 1.4;
-  background: none;
+  background-color: transparent; 
 }
 
-/* Conteneur principal */
+/* Section musicale */
 #music_container {
   text-align: center;
-  margin: 20px auto;
+  margin: 20px auto 30px auto;
   background-color: var(--couleur-croute);
   padding: 20px;
-  border-radius: 8px; /* Coins arrondis pour un effet visuel */
+  border-radius: 8px;
 }
 
-/* Texte explicatif */
 #music_description {
   font-size: 1.2em;
   margin-bottom: 15px;
   text-align: center; 
 }
 
-/* Style général du lecteur audio */
 #background_music {
-  width: 100%; /* Le lecteur occupe toute la largeur du conteneur */
-  max-width: 300px; /* Limite la largeur maximale */
-  border: none; /* Pas de bordure autour du lecteur */
-  border-radius: 8px; /* Coins arrondis */
-  outline: none; /* Enlève les bordures de focus */
+  width: 100%;
+  max-width: 300px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
 }
 
-/* Personnalisation des contrôles natifs pour Webkit (Chrome, Edge, Safari) */
+/* Personnalisation des contrôles audio (Webkit) */
 #background_music::-webkit-media-controls-panel {
-  background-color: var(--couleur-fromage); /* Fond des contrôles */
+  background-color: var(--couleur-fromage);
   border-radius: 8px;
 }
 
 #background_music::-webkit-media-controls-play-button,
 #background_music::-webkit-media-controls-pause-button {
-  background-color: var(--rouge-sauce); /* Couleur des boutons Play/Pause */
-  border-radius: 50%; /* Boutons arrondis */
-  border: 2px solid var(--rouge-sauce); /* Bordure des boutons */
+  background-color: var(--rouge-sauce);
+  border-radius: 50%;
+  border: 2px solid var(--rouge-sauce);
 }
 
 #background_music::-webkit-media-controls-time-remaining-display {
-  color: var(--rouge-sauce); /* Couleur du texte pour le temps restant */
-}
-/* Réduire l'espace entre le lecteur audio et la section suivante */
-#music_container {
-  margin-bottom: 30px; /* Réduit l'espace en dessous du lecteur audio */
+  color: var(--rouge-sauce);
 }
 
 /* Responsivité */
 @media (max-width: 768px) {
   .event, .resume_item {
-      max-width: 100%;
+    max-width: 100%;
   }
-  #event1,#event2,#event3,#event4,#event5,#event6,#resume1,#resume2,#resume3,#resume4,#resume5,#resume6{
+  
+  /* Sur mobile, pas d'animation de slide */
+  #event1, #event2, #event3, #event4, #event5, #event6,
+  #resume1, #resume2, #resume3, #resume4, #resume5, #resume6 {
     animation: none;
     position: relative;
     left: 0;
+    right: 0;
   }
-
-  
 }
 
 @media (max-width: 480px) {
   #top_banner h1 {
-      font-size: 1.5em;
+    font-size: 1.5em;
   }
   .event p, .resume_item p {
-      font-size: 0.9em;
+    font-size: 0.9em;
   }
 }
