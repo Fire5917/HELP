@@ -1,4 +1,5 @@
 :root {
+    /* Couleurs pour l'ambiance pizza */
     --couleur-croute: #f7e1bd;
     --rouge-sauce: #cc452b;
     --vert-basilic: #529c4a;
@@ -16,7 +17,7 @@ main {
     line-height: 1.6;
 }
 
-/* TITRES ANIMÉS */
+/* Titres animés avec soulignement */
 .reveal-title {
     font-size: 2.2em;
     color: var(--rouge-sauce);
@@ -36,13 +37,13 @@ main {
     animation: slide-in-title 1.2s forwards;
 }
 
-/* ANIMATIONS */
 @keyframes slide-in-title {
     to {
         left: 0;
     }
 }
 
+/* Effet de fondu pour les paragraphes */
 .fade-in {
     animation: fade-in 0.5s ease-in;
 }
@@ -55,82 +56,40 @@ main {
     }
 }
 
-
-
-/* Conteneur des photos */
+/* Section équipe : présentation des photos de l'équipe */
 #team_photos {
     display: flex;
-    justify-content: center; /* Centrer les photos */
-    gap: 40px; /* Espace entre les photos */
+    justify-content: center;
+    gap: 40px;
     margin-top: 20px;
-    flex-wrap: wrap; /* Permet aux images de se réorganiser si nécessaire */
+    flex-wrap: wrap;
 }
 
 #team_photos .photo {
-    text-align: center; /* Centrer les textes sous les photos */
-    flex-basis: 45%; /* Chaque image occupe environ la moitié de l'espace sur large écran */
-    margin: 10px; /* Ajoute un peu d'espace autour des images */
+    text-align: center;
+    flex-basis: 45%;
+    margin: 10px;
 }
 
 #team_photos img {
-    width: 100%; /* L'image prend toute la largeur disponible */
+    width: 100%;
     height: auto;
-    border-radius: 15px; /* Bords arrondis */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Ombre légère */
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-/* Effet au survol */
 #team_photos img:hover {
-    transform: scale(1.05); /* Zoom léger */
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4); /* Ombre plus marquée */
+    transform: scale(1.05);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
 }
 
-/* Texte sous les images */
 #team_photos .photo p {
     font-size: 1.2em;
     color: var(--rouge-sauce);
     margin-top: 10px;
     font-weight: bold;
 }
-
-/* RESPONSIVITÉ : Adaptation sur les petites résolutions */
-
-/* Tablettes : réduire la taille des images */
-@media screen and (max-width: 768px) {
-    #team_photos {
-        gap: 20px;
-    }
-
-    #team_photos .photo {
-        flex-basis: 45%; /* Réduit la taille des images mais garde deux images sur la ligne */
-    }
-
-    #team_photos img {
-        width: 90%; /* Réduit la taille des images sur tablette */
-    }
-}
-
-/* Téléphones : Empilement des images verticalement */
-@media screen and (max-width: 480px) {
-    #team_photos {
-        flex-direction: column; /* Change la direction des éléments pour les empiler verticalement */
-        gap: 20px;
-    }
-
-    #team_photos .photo {
-        flex-basis: 100%; /* Chaque image prend la pleine largeur de l'écran */
-    }
-
-    #team_photos img {
-        width: 80%; /* Légèrement plus petit sur mobile */
-    }
-
-    #team_photos .photo p {
-        font-size: 1.1em; /* Réduire légèrement la taille du texte sur mobile */
-    }
-}
-
 
 /* Témoignages clients */
 #testimonials {
@@ -142,37 +101,37 @@ main {
 #testimonial_container {
     display: flex;
     justify-content: center;
-    gap: 20px; /* Espace entre les avis */
+    gap: 20px;
     flex-wrap: wrap;
     margin-top: 20px;
 }
 
 .testimonial {
     background-color: var(--couleur-fromage);
-    border-radius: 10px; /* Bords arrondis */
+    border-radius: 10px;
     padding: 15px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 300px; /* Taille maximale */
+    max-width: 300px;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animations */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .testimonial:hover {
-    transform: scale(1.05); /* Zoom au hover */
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Ombre plus marquée */
+    transform: scale(1.05);
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
 }
 
 .testimonial img {
-    width: 80px; /* Taille des photos */
+    width: 80px;
     height: 80px;
-    border-radius: 50%; /* Ronde par défaut */
+    border-radius: 50%;
     margin-bottom: 10px;
     object-fit: cover;
-    transition: border-radius 0.3s ease; /* Animation de la bordure */
+    transition: border-radius 0.3s ease;
 }
 
 .testimonial:hover img {
-    border-radius: 15%; /* Plus carré au hover */
+    border-radius: 15%;
 }
 
 .testimonial p {
@@ -190,8 +149,7 @@ main {
     background-color: var(--couleur-fromage);
 }
 
-
-/* Section Pourquoi Nous Choisir ? */
+/* Section "Pourquoi Nous Choisir ?" */
 #why_choose_us {
     margin-top: 40px;
     text-align: center;
@@ -201,32 +159,32 @@ main {
 #advantages_container {
     display: flex;
     justify-content: center;
-    gap: 30px; /* Espace entre les cartes */
+    gap: 30px;
     flex-wrap: wrap;
     margin-top: 20px;
 }
 
 .advantage {
     border-radius: 15px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
     text-align: center;
     padding: 20px;
-    max-width: 300px; /* Largeur fixe pour les cartes */
+    max-width: 300px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background-color: var(--couleur-fromage);
 }
 
 .advantage:hover {
-    transform: scale(1.05); /* Zoom au hover */
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.2);
 }
 
 .advantage img {
-    width: 120px; /* Taille des images augmentée */
-    height: 120px; /* Images carrées */
+    width: 120px;
+    height: 120px;
     margin-bottom: 15px;
-    border-radius: 15px; /* Bords arrondis */
-    object-fit: cover; /* Maintient un bon cadrage des images */
+    border-radius: 15px;
+    object-fit: cover;
 }
 
 .advantage h3 {
@@ -241,4 +199,36 @@ main {
     color: #333;
     line-height: 1.4;
     background-color: var(--couleur-fromage);
+}
+
+/* Responsivité */
+@media screen and (max-width: 768px) {
+    #team_photos {
+        gap: 20px;
+    }
+    #team_photos .photo {
+        flex-basis: 45%;
+    }
+    #team_photos img {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #team_photos {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #team_photos .photo {
+        flex-basis: 100%;
+    }
+
+    #team_photos img {
+        width: 80%;
+    }
+
+    #team_photos .photo p {
+        font-size: 1.1em;
+    }
 }
