@@ -14,10 +14,6 @@
 ```
 > css
   fichiers css
-> dev
-  fichiers html à proposer pour ajout
-  > css_dev
-    partie du css à ajouter au css de la vraie page pour l'ajout proposé
 > media
   images/audio/icons
 > pages
