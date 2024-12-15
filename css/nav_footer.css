@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /* Variables globales */
 :root {
     /* Palette de couleurs du thème pizza */
@@ -38,10 +45,14 @@
 
 /* Animation des lettres initiales dans la bannière */
 #top_banner .help_first_letter {
-    animation-duration: 8s; /* Durée de chaque cycle d'animation */
-    animation-timing-function: ease-in-out; /* Animation fluide */
-    animation-iteration-count: infinite; /* Animation en boucle */
-    animation-delay: 0s; /* Pas de délai initial */
+    -webkit-animation-duration: 8s;
+            animation-duration: 8s; /* Durée de chaque cycle d'animation */
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out; /* Animation fluide */
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite; /* Animation en boucle */
+    -webkit-animation-delay: 0s;
+            animation-delay: 0s; /* Pas de délai initial */
 }
 
 /* Animation pour afficher ou masquer les mots entiers après la première lettre */
@@ -52,6 +63,11 @@
 }
 
 /* Définition de l'animation pour rendre les mots visibles ou invisibles */
+@-webkit-keyframes toggleVisibility {
+    0%, 37.5% { opacity: 1; } /* Mots visibles */
+    50%, 87.5% { opacity: 0; } /* Mots masqués */
+    100% { opacity: 1; } /* Retour à visible */
+}
 @keyframes toggleVisibility {
     0%, 37.5% { opacity: 1; } /* Mots visibles */
     50%, 87.5% { opacity: 0; } /* Mots masqués */
@@ -60,19 +76,27 @@
 
 /* Animations de déplacement pour chaque lettre "H", "E", "L", "P" */
 #top_banner .help_first_letter:nth-of-type(1) {
-    animation: moveH 8s ease-in-out 3s infinite; /* Animation personnalisée pour H */
+    -webkit-animation: moveH 8s ease-in-out 3s infinite;
+            animation: moveH 8s ease-in-out 3s infinite; /* Animation personnalisée pour H */
 }
 #top_banner .help_first_letter:nth-of-type(3) {
-    animation: moveE 8s ease-in-out 3s infinite; /* Animation personnalisée pour E */
+    -webkit-animation: moveE 8s ease-in-out 3s infinite;
+            animation: moveE 8s ease-in-out 3s infinite; /* Animation personnalisée pour E */
 }
 #top_banner .help_first_letter:nth-of-type(5) {
-    animation: moveL 8s ease-in-out 3s infinite; /* Animation personnalisée pour L */
+    -webkit-animation: moveL 8s ease-in-out 3s infinite;
+            animation: moveL 8s ease-in-out 3s infinite; /* Animation personnalisée pour L */
 }
 #top_banner .help_first_letter:nth-of-type(7) {
-    animation: moveP 8s ease-in-out 3s infinite; /* Animation personnalisée pour P */
+    -webkit-animation: moveP 8s ease-in-out 3s infinite;
+            animation: moveP 8s ease-in-out 3s infinite; /* Animation personnalisée pour P */
 }
 
 /* Déplacements spécifiques des lettres de la bannière */
+@-webkit-keyframes moveH {
+    40%, 60% { -webkit-transform: translateX(350px); transform: translateX(350px); }
+    60% { -webkit-transform: translateX(0); transform: translateX(0); }
+}
 @keyframes moveH {
     40%, 60% { -webkit-transform: translateX(350px); transform: translateX(350px); }
     60% { -webkit-transform: translateX(0); transform: translateX(0); }
@@ -90,12 +114,16 @@
     60% { -webkit-transform: translateX(0); transform: translateX(0); }
 }
 @keyframes moveL {
-    40%, 60% { transform: translateX(-1em); }
-    60% { transform: translateX(0); }
+    40%, 60% { -webkit-transform: translateX(-1em); transform: translateX(-1em); }
+    60% { -webkit-transform: translateX(0); transform: translateX(0); }
+}
+@-webkit-keyframes moveP {
+    40%, 60% { -webkit-transform: translateX(-300px); transform: translateX(-300px); }
+    60% { -webkit-transform: translateX(0); transform: translateX(0); }
 }
 @keyframes moveP {
-    40%, 60% { transform: translateX(-300px); }
-    60% { transform: translateX(0); }
+    40%, 60% { -webkit-transform: translateX(-300px); transform: translateX(-300px); }
+    60% { -webkit-transform: translateX(0); transform: translateX(0); }
 }
 
 /* ---------- Barre de navigation ---------- */
@@ -103,8 +131,12 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    justify-content: center; /* Centre les liens horizontalement */
-    align-self: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; /* Centre les liens horizontalement */
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
     background-color: var(--couleur-fromage); 
     padding: 10px 20px; /* Espacement interne */
     border-radius: 25px; /* Arrondit les coins */
@@ -119,6 +151,8 @@
     font-weight: bold; /* Met le texte en gras */
     font-size: large;
     background-color: var(--couleur-fromage); /* Couleur de fond */
+    -webkit-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
     transition: color 0.3s ease; /* Transition fluide sur le changement de couleur */
     border-radius: 18px; /* Coins arrondis */
 }
@@ -139,8 +173,11 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    justify-content: space-around; /* Répartit les sections horizontalement */
-    align-items: flex-start; /* Aligne les éléments en haut */
+    -ms-flex-pack: distribute;
+        justify-content: space-around; /* Répartit les sections horizontalement */
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start; /* Aligne les éléments en haut */
     background-color: var(--couleur-croute); 
     padding: 20px; /* Espacement interne */
 }
@@ -160,6 +197,8 @@
 /* Liste des icônes des réseaux sociaux */
 .footer_content ul {
     list-style-type: none; /* Supprime les puces */
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex; /* Affiche les icônes en ligne */
     padding: 0;
     gap: 10px; /* Espacement entre les icônes */
@@ -173,10 +212,18 @@
 
 /* Effet au survol des icônes */
 .footer_content ul li a:hover img {
-    animation: socialMedia 1.5s ease; /* Ajoute une animation */
+    -webkit-animation: socialMedia 1.5s ease;
+            animation: socialMedia 1.5s ease; /* Ajoute une animation */
 }
 
 /* Animation des icônes : rotation et mise à l'échelle */
+@-webkit-keyframes socialMedia {
+    0% { -webkit-transform: rotate(0deg) scale(1); transform: rotate(0deg) scale(1); }
+    10% { -webkit-transform: rotate(10deg); transform: rotate(10deg); }
+    20% { -webkit-transform: rotate(-10deg); transform: rotate(-10deg); }
+    30% { -webkit-transform: rotate(0deg) scale(1.2); transform: rotate(0deg) scale(1.2); }
+    100% { -webkit-transform: rotate(0deg) scale(1); transform: rotate(0deg) scale(1); }
+}
 @keyframes socialMedia {
     0% { -webkit-transform: rotate(0deg) scale(1); transform: rotate(0deg) scale(1); }
     10% { -webkit-transform: rotate(10deg); transform: rotate(10deg); }
@@ -190,7 +237,9 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    justify-content: center; /* Centre le texte */
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; /* Centre le texte */
     color: var(--rouge-sauce);
     padding: 10px 0;
     font-size: 0.9em;
@@ -200,13 +249,21 @@
 #back_to_top img {
     width: 24px; 
     height: 24px;
-    transform: scale(0.9);
-    transition: transform 0.6s ease; /* Transition fluide */
+    -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+            transform: scale(0.9);
+    -webkit-transition: -webkit-transform 0.6s ease;
+    transition: -webkit-transform 0.6s ease;
+    -o-transition: transform 0.6s ease;
+    transition: transform 0.6s ease;
+    transition: transform 0.6s ease, -webkit-transform 0.6s ease; /* Transition fluide */
 }
 
 /* Effet au survol du bouton */
 #back_to_top:hover img {
-    transform: rotate(315deg); /* Rotation au survol */
+    -webkit-transform: rotate(315deg);
+        -ms-transform: rotate(315deg);
+            transform: rotate(315deg); /* Rotation au survol */
 }
 
 #back_to_top {
@@ -222,11 +279,15 @@
         font-size: 1.2em;
         padding: 10px;
         text-align: center;
-        animation: none; /* Désactive les animations */
+        -webkit-animation: none;
+                animation: none; /* Désactive les animations */
     }
 
     .navbar {
-        flex-direction: column; /* Les liens passent en colonne */
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column; /* Les liens passent en colonne */
         padding: 5px;
         -webkit-box-align: center;
             -ms-flex-align: center;
@@ -243,7 +304,10 @@
     }
 
     .footer {
-        flex-direction: column; /* Les sections passent en colonne */
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column; /* Les sections passent en colonne */
         padding: 10px;
     }
 
@@ -256,7 +320,10 @@
     }
 
     .footer_content ul {
-        flex-direction: row; /* Les icônes restent en ligne */
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row; /* Les icônes restent en ligne */
         gap: 10px;
         -webkit-box-pack: center;
             -ms-flex-pack: center;
