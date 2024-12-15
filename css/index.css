@@ -1,7 +1,3 @@
-/* CSS uniquement pour la page : index.html */
-
-
-
 :root{
     --couleur-croute: #f7e1bd;
     --rouge-sauce: #cc452b;
@@ -9,7 +5,7 @@
     --couleur-fromage: #f4db95;
 }
 
-/* Section Welcoming */
+/* Section accueil */
 #welcoming {
     background-color: var(--couleur-croute);
     padding: 50px 20px;
@@ -24,6 +20,7 @@
     font-weight: bold;
     letter-spacing: 2px;
     text-shadow: 1px 1px var(--vert-basilic);
+    margin-top: -80px; /* Réduction espace au-dessus du titre */
 }
 
 #welcoming p {
@@ -53,17 +50,18 @@
     transform: scale(1.05);
 }
 
+/* Section about us */
 #about_us {
     display: flex;
     justify-content: space-between;
-    gap: 20px; /* Espace entre chaque div */
+    gap: 20px;
     padding: 20px;
     background-color: var(--couleur-croute);
 }
 
 .about_item {
     text-align: center;
-    width: 30%; /* Réduit la largeur pour donner plus d’espace entre les divs */
+    width: 30%;
     padding: 15px;
     background-color: var(--couleur-fromage);
     border-radius: 15px;
@@ -95,91 +93,67 @@
     background-color: var(--couleur-fromage);
 }
 
-/* Affichage tablette */
+/* Responsive about_us */
 @media (max-width: 768px) {
-    #about_us {
-        flex-direction: column; /* Place les divs en colonne */
-        align-items: center;
-        gap: 15px; /* Réduit l'espacement entre les divs */
-    }
-
-    .about_item {
-        width: 80%; /* Occupe une large partie de l'écran tout en laissant des marges */
-    }
-}
-
-/* Affichage téléphone */
-@media (max-width: 480px) {
     #about_us {
         flex-direction: column;
         align-items: center;
-        gap: 10px;
-        padding: 10px; /* Réduit le padding*/
+        gap: 15px;
     }
-
     .about_item {
-        width: 100%; /*Prend toute la largeur de l'écran*/
-        padding: 10px; /*Moins de padding --> plus compact*/
-    }
-
-    .about_item img {
-        border-radius: 8px; /* Aroondi pour petits écrans*/
+        width: 80%;
     }
 }
-/* Conteneur principal */
+
+@media (max-width: 480px) {
+    #about_us {
+        padding: 10px;
+        gap: 10px;
+    }
+    .about_item {
+        width: 100%;
+        padding: 10px;
+    }
+    .about_item img {
+        border-radius: 8px;
+    }
+}
+
+/* Lecteur audio */
 #music_container {
     text-align: center;
     margin: 20px auto;
     background-color: var(--couleur-croute);
     padding: 20px;
-    border-radius: 8px; /* Coins arrondis pour un effet visuel */
+    border-radius: 8px;
+    margin-bottom: 30px;
 }
 
-/* Texte explicatif */
-#music_container p {
-    font-size: 1.2em;
-    color: var(--rouge-sauce);
-    margin-bottom: 15px;
-}
-
-/* Style général du lecteur audio */
 #background_music {
-    width: 100%; /* Le lecteur occupe toute la largeur du conteneur */
-    max-width: 300px; /* Limite la largeur maximale */
-    border: none; /* Pas de bordure autour du lecteur */
-    border-radius: 8px; /* Coins arrondis */
-    outline: none; /* Enlève les bordures de focus */
+    width: 100%;
+    max-width: 300px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
 }
 
-/* Personnalisation des contrôles natifs pour Webkit (Chrome, Edge, Safari) */
 #background_music::-webkit-media-controls-panel {
-    background-color: var(--couleur-fromage); /* Fond des contrôles */
+    background-color: var(--couleur-fromage);
     border-radius: 8px;
 }
 
 #background_music::-webkit-media-controls-play-button,
 #background_music::-webkit-media-controls-pause-button {
-    background-color: var(--rouge-sauce); /* Couleur des boutons Play/Pause */
-    border-radius: 50%; /* Boutons arrondis */
-    border: 2px solid var(--rouge-sauce); /* Bordure des boutons */
+    background-color: var(--rouge-sauce);
+    border-radius: 50%;
+    border: 2px solid var(--rouge-sauce);
 }
 
 #background_music::-webkit-media-controls-time-remaining-display {
-    color: var(--rouge-sauce); /* Couleur du texte pour le temps restant */
-}
-/* Réduire l'espace entre le lecteur audio et la section suivante */
-#music_container {
-    margin-bottom: 30px; /* Réduit l'espace en dessous du lecteur audio */
+    color: var(--rouge-sauce);
 }
 
-/* Réduire l'espace au-dessus du titre dans la section welcoming */
-#welcoming h2 {
-    margin-top: -80px; /* Réduit l'espace au-dessus du titre */
-}
-
-
-
-/* Style de la section Horoscope */
+/* Horoscope */
 .pizza-horoscope {
     padding: 40px;
     text-align: center;
@@ -196,7 +170,6 @@
     font-size: 1.1em;
 }
 
-/* Grid des signes astrologiques */
 .horoscope-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -217,7 +190,7 @@
     font-size: 1.4em;
     margin-bottom: 8px;
     color: var(--rouge-sauce);
-    background-color: var(--couleur-fromage); /* Fond couleur fromage */
+    background-color: var(--couleur-fromage);
     padding: 5px 10px;
     border-radius: 5px;
     display: inline-block;
@@ -228,14 +201,13 @@
     color: #333;
     font-size: 1em;
     opacity: 0;
-    background-color: var(--couleur-fromage); /* Fond couleur fromage */
+    background-color: var(--couleur-fromage);
     padding: 5px 10px;
     border-radius: 5px;
     display: inline-block;
     transition: opacity 0.5s ease-in-out;
 }
 
-/* Style des noms de pizzas (balises <strong> dans les <p>) */
 .horoscope-grid .sign p strong {
     background-color: var(--couleur-fromage);
     color: var(--rouge-sauce);
@@ -245,7 +217,6 @@
     font-style: italic;
 }
 
-/* Animation épurée pour les signes astrologiques */
 .horoscope-grid .sign:hover {
     animation: hoverUp 1s forwards ease-in;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
@@ -269,8 +240,6 @@
     }
 }
 
-
-
 @keyframes textPop {
     0% {
         letter-spacing: 0;
@@ -279,8 +248,3 @@
         letter-spacing: 2px;
     }
 }
-
-
-
-
-
