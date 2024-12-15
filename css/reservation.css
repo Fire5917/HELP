@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /* Variables de couleurs */
 :root {
     --couleur-croute: #f7e1bd;
@@ -8,9 +15,13 @@
 
 /* Structure de la grille principale */
 .grid-container {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
-    align-items: stretch;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
     min-height: calc(100vh - 200px);
     position: relative;
 }
@@ -25,10 +36,17 @@
 
 /* Colonne centrale */
 .center-column {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     position: relative;
     padding: 20px;
 }
@@ -40,11 +58,14 @@
     border-radius: 10px;
     padding: 20px;
     width: 100%;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     max-width: 400px;
     min-height: 600px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 0.8s ease-in-out;
+    -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    -webkit-animation: fadeIn 0.8s ease-in-out;
+            animation: fadeIn 0.8s ease-in-out;
     overflow: auto;
     scrollbar-width: thin;
     scrollbar-color: var(--rouge-sauce) var(--couleur-croute);
@@ -92,16 +113,23 @@
     border-radius: 5px;
     background-color: var(--couleur-croute);
     font-size: 1rem;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    -webkit-transition: -webkit-box-shadow 0.3s ease;
+    transition: -webkit-box-shadow 0.3s ease;
+    -o-transition: box-shadow 0.3s ease;
     transition: box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
 }
 
 .reservation-form input:hover {
-    box-shadow: 0 0 8px var(--rouge-sauce);
+    -webkit-box-shadow: 0 0 8px var(--rouge-sauce);
+            box-shadow: 0 0 8px var(--rouge-sauce);
 }
 
 .reservation-form input:focus {
-    box-shadow: 0 0 5px var(--rouge-sauce);
+    -webkit-box-shadow: 0 0 5px var(--rouge-sauce);
+            box-shadow: 0 0 5px var(--rouge-sauce);
 }
 
 /* Bouton de soumission */
@@ -116,6 +144,8 @@
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
+    -webkit-transition: background-color 0.3s ease, color 0.3s ease;
+    -o-transition: background-color 0.3s ease, color 0.3s ease;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -132,9 +162,20 @@
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     will-change: transform;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+@-webkit-keyframes moveLogo1 {
+    0%   { top:10%; left:10%; }
+    20%  { top:15%; left:75%; }
+    40%  { top:10%; left:30%; }
+    60%  { top:25%; left:60%; }
+    80%  { top:20%; left:50%; }
+    100% { top:10%; left:10%; }
 }
 
 @keyframes moveLogo1 {
@@ -146,6 +187,15 @@
     100% { top:10%; left:10%; }
 }
 
+@-webkit-keyframes moveLogo2 {
+    0%   { top:40%; left:20%; }
+    20%  { top:50%; left:65%; }
+    40%  { top:45%; left:40%; }
+    60%  { top:55%; left:30%; }
+    80%  { top:35%; left:70%; }
+    100% { top:40%; left:20%; }
+}
+
 @keyframes moveLogo2 {
     0%   { top:40%; left:20%; }
     20%  { top:50%; left:65%; }
@@ -153,6 +203,15 @@
     60%  { top:55%; left:30%; }
     80%  { top:35%; left:70%; }
     100% { top:40%; left:20%; }
+}
+
+@-webkit-keyframes moveLogo3 {
+    0%   { top:70%; left:30%; }
+    20%  { top:80%; left:10%; }
+    40%  { top:85%; left:60%; }
+    60%  { top:75%; left:20%; }
+    80%  { top:90%; left:50%; }
+    100% { top:70%; left:30%; }
 }
 
 @keyframes moveLogo3 {
@@ -164,6 +223,15 @@
     100% { top:70%; left:30%; }
 }
 
+@-webkit-keyframes moveLogo4 {
+    0%   { top:10%; left:20%; }
+    20%  { top:5%;  left:60%; }
+    40%  { top:20%; left:30%; }
+    60%  { top:15%; left:70%; }
+    80%  { top:25%; left:50%; }
+    100% { top:10%; left:20%; }
+}
+
 @keyframes moveLogo4 {
     0%   { top:10%; left:20%; }
     20%  { top:5%;  left:60%; }
@@ -173,6 +241,15 @@
     100% { top:10%; left:20%; }
 }
 
+@-webkit-keyframes moveLogo5 {
+    0%   { top:40%; left:30%; }
+    20%  { top:50%; left:60%; }
+    40%  { top:45%; left:20%; }
+    60%  { top:60%; left:75%; }
+    80%  { top:55%; left:45%; }
+    100% { top:40%; left:30%; }
+}
+
 @keyframes moveLogo5 {
     0%   { top:40%; left:30%; }
     20%  { top:50%; left:60%; }
@@ -180,6 +257,15 @@
     60%  { top:60%; left:75%; }
     80%  { top:55%; left:45%; }
     100% { top:40%; left:30%; }
+}
+
+@-webkit-keyframes moveLogo6 {
+    0%   { top:75%; left:40%; }
+    20%  { top:85%; left:20%; }
+    40%  { top:80%; left:65%; }
+    60%  { top:90%; left:35%; }
+    80%  { top:85%; left:60%; }
+    100% { top:75%; left:40%; }
 }
 
 @keyframes moveLogo6 {
@@ -193,38 +279,58 @@
 
 /* Assignation des animations aux logos */
 .left-column .logo1 {
-    animation: moveLogo1 9s linear infinite;
+    -webkit-animation: moveLogo1 9s linear infinite;
+            animation: moveLogo1 9s linear infinite;
 }
 
 .left-column .logo2 {
-    animation: moveLogo2 11s linear infinite;
+    -webkit-animation: moveLogo2 11s linear infinite;
+            animation: moveLogo2 11s linear infinite;
 }
 
 .left-column .logo3 {
-    animation: moveLogo3 10s linear infinite;
+    -webkit-animation: moveLogo3 10s linear infinite;
+            animation: moveLogo3 10s linear infinite;
 }
 
 .right-column .logo4 {
-    animation: moveLogo4 8s linear infinite;
+    -webkit-animation: moveLogo4 8s linear infinite;
+            animation: moveLogo4 8s linear infinite;
 }
 
 .right-column .logo5 {
-    animation: moveLogo5 10s linear infinite;
+    -webkit-animation: moveLogo5 10s linear infinite;
+            animation: moveLogo5 10s linear infinite;
 }
 
 .right-column .logo6 {
-    animation: moveLogo6 12s linear infinite;
+    -webkit-animation: moveLogo6 12s linear infinite;
+            animation: moveLogo6 12s linear infinite;
 }
 
 /* Animation d'apparition du formulaire */
-@keyframes fadeIn {
+@-webkit-keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        -webkit-transform: translateY(20px);
+                transform: translateY(20px);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+                transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
     }
 }
 
@@ -233,6 +339,7 @@
    et leurs logos, on affiche uniquement le formulaire au centre. */
 @media (max-width: 1200px) {
     .grid-container {
+        -ms-grid-columns: 1fr !important;
         grid-template-columns: 1fr !important;
         min-height: calc(100vh - 200px) !important;
     }
@@ -245,15 +352,22 @@
         display: none !important;
         opacity: 0 !important;
         visibility: hidden !important;
-        animation: none !important;
+        -webkit-animation: none !important;
+                animation: none !important;
     }
 
     .center-column {
         grid-column: 1 / -1 !important;
         width: 100% !important;
+        display: -webkit-box !important;
+        display: -ms-flexbox !important;
         display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
+        -webkit-box-pack: center !important;
+            -ms-flex-pack: center !important;
+                justify-content: center !important;
+        -webkit-box-align: center !important;
+            -ms-flex-align: center !important;
+                align-items: center !important;
         padding: 0 !important;
         margin-top: 20px !important;
     }

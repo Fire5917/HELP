@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /* CSS uniquement pour la page : recrutement.html */
 
 /* Variables de couleurs */
@@ -30,14 +37,21 @@ header p {
   margin-bottom: 20px;
   background-color: var(--couleur-fromage);
   border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   font-size: 1.2em;
   line-height: 1.8em;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  -o-transition: transform 0.3s ease;
   transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
 #intro_recrue:hover {
-  transform: scale(1.02);
+  -webkit-transform: scale(1.02);
+      -ms-transform: scale(1.02);
+          transform: scale(1.02);
 }
 
 #intro_recrue h3 {
@@ -57,12 +71,17 @@ header p {
 
 /* Présentation des postes */
 #métiers {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   gap: 20px;
   padding: 20px;
   background-color: var(--couleur-croute);
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .job {
@@ -71,13 +90,20 @@ header p {
   padding: 15px;
   background-color: var(--couleur-fromage);
   border-radius: 15px;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  -o-transition: transform 0.3s ease;
   transition: transform 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   min-width: 250px;
 }
 
 .job:hover {
-  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .job img {
@@ -109,7 +135,8 @@ header p {
   max-width: 700px;
   width: 100%;
   margin: 0 auto 40px auto;
-  animation: fadeIn 0.8s ease-in-out;
+  -webkit-animation: fadeIn 0.8s ease-in-out;
+          animation: fadeIn 0.8s ease-in-out;
 }
 
 .form-title {
@@ -123,11 +150,16 @@ header p {
 }
 
 .form-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-bottom: 20px;
   background: var(--couleur-fromage);
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: 20px;
 }
 
@@ -164,8 +196,13 @@ header p {
   border-radius: 5px;
   background-color: var(--couleur-croute);
   font-size: 1rem;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: -webkit-box-shadow 0.3s ease;
+  transition: -webkit-box-shadow 0.3s ease;
+  -o-transition: box-shadow 0.3s ease;
   transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
 }
 
 .recrutement-form button {
@@ -175,6 +212,8 @@ header p {
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
+  -webkit-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
   width: 30%;
   min-width: 120px;
@@ -188,23 +227,39 @@ header p {
 
 .recrutement-form input:focus,
 .recrutement-form select:focus {
-  box-shadow: 0 0 5px var(--rouge-sauce);
+  -webkit-box-shadow: 0 0 5px var(--rouge-sauce);
+          box-shadow: 0 0 5px var(--rouge-sauce);
 }
 
 .recrutement-form input:hover,
 .recrutement-form select:hover {
-  box-shadow: 0 0 8px var(--rouge-sauce);
+  -webkit-box-shadow: 0 0 8px var(--rouge-sauce);
+          box-shadow: 0 0 8px var(--rouge-sauce);
 }
 
 /* Animation d'apparition du formulaire */
-@keyframes fadeIn {
+@-webkit-keyframes fadeIn {
   from {
       opacity: 0;
-      transform: translateY(20px);
+      -webkit-transform: translateY(20px);
+              transform: translateY(20px);
   }
   to {
       opacity: 1;
-      transform: translateY(0);
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      -webkit-transform: translateY(20px);
+              transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
   }
 }
 
@@ -215,7 +270,10 @@ header p {
   }
 
   .form-content {
-      flex-direction: column;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
       margin-bottom: 15px;
       background: var(--couleur-fromage);
   }
@@ -241,8 +299,13 @@ header p {
   }
 
   #métiers {
-      flex-direction: column;
-      align-items: center;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
   }
 
   .job {
